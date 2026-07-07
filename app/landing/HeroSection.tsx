@@ -92,7 +92,7 @@ export default function HeroSection() {
     <section
       className={`${poppins.variable} relative h-screen w-full overflow-hidden font-(family-name:--font-display)`}
     >
-      {/* ================= BACKGROUND IMAGE ================= */}
+
       <Navbar/>
       <Image
         src="/hero5.png"
@@ -102,11 +102,11 @@ export default function HeroSection() {
         className="object-cover"
       />
      
-      {/* readability scrim so light text/dark text both work over the photo */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0F3D2E]/20 via-[#0F3D2E]/30 to-[#092d21]" />
+      
+      <div className="absolute inset-0 bg-linear-to-t from-[#0F3D2E]/20 via-[#0F3D2E]/30 to-[#092d21]" />
 
-      {/* ================= TOP NAV ================= */}
-      <div className="absolute inset-x-0 top-0 z-20 flex items-center justify-between px-6 py-6 sm:px-10 sm:py-8">
+     
+      {/* <div className="absolute inset-x-0 top-0 z-20 flex items-center justify-between px-6 py-6 sm:px-10 sm:py-8">
         <div className="flex items-center gap-2">
           <svg viewBox="0 0 32 32" className="h-7 w-7 text-[#EAF3E4]" fill="currentColor">
             <path d="M16 2 A14 14 0 0 1 16 30 Z" />
@@ -133,9 +133,9 @@ export default function HeroSection() {
             }`}
           />
         </button>
-      </div>
+      </div> */}
 
-      {/* ================= HEADLINE + COPY ================= */}
+      
       <div className="absolute inset-x-0 top-1/2 z-10 -translate-y-1/2 px-6 sm:px-10 lg:px-20">
         <div className="max-w-3xl">
           <span className="inline-block rounded-full border border-[#EAF3E4]/30 bg-[#EAF3E4]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-[#EAF3E4] backdrop-blur-sm">

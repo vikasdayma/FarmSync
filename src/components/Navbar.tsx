@@ -26,7 +26,7 @@ const Navbar = () => {
             <li><button onClick={() => router.push('/')}>Home</button></li>
             <li><a href="#features">Features</a></li>
             <li><button onClick={()=>{router.push('/marketplace')}}> Marketplace</button></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#features">Contact</a></li>
           </ul>
 
           {/* Right Side */}

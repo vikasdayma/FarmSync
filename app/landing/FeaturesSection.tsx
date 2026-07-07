@@ -42,6 +42,7 @@ const features = [
 export function FeaturesSection() {
   return (
     <section
+    id="features"
       className={`${poppins.variable} bg-no-repeat bg-cover  px-6 py-24 font-[family-name:var(--font-display)] 
         bg-white/30 sm:px-10 lg:px-20`
 
