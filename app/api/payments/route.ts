@@ -47,19 +47,19 @@ export async function POST(req: NextRequest) {
         if (order.buyerId !== auth.user.sub && auth.user.role !== "SUPER_ADMIN") return apiForbidden();
         if (order.status === "CANCELLED") return apiBadRequest("Cannot pay for a cancelled order");
 
-        const payment = await prisma.payment.create({
-            data: {
-                ...parsed.data,
-                userId: auth.user.sub,
-                paidAt: new Date(),
-            },
-        });
+       const payment = await prisma.payment.create({
+    data: {
+        ...parsed.data,
+        userId: auth.user.sub,
+        status: "COMPLETED",
+        paidAt: new Date(),
+    },
+});
 
-        
-        await prisma.order.update({
-            where: { id: parsed.data.orderId },
-            data: { paymentStatus: "PAID", status: "CONFIRMED" },
-        });
+await prisma.order.update({
+    where: { id: parsed.data.orderId },
+    data: { status: "CONFIRMED" },
+});
 
         await createNotification({
             userId: order.supplierId,

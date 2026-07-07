@@ -27,7 +27,7 @@ export function apiCreated<T>(data: T, message = "Created successfully") {
 }
 
 /** 400 Bad Request */
-export function apiBadRequest(message = "Bad request", errors?: unknown) {
+export function apiBadRequest(message = "Bad request", errors?: Record<string, unknown>) {
     return NextResponse.json(
         { success: false, message, ...(errors && { errors }) },
         { status: 400 }
@@ -67,14 +67,14 @@ export function apiRateLimited(message = "Too many requests. Please slow down.")
 /** 500 Internal Server Error */
 export function apiServerError(error?: unknown, message = "Internal server error") {
     const isDev = process.env.NODE_ENV === "development";
-    return NextResponse.json(
-        {
-            success: false,
-            message,
-            ...(isDev && error && { debug: String(error) }),
-        },
-        { status: 500 }
-    );
+    const body: { success: boolean; message: string; debug?: string } = {
+        success: false,
+        message,
+    };
+    if (isDev && error) {
+        body.debug = String(error);
+    }
+    return NextResponse.json(body, { status: 500 });
 }
 
 // =============================================================================

@@ -3,7 +3,7 @@
 // Access token (15m) + Refresh token (7d) strategy
 // =============================================================================
 import jwt from "jsonwebtoken";
-import { Role } from "@prisma/client";
+import { Role } from "@/generated/prisma/enums";
 
 const JWT_SECRET = process.env.JWT_SECRET!;
 const JWT_REFRESH_SECRET = process.env.JWT_REFRESH_SECRET!;

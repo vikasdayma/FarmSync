@@ -2552,12 +2552,6 @@ export const UserScalarFieldEnum = {
   role: 'role',
   status: 'status',
   avatarUrl: 'avatarUrl',
-  bio: 'bio',
-  address: 'address',
-  city: 'city',
-  state: 'state',
-  country: 'country',
-  pincode: 'pincode',
   failedLoginAttempts: 'failedLoginAttempts',
   lockedUntil: 'lockedUntil',
   emailVerified: 'emailVerified',
@@ -2570,7 +2564,13 @@ export const UserScalarFieldEnum = {
   passwordChangedAt: 'passwordChangedAt',
   deletedAt: 'deletedAt',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  address: 'address',
+  bio: 'bio',
+  city: 'city',
+  country: 'country',
+  pincode: 'pincode',
+  state: 'state'
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
@@ -2822,9 +2822,17 @@ export const OrderScalarFieldEnum = {
   orderNo: 'orderNo',
   buyerId: 'buyerId',
   supplierId: 'supplierId',
+  status: 'status',
   totalAmount: 'totalAmount',
-  shippingAddress: 'shippingAddress',
+  discountAmount: 'discountAmount',
+  shippingAmount: 'shippingAmount',
+  taxAmount: 'taxAmount',
   notes: 'notes',
+  shippingAddress: 'shippingAddress',
+  cancelReason: 'cancelReason',
+  cancelledAt: 'cancelledAt',
+  deliveredAt: 'deliveredAt',
+  deletedAt: 'deletedAt',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
@@ -3340,6 +3348,20 @@ export type EnumEquipmentStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$
  * Reference to a field of type 'EquipmentStatus[]'
  */
 export type ListEnumEquipmentStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'EquipmentStatus[]'>
+    
+
+
+/**
+ * Reference to a field of type 'OrderStatus'
+ */
+export type EnumOrderStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'OrderStatus'>
+    
+
+
+/**
+ * Reference to a field of type 'OrderStatus[]'
+ */
+export type ListEnumOrderStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'OrderStatus[]'>
     
 
 

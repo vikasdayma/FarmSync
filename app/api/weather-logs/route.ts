@@ -7,7 +7,7 @@ import { getAuthUser } from "@/middleware/auth";
 import { CreateWeatherLogSchema } from "@/validators/schemas";
 import { getPagination, buildMeta, getSortOrder } from "@/lib/response";
 import { cacheGet, cacheSet } from "@/lib/redis";
-
+import { Prisma } from "@/generated/prisma/client";
 export async function GET(req: NextRequest) {
     const auth = await getAuthUser(req);
     if ("error" in auth) return auth.error;
@@ -52,9 +52,14 @@ export async function POST(req: NextRequest) {
         const parsed = CreateWeatherLogSchema.safeParse(body);
         if (!parsed.success) return apiValidationError(parsed.error.flatten().fieldErrors);
 
-        const log = await prisma.weatherLog.create({
-            data: { ...parsed.data, recordedAt: new Date(parsed.data.recordedAt) },
-        });
+       
+const log = await prisma.weatherLog.create({
+    data: {
+        ...parsed.data,
+        recordedAt: new Date(parsed.data.recordedAt),
+        forecastData: parsed.data.forecastData as Prisma.InputJsonValue | undefined,
+    },
+});
         return apiCreated(log, "Weather log created");
     } catch (err) {
         return apiServerError(err);

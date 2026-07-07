@@ -182,7 +182,9 @@ export const AuditAction = {
   REJECT: 'REJECT',
   UPLOAD: 'UPLOAD',
   DOWNLOAD: 'DOWNLOAD',
-  EXPORT: 'EXPORT'
+  EXPORT: 'EXPORT',
+  BAN: 'BAN',
+  UNBAN: 'UNBAN'
 } as const
 
 export type AuditAction = (typeof AuditAction)[keyof typeof AuditAction]

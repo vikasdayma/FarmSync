@@ -312,8 +312,8 @@ export type CropCycleWhereInput = {
   deletedAt?: Prisma.DateTimeNullableFilter<"CropCycle"> | Date | string | null
   createdAt?: Prisma.DateTimeFilter<"CropCycle"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"CropCycle"> | Date | string
-  farm?: Prisma.XOR<Prisma.FarmScalarRelationFilter, Prisma.FarmWhereInput>
   crop?: Prisma.XOR<Prisma.CropScalarRelationFilter, Prisma.CropWhereInput>
+  farm?: Prisma.XOR<Prisma.FarmScalarRelationFilter, Prisma.FarmWhereInput>
 }
 
 export type CropCycleOrderByWithRelationInput = {
@@ -333,8 +333,8 @@ export type CropCycleOrderByWithRelationInput = {
   deletedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  farm?: Prisma.FarmOrderByWithRelationInput
   crop?: Prisma.CropOrderByWithRelationInput
+  farm?: Prisma.FarmOrderByWithRelationInput
 }
 
 export type CropCycleWhereUniqueInput = Prisma.AtLeast<{
@@ -357,8 +357,8 @@ export type CropCycleWhereUniqueInput = Prisma.AtLeast<{
   deletedAt?: Prisma.DateTimeNullableFilter<"CropCycle"> | Date | string | null
   createdAt?: Prisma.DateTimeFilter<"CropCycle"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"CropCycle"> | Date | string
-  farm?: Prisma.XOR<Prisma.FarmScalarRelationFilter, Prisma.FarmWhereInput>
   crop?: Prisma.XOR<Prisma.CropScalarRelationFilter, Prisma.CropWhereInput>
+  farm?: Prisma.XOR<Prisma.FarmScalarRelationFilter, Prisma.FarmWhereInput>
 }, "id">
 
 export type CropCycleOrderByWithAggregationInput = {
@@ -422,8 +422,8 @@ export type CropCycleCreateInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  farm: Prisma.FarmCreateNestedOneWithoutCropCyclesInput
   crop: Prisma.CropCreateNestedOneWithoutCropCyclesInput
+  farm: Prisma.FarmCreateNestedOneWithoutCropCyclesInput
 }
 
 export type CropCycleUncheckedCreateInput = {
@@ -460,8 +460,8 @@ export type CropCycleUpdateInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  farm?: Prisma.FarmUpdateOneRequiredWithoutCropCyclesNestedInput
   crop?: Prisma.CropUpdateOneRequiredWithoutCropCyclesNestedInput
+  farm?: Prisma.FarmUpdateOneRequiredWithoutCropCyclesNestedInput
 }
 
 export type CropCycleUncheckedUpdateInput = {
@@ -1014,8 +1014,8 @@ export type CropCycleSelect<ExtArgs extends runtime.Types.Extensions.InternalArg
   deletedAt?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  farm?: boolean | Prisma.FarmDefaultArgs<ExtArgs>
   crop?: boolean | Prisma.CropDefaultArgs<ExtArgs>
+  farm?: boolean | Prisma.FarmDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["cropCycle"]>
 
 export type CropCycleSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -1035,8 +1035,8 @@ export type CropCycleSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ext
   deletedAt?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  farm?: boolean | Prisma.FarmDefaultArgs<ExtArgs>
   crop?: boolean | Prisma.CropDefaultArgs<ExtArgs>
+  farm?: boolean | Prisma.FarmDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["cropCycle"]>
 
 export type CropCycleSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -1056,8 +1056,8 @@ export type CropCycleSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ext
   deletedAt?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  farm?: boolean | Prisma.FarmDefaultArgs<ExtArgs>
   crop?: boolean | Prisma.CropDefaultArgs<ExtArgs>
+  farm?: boolean | Prisma.FarmDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["cropCycle"]>
 
 export type CropCycleSelectScalar = {
@@ -1081,23 +1081,23 @@ export type CropCycleSelectScalar = {
 
 export type CropCycleOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "farmId" | "cropId" | "userId" | "season" | "year" | "status" | "plantingDate" | "harvestDate" | "actualHarvestDate" | "expectedYieldKg" | "actualYieldKg" | "notes" | "deletedAt" | "createdAt" | "updatedAt", ExtArgs["result"]["cropCycle"]>
 export type CropCycleInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  farm?: boolean | Prisma.FarmDefaultArgs<ExtArgs>
   crop?: boolean | Prisma.CropDefaultArgs<ExtArgs>
+  farm?: boolean | Prisma.FarmDefaultArgs<ExtArgs>
 }
 export type CropCycleIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  farm?: boolean | Prisma.FarmDefaultArgs<ExtArgs>
   crop?: boolean | Prisma.CropDefaultArgs<ExtArgs>
+  farm?: boolean | Prisma.FarmDefaultArgs<ExtArgs>
 }
 export type CropCycleIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  farm?: boolean | Prisma.FarmDefaultArgs<ExtArgs>
   crop?: boolean | Prisma.CropDefaultArgs<ExtArgs>
+  farm?: boolean | Prisma.FarmDefaultArgs<ExtArgs>
 }
 
 export type $CropCyclePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "CropCycle"
   objects: {
-    farm: Prisma.$FarmPayload<ExtArgs>
     crop: Prisma.$CropPayload<ExtArgs>
+    farm: Prisma.$FarmPayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1510,8 +1510,8 @@ readonly fields: CropCycleFieldRefs;
  */
 export interface Prisma__CropCycleClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  farm<T extends Prisma.FarmDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.FarmDefaultArgs<ExtArgs>>): Prisma.Prisma__FarmClient<runtime.Types.Result.GetResult<Prisma.$FarmPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   crop<T extends Prisma.CropDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.CropDefaultArgs<ExtArgs>>): Prisma.Prisma__CropClient<runtime.Types.Result.GetResult<Prisma.$CropPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  farm<T extends Prisma.FarmDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.FarmDefaultArgs<ExtArgs>>): Prisma.Prisma__FarmClient<runtime.Types.Result.GetResult<Prisma.$FarmPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.

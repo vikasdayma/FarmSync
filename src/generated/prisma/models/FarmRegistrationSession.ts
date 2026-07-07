@@ -238,8 +238,8 @@ export type FarmRegistrationSessionWhereInput = {
   deletedAt?: Prisma.DateTimeNullableFilter<"FarmRegistrationSession"> | Date | string | null
   createdAt?: Prisma.DateTimeFilter<"FarmRegistrationSession"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"FarmRegistrationSession"> | Date | string
-  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   farm?: Prisma.XOR<Prisma.FarmNullableScalarRelationFilter, Prisma.FarmWhereInput> | null
+  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
 }
 
 export type FarmRegistrationSessionOrderByWithRelationInput = {
@@ -258,8 +258,8 @@ export type FarmRegistrationSessionOrderByWithRelationInput = {
   deletedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  user?: Prisma.UserOrderByWithRelationInput
   farm?: Prisma.FarmOrderByWithRelationInput
+  user?: Prisma.UserOrderByWithRelationInput
 }
 
 export type FarmRegistrationSessionWhereUniqueInput = Prisma.AtLeast<{
@@ -281,8 +281,8 @@ export type FarmRegistrationSessionWhereUniqueInput = Prisma.AtLeast<{
   deletedAt?: Prisma.DateTimeNullableFilter<"FarmRegistrationSession"> | Date | string | null
   createdAt?: Prisma.DateTimeFilter<"FarmRegistrationSession"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"FarmRegistrationSession"> | Date | string
-  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   farm?: Prisma.XOR<Prisma.FarmNullableScalarRelationFilter, Prisma.FarmWhereInput> | null
+  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
 }, "id" | "farmId">
 
 export type FarmRegistrationSessionOrderByWithAggregationInput = {
@@ -341,8 +341,8 @@ export type FarmRegistrationSessionCreateInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  user: Prisma.UserCreateNestedOneWithoutFarmRegistrationsInput
   farm?: Prisma.FarmCreateNestedOneWithoutRegistrationSessionInput
+  user: Prisma.UserCreateNestedOneWithoutFarmRegistrationsInput
 }
 
 export type FarmRegistrationSessionUncheckedCreateInput = {
@@ -377,8 +377,8 @@ export type FarmRegistrationSessionUpdateInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  user?: Prisma.UserUpdateOneRequiredWithoutFarmRegistrationsNestedInput
   farm?: Prisma.FarmUpdateOneWithoutRegistrationSessionNestedInput
+  user?: Prisma.UserUpdateOneRequiredWithoutFarmRegistrationsNestedInput
 }
 
 export type FarmRegistrationSessionUncheckedUpdateInput = {
@@ -837,8 +837,8 @@ export type FarmRegistrationSessionSelect<ExtArgs extends runtime.Types.Extensio
   deletedAt?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   farm?: boolean | Prisma.FarmRegistrationSession$farmArgs<ExtArgs>
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["farmRegistrationSession"]>
 
 export type FarmRegistrationSessionSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -857,8 +857,8 @@ export type FarmRegistrationSessionSelectCreateManyAndReturn<ExtArgs extends run
   deletedAt?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   farm?: boolean | Prisma.FarmRegistrationSession$farmArgs<ExtArgs>
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["farmRegistrationSession"]>
 
 export type FarmRegistrationSessionSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -877,8 +877,8 @@ export type FarmRegistrationSessionSelectUpdateManyAndReturn<ExtArgs extends run
   deletedAt?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   farm?: boolean | Prisma.FarmRegistrationSession$farmArgs<ExtArgs>
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["farmRegistrationSession"]>
 
 export type FarmRegistrationSessionSelectScalar = {
@@ -901,23 +901,23 @@ export type FarmRegistrationSessionSelectScalar = {
 
 export type FarmRegistrationSessionOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "farmId" | "currentStep" | "step1Data" | "step2Data" | "step3Data" | "step4Data" | "step5Data" | "step6Data" | "isCompleted" | "completedAt" | "deletedAt" | "createdAt" | "updatedAt", ExtArgs["result"]["farmRegistrationSession"]>
 export type FarmRegistrationSessionInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   farm?: boolean | Prisma.FarmRegistrationSession$farmArgs<ExtArgs>
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
 export type FarmRegistrationSessionIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   farm?: boolean | Prisma.FarmRegistrationSession$farmArgs<ExtArgs>
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
 export type FarmRegistrationSessionIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   farm?: boolean | Prisma.FarmRegistrationSession$farmArgs<ExtArgs>
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
 
 export type $FarmRegistrationSessionPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "FarmRegistrationSession"
   objects: {
-    user: Prisma.$UserPayload<ExtArgs>
     farm: Prisma.$FarmPayload<ExtArgs> | null
+    user: Prisma.$UserPayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1329,8 +1329,8 @@ readonly fields: FarmRegistrationSessionFieldRefs;
  */
 export interface Prisma__FarmRegistrationSessionClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  user<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   farm<T extends Prisma.FarmRegistrationSession$farmArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.FarmRegistrationSession$farmArgs<ExtArgs>>): Prisma.Prisma__FarmClient<runtime.Types.Result.GetResult<Prisma.$FarmPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  user<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.

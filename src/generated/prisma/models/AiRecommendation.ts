@@ -276,8 +276,8 @@ export type AiRecommendationWhereInput = {
   modelVersion?: Prisma.StringNullableFilter<"AiRecommendation"> | string | null
   inputData?: Prisma.JsonNullableFilter<"AiRecommendation">
   createdAt?: Prisma.DateTimeFilter<"AiRecommendation"> | Date | string
-  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   farm?: Prisma.XOR<Prisma.FarmScalarRelationFilter, Prisma.FarmWhereInput>
+  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
 }
 
 export type AiRecommendationOrderByWithRelationInput = {
@@ -295,8 +295,8 @@ export type AiRecommendationOrderByWithRelationInput = {
   modelVersion?: Prisma.SortOrderInput | Prisma.SortOrder
   inputData?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
-  user?: Prisma.UserOrderByWithRelationInput
   farm?: Prisma.FarmOrderByWithRelationInput
+  user?: Prisma.UserOrderByWithRelationInput
 }
 
 export type AiRecommendationWhereUniqueInput = Prisma.AtLeast<{
@@ -317,8 +317,8 @@ export type AiRecommendationWhereUniqueInput = Prisma.AtLeast<{
   modelVersion?: Prisma.StringNullableFilter<"AiRecommendation"> | string | null
   inputData?: Prisma.JsonNullableFilter<"AiRecommendation">
   createdAt?: Prisma.DateTimeFilter<"AiRecommendation"> | Date | string
-  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   farm?: Prisma.XOR<Prisma.FarmScalarRelationFilter, Prisma.FarmWhereInput>
+  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
 }, "id">
 
 export type AiRecommendationOrderByWithAggregationInput = {
@@ -376,8 +376,8 @@ export type AiRecommendationCreateInput = {
   modelVersion?: string | null
   inputData?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   createdAt?: Date | string
-  user: Prisma.UserCreateNestedOneWithoutAiRecommendationsInput
   farm: Prisma.FarmCreateNestedOneWithoutAiRecommendationsInput
+  user: Prisma.UserCreateNestedOneWithoutAiRecommendationsInput
 }
 
 export type AiRecommendationUncheckedCreateInput = {
@@ -410,8 +410,8 @@ export type AiRecommendationUpdateInput = {
   modelVersion?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   inputData?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  user?: Prisma.UserUpdateOneRequiredWithoutAiRecommendationsNestedInput
   farm?: Prisma.FarmUpdateOneRequiredWithoutAiRecommendationsNestedInput
+  user?: Prisma.UserUpdateOneRequiredWithoutAiRecommendationsNestedInput
 }
 
 export type AiRecommendationUncheckedUpdateInput = {
@@ -908,8 +908,8 @@ export type AiRecommendationSelect<ExtArgs extends runtime.Types.Extensions.Inte
   modelVersion?: boolean
   inputData?: boolean
   createdAt?: boolean
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   farm?: boolean | Prisma.FarmDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["aiRecommendation"]>
 
 export type AiRecommendationSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -927,8 +927,8 @@ export type AiRecommendationSelectCreateManyAndReturn<ExtArgs extends runtime.Ty
   modelVersion?: boolean
   inputData?: boolean
   createdAt?: boolean
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   farm?: boolean | Prisma.FarmDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["aiRecommendation"]>
 
 export type AiRecommendationSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -946,8 +946,8 @@ export type AiRecommendationSelectUpdateManyAndReturn<ExtArgs extends runtime.Ty
   modelVersion?: boolean
   inputData?: boolean
   createdAt?: boolean
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   farm?: boolean | Prisma.FarmDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["aiRecommendation"]>
 
 export type AiRecommendationSelectScalar = {
@@ -969,23 +969,23 @@ export type AiRecommendationSelectScalar = {
 
 export type AiRecommendationOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "farmId" | "cropName" | "season" | "soilPhRange" | "recommendedCrops" | "fertilizerPlan" | "irrigationPlan" | "estimatedYield" | "confidencePct" | "modelVersion" | "inputData" | "createdAt", ExtArgs["result"]["aiRecommendation"]>
 export type AiRecommendationInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   farm?: boolean | Prisma.FarmDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
 export type AiRecommendationIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   farm?: boolean | Prisma.FarmDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
 export type AiRecommendationIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   farm?: boolean | Prisma.FarmDefaultArgs<ExtArgs>
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
 
 export type $AiRecommendationPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "AiRecommendation"
   objects: {
-    user: Prisma.$UserPayload<ExtArgs>
     farm: Prisma.$FarmPayload<ExtArgs>
+    user: Prisma.$UserPayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1396,8 +1396,8 @@ readonly fields: AiRecommendationFieldRefs;
  */
 export interface Prisma__AiRecommendationClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  user<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   farm<T extends Prisma.FarmDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.FarmDefaultArgs<ExtArgs>>): Prisma.Prisma__FarmClient<runtime.Types.Result.GetResult<Prisma.$FarmPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  user<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.

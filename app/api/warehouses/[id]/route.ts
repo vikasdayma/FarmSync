@@ -17,9 +17,9 @@ export async function GET(req: NextRequest, { params }: Params) {
     const warehouse = await prisma.warehouse.findFirst({
         where: { id, ...notDeleted() },
         include: {
-            manager: { select: { id: true, firstName: true, lastName: true } },
-            inventory: { where: { isActive: true }, select: { id: true, name: true, category: true, quantityKg: true, unitPrice: true } },
-            _count: { select: { inventory: true } },
+//          manager: { select: { id: true, firstName: true, lastName: true } },
+// inventories: { where: { isActive: true }, select: { id: true, name: true, category: true, quantityKg: true, unitPrice: true } },
+// _count: { select: { inventories: true } },
         },
     });
     if (!warehouse) return apiNotFound("Warehouse not found");

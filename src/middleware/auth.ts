@@ -7,7 +7,8 @@ import { verifyAccessToken, JwtPayload } from "@/lib/jwt";
 import { apiUnauthorized, apiForbidden, apiRateLimited } from "@/lib/response";
 import { checkRateLimit } from "@/lib/redis";
 import { prisma } from "@/lib/prisma";
-import { Role } from "@prisma/client";
+import { Role } from "@/generated/prisma/enums";
+import { Prisma, AuditAction } from "@/generated/prisma/client";
 
 export type AuthenticatedRequest = NextRequest & {
     user?: JwtPayload;
@@ -126,9 +127,10 @@ export async function withRateLimit(
 // =============================================================================
 // AUDIT LOGGER
 // =============================================================================
+
 export async function createAuditLog(params: {
     actorId: string;
-    action: "CREATE" | "READ" | "UPDATE" | "DELETE" | "LOGIN" | "LOGOUT" | "APPROVE" | "REJECT" | "UPLOAD" | "DOWNLOAD" | "EXPORT";
+    action: AuditAction;
     entity: string;
     entityId: string;
     oldValue?: Record<string, unknown> | null;
@@ -141,18 +143,17 @@ export async function createAuditLog(params: {
             params.req?.headers.get("x-forwarded-for")?.split(",")[0].trim() ||
             params.req?.headers.get("x-real-ip") ||
             undefined;
-
         await prisma.auditLog.create({
             data: {
                 actorId: params.actorId,
                 action: params.action,
                 entity: params.entity,
                 entityId: params.entityId,
-                oldValue: params.oldValue ?? undefined,
-                newValue: params.newValue ?? undefined,
+                oldValue: (params.oldValue ?? undefined) as Prisma.InputJsonValue | undefined,
+                newValue: (params.newValue ?? undefined) as Prisma.InputJsonValue | undefined,
                 ipAddress: ip,
                 userAgent: params.req?.headers.get("user-agent") ?? undefined,
-                metadata: params.metadata ?? undefined,
+                metadata: (params.metadata ?? undefined) as Prisma.InputJsonValue | undefined,
             },
         });
     } catch (err) {
@@ -181,7 +182,7 @@ export async function createActivityLog(params: {
                 description: params.description,
                 ipAddress: ip,
                 userAgent: params.req?.headers.get("user-agent") ?? undefined,
-                metadata: params.metadata ?? undefined,
+            metadata: (params.metadata ?? undefined) as Prisma.InputJsonValue | undefined,
             },
         });
     } catch (err) {
@@ -200,7 +201,12 @@ export async function createNotification(params: {
     metadata?: Record<string, unknown>;
 }): Promise<void> {
     try {
-        await prisma.notification.create({ data: params });
+        await prisma.notification.create({
+            data: {
+                ...params,
+                metadata: params.metadata as Prisma.InputJsonValue | undefined,
+            },
+        });
     } catch (err) {
         console.error("[Notification] Failed:", err);
     }

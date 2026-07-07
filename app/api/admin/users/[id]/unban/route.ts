@@ -27,7 +27,7 @@ export async function POST(req: NextRequest, { params }: Params) {
             body: "Your account has been reinstated. You can now log in again.",
         });
 
-        await createAuditLog({ actorId: auth.user.sub, action: "UNBAN", entity: "User", entityId: id, req });
+        await createAuditLog({ actorId: auth.user.sub, action: "UPDATE", entity: "User", entityId: id, req });
         return apiSuccess(null, "User account reinstated successfully");
     } catch (err) {
         return apiServerError(err);

@@ -297,8 +297,8 @@ export type MarketplaceListingWhereInput = {
   createdAt?: Prisma.DateTimeFilter<"MarketplaceListing"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"MarketplaceListing"> | Date | string
   seller?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
-  reviews?: Prisma.ReviewListRelationFilter
   orderItems?: Prisma.OrderItemListRelationFilter
+  reviews?: Prisma.ReviewListRelationFilter
 }
 
 export type MarketplaceListingOrderByWithRelationInput = {
@@ -318,8 +318,8 @@ export type MarketplaceListingOrderByWithRelationInput = {
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   seller?: Prisma.UserOrderByWithRelationInput
-  reviews?: Prisma.ReviewOrderByRelationAggregateInput
   orderItems?: Prisma.OrderItemOrderByRelationAggregateInput
+  reviews?: Prisma.ReviewOrderByRelationAggregateInput
 }
 
 export type MarketplaceListingWhereUniqueInput = Prisma.AtLeast<{
@@ -342,8 +342,8 @@ export type MarketplaceListingWhereUniqueInput = Prisma.AtLeast<{
   createdAt?: Prisma.DateTimeFilter<"MarketplaceListing"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"MarketplaceListing"> | Date | string
   seller?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
-  reviews?: Prisma.ReviewListRelationFilter
   orderItems?: Prisma.OrderItemListRelationFilter
+  reviews?: Prisma.ReviewListRelationFilter
 }, "id">
 
 export type MarketplaceListingOrderByWithAggregationInput = {
@@ -406,8 +406,8 @@ export type MarketplaceListingCreateInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   seller: Prisma.UserCreateNestedOneWithoutMarketplaceListingsInput
-  reviews?: Prisma.ReviewCreateNestedManyWithoutListingInput
   orderItems?: Prisma.OrderItemCreateNestedManyWithoutListingInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutListingInput
 }
 
 export type MarketplaceListingUncheckedCreateInput = {
@@ -426,8 +426,8 @@ export type MarketplaceListingUncheckedCreateInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutListingInput
   orderItems?: Prisma.OrderItemUncheckedCreateNestedManyWithoutListingInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutListingInput
 }
 
 export type MarketplaceListingUpdateInput = {
@@ -446,8 +446,8 @@ export type MarketplaceListingUpdateInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   seller?: Prisma.UserUpdateOneRequiredWithoutMarketplaceListingsNestedInput
-  reviews?: Prisma.ReviewUpdateManyWithoutListingNestedInput
   orderItems?: Prisma.OrderItemUpdateManyWithoutListingNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutListingNestedInput
 }
 
 export type MarketplaceListingUncheckedUpdateInput = {
@@ -466,8 +466,8 @@ export type MarketplaceListingUncheckedUpdateInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutListingNestedInput
   orderItems?: Prisma.OrderItemUncheckedUpdateManyWithoutListingNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutListingNestedInput
 }
 
 export type MarketplaceListingCreateManyInput = {
@@ -698,8 +698,8 @@ export type MarketplaceListingCreateWithoutSellerInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  reviews?: Prisma.ReviewCreateNestedManyWithoutListingInput
   orderItems?: Prisma.OrderItemCreateNestedManyWithoutListingInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutListingInput
 }
 
 export type MarketplaceListingUncheckedCreateWithoutSellerInput = {
@@ -717,8 +717,8 @@ export type MarketplaceListingUncheckedCreateWithoutSellerInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutListingInput
   orderItems?: Prisma.OrderItemUncheckedCreateNestedManyWithoutListingInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutListingInput
 }
 
 export type MarketplaceListingCreateOrConnectWithoutSellerInput = {
@@ -984,8 +984,8 @@ export type MarketplaceListingUpdateWithoutSellerInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  reviews?: Prisma.ReviewUpdateManyWithoutListingNestedInput
   orderItems?: Prisma.OrderItemUpdateManyWithoutListingNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutListingNestedInput
 }
 
 export type MarketplaceListingUncheckedUpdateWithoutSellerInput = {
@@ -1003,8 +1003,8 @@ export type MarketplaceListingUncheckedUpdateWithoutSellerInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutListingNestedInput
   orderItems?: Prisma.OrderItemUncheckedUpdateManyWithoutListingNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutListingNestedInput
 }
 
 export type MarketplaceListingUncheckedUpdateManyWithoutSellerInput = {
@@ -1030,13 +1030,13 @@ export type MarketplaceListingUncheckedUpdateManyWithoutSellerInput = {
  */
 
 export type MarketplaceListingCountOutputType = {
-  reviews: number
   orderItems: number
+  reviews: number
 }
 
 export type MarketplaceListingCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  reviews?: boolean | MarketplaceListingCountOutputTypeCountReviewsArgs
   orderItems?: boolean | MarketplaceListingCountOutputTypeCountOrderItemsArgs
+  reviews?: boolean | MarketplaceListingCountOutputTypeCountReviewsArgs
 }
 
 /**
@@ -1052,15 +1052,15 @@ export type MarketplaceListingCountOutputTypeDefaultArgs<ExtArgs extends runtime
 /**
  * MarketplaceListingCountOutputType without action
  */
-export type MarketplaceListingCountOutputTypeCountReviewsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ReviewWhereInput
+export type MarketplaceListingCountOutputTypeCountOrderItemsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.OrderItemWhereInput
 }
 
 /**
  * MarketplaceListingCountOutputType without action
  */
-export type MarketplaceListingCountOutputTypeCountOrderItemsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.OrderItemWhereInput
+export type MarketplaceListingCountOutputTypeCountReviewsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ReviewWhereInput
 }
 
 
@@ -1081,8 +1081,8 @@ export type MarketplaceListingSelect<ExtArgs extends runtime.Types.Extensions.In
   createdAt?: boolean
   updatedAt?: boolean
   seller?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  reviews?: boolean | Prisma.MarketplaceListing$reviewsArgs<ExtArgs>
   orderItems?: boolean | Prisma.MarketplaceListing$orderItemsArgs<ExtArgs>
+  reviews?: boolean | Prisma.MarketplaceListing$reviewsArgs<ExtArgs>
   _count?: boolean | Prisma.MarketplaceListingCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["marketplaceListing"]>
 
@@ -1145,8 +1145,8 @@ export type MarketplaceListingSelectScalar = {
 export type MarketplaceListingOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "sellerId" | "title" | "description" | "category" | "pricePerUnit" | "unit" | "quantityAvailable" | "imageUrls" | "location" | "status" | "expiresAt" | "deletedAt" | "createdAt" | "updatedAt", ExtArgs["result"]["marketplaceListing"]>
 export type MarketplaceListingInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   seller?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  reviews?: boolean | Prisma.MarketplaceListing$reviewsArgs<ExtArgs>
   orderItems?: boolean | Prisma.MarketplaceListing$orderItemsArgs<ExtArgs>
+  reviews?: boolean | Prisma.MarketplaceListing$reviewsArgs<ExtArgs>
   _count?: boolean | Prisma.MarketplaceListingCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type MarketplaceListingIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1160,8 +1160,8 @@ export type $MarketplaceListingPayload<ExtArgs extends runtime.Types.Extensions.
   name: "MarketplaceListing"
   objects: {
     seller: Prisma.$UserPayload<ExtArgs>
-    reviews: Prisma.$ReviewPayload<ExtArgs>[]
     orderItems: Prisma.$OrderItemPayload<ExtArgs>[]
+    reviews: Prisma.$ReviewPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1574,8 +1574,8 @@ readonly fields: MarketplaceListingFieldRefs;
 export interface Prisma__MarketplaceListingClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   seller<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  reviews<T extends Prisma.MarketplaceListing$reviewsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.MarketplaceListing$reviewsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ReviewPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   orderItems<T extends Prisma.MarketplaceListing$orderItemsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.MarketplaceListing$orderItemsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$OrderItemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  reviews<T extends Prisma.MarketplaceListing$reviewsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.MarketplaceListing$reviewsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ReviewPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2016,30 +2016,6 @@ export type MarketplaceListingDeleteManyArgs<ExtArgs extends runtime.Types.Exten
 }
 
 /**
- * MarketplaceListing.reviews
- */
-export type MarketplaceListing$reviewsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Review
-   */
-  select?: Prisma.ReviewSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Review
-   */
-  omit?: Prisma.ReviewOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.ReviewInclude<ExtArgs> | null
-  where?: Prisma.ReviewWhereInput
-  orderBy?: Prisma.ReviewOrderByWithRelationInput | Prisma.ReviewOrderByWithRelationInput[]
-  cursor?: Prisma.ReviewWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.ReviewScalarFieldEnum | Prisma.ReviewScalarFieldEnum[]
-}
-
-/**
  * MarketplaceListing.orderItems
  */
 export type MarketplaceListing$orderItemsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -2061,6 +2037,30 @@ export type MarketplaceListing$orderItemsArgs<ExtArgs extends runtime.Types.Exte
   take?: number
   skip?: number
   distinct?: Prisma.OrderItemScalarFieldEnum | Prisma.OrderItemScalarFieldEnum[]
+}
+
+/**
+ * MarketplaceListing.reviews
+ */
+export type MarketplaceListing$reviewsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Review
+   */
+  select?: Prisma.ReviewSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Review
+   */
+  omit?: Prisma.ReviewOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ReviewInclude<ExtArgs> | null
+  where?: Prisma.ReviewWhereInput
+  orderBy?: Prisma.ReviewOrderByWithRelationInput | Prisma.ReviewOrderByWithRelationInput[]
+  cursor?: Prisma.ReviewWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ReviewScalarFieldEnum | Prisma.ReviewScalarFieldEnum[]
 }
 
 /**

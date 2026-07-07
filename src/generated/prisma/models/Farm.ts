@@ -368,14 +368,14 @@ export type FarmWhereInput = {
   deletedAt?: Prisma.DateTimeNullableFilter<"Farm"> | Date | string | null
   createdAt?: Prisma.DateTimeFilter<"Farm"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Farm"> | Date | string
-  owner?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  aiRecommendations?: Prisma.AiRecommendationListRelationFilter
   cropCycles?: Prisma.CropCycleListRelationFilter
-  soilReports?: Prisma.SoilReportListRelationFilter
   diseaseReports?: Prisma.DiseaseReportListRelationFilter
   equipments?: Prisma.EquipmentListRelationFilter
-  weatherLogs?: Prisma.WeatherLogListRelationFilter
-  aiRecommendations?: Prisma.AiRecommendationListRelationFilter
   registrationSession?: Prisma.XOR<Prisma.FarmRegistrationSessionNullableScalarRelationFilter, Prisma.FarmRegistrationSessionWhereInput> | null
+  owner?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  soilReports?: Prisma.SoilReportListRelationFilter
+  weatherLogs?: Prisma.WeatherLogListRelationFilter
 }
 
 export type FarmOrderByWithRelationInput = {
@@ -402,14 +402,14 @@ export type FarmOrderByWithRelationInput = {
   deletedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  owner?: Prisma.UserOrderByWithRelationInput
+  aiRecommendations?: Prisma.AiRecommendationOrderByRelationAggregateInput
   cropCycles?: Prisma.CropCycleOrderByRelationAggregateInput
-  soilReports?: Prisma.SoilReportOrderByRelationAggregateInput
   diseaseReports?: Prisma.DiseaseReportOrderByRelationAggregateInput
   equipments?: Prisma.EquipmentOrderByRelationAggregateInput
-  weatherLogs?: Prisma.WeatherLogOrderByRelationAggregateInput
-  aiRecommendations?: Prisma.AiRecommendationOrderByRelationAggregateInput
   registrationSession?: Prisma.FarmRegistrationSessionOrderByWithRelationInput
+  owner?: Prisma.UserOrderByWithRelationInput
+  soilReports?: Prisma.SoilReportOrderByRelationAggregateInput
+  weatherLogs?: Prisma.WeatherLogOrderByRelationAggregateInput
 }
 
 export type FarmWhereUniqueInput = Prisma.AtLeast<{
@@ -439,14 +439,14 @@ export type FarmWhereUniqueInput = Prisma.AtLeast<{
   deletedAt?: Prisma.DateTimeNullableFilter<"Farm"> | Date | string | null
   createdAt?: Prisma.DateTimeFilter<"Farm"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Farm"> | Date | string
-  owner?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  aiRecommendations?: Prisma.AiRecommendationListRelationFilter
   cropCycles?: Prisma.CropCycleListRelationFilter
-  soilReports?: Prisma.SoilReportListRelationFilter
   diseaseReports?: Prisma.DiseaseReportListRelationFilter
   equipments?: Prisma.EquipmentListRelationFilter
-  weatherLogs?: Prisma.WeatherLogListRelationFilter
-  aiRecommendations?: Prisma.AiRecommendationListRelationFilter
   registrationSession?: Prisma.XOR<Prisma.FarmRegistrationSessionNullableScalarRelationFilter, Prisma.FarmRegistrationSessionWhereInput> | null
+  owner?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  soilReports?: Prisma.SoilReportListRelationFilter
+  weatherLogs?: Prisma.WeatherLogListRelationFilter
 }, "id" | "registrationNo">
 
 export type FarmOrderByWithAggregationInput = {
@@ -532,14 +532,14 @@ export type FarmCreateInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  owner: Prisma.UserCreateNestedOneWithoutFarmsInput
+  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutFarmInput
   cropCycles?: Prisma.CropCycleCreateNestedManyWithoutFarmInput
-  soilReports?: Prisma.SoilReportCreateNestedManyWithoutFarmInput
   diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutFarmInput
   equipments?: Prisma.EquipmentCreateNestedManyWithoutFarmInput
-  weatherLogs?: Prisma.WeatherLogCreateNestedManyWithoutFarmInput
-  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutFarmInput
   registrationSession?: Prisma.FarmRegistrationSessionCreateNestedOneWithoutFarmInput
+  owner: Prisma.UserCreateNestedOneWithoutFarmsInput
+  soilReports?: Prisma.SoilReportCreateNestedManyWithoutFarmInput
+  weatherLogs?: Prisma.WeatherLogCreateNestedManyWithoutFarmInput
 }
 
 export type FarmUncheckedCreateInput = {
@@ -566,13 +566,13 @@ export type FarmUncheckedCreateInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutFarmInput
   cropCycles?: Prisma.CropCycleUncheckedCreateNestedManyWithoutFarmInput
-  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutFarmInput
   diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutFarmInput
   equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutFarmInput
-  weatherLogs?: Prisma.WeatherLogUncheckedCreateNestedManyWithoutFarmInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutFarmInput
   registrationSession?: Prisma.FarmRegistrationSessionUncheckedCreateNestedOneWithoutFarmInput
+  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutFarmInput
+  weatherLogs?: Prisma.WeatherLogUncheckedCreateNestedManyWithoutFarmInput
 }
 
 export type FarmUpdateInput = {
@@ -598,14 +598,14 @@ export type FarmUpdateInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  owner?: Prisma.UserUpdateOneRequiredWithoutFarmsNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutFarmNestedInput
   cropCycles?: Prisma.CropCycleUpdateManyWithoutFarmNestedInput
-  soilReports?: Prisma.SoilReportUpdateManyWithoutFarmNestedInput
   diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutFarmNestedInput
   equipments?: Prisma.EquipmentUpdateManyWithoutFarmNestedInput
-  weatherLogs?: Prisma.WeatherLogUpdateManyWithoutFarmNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutFarmNestedInput
   registrationSession?: Prisma.FarmRegistrationSessionUpdateOneWithoutFarmNestedInput
+  owner?: Prisma.UserUpdateOneRequiredWithoutFarmsNestedInput
+  soilReports?: Prisma.SoilReportUpdateManyWithoutFarmNestedInput
+  weatherLogs?: Prisma.WeatherLogUpdateManyWithoutFarmNestedInput
 }
 
 export type FarmUncheckedUpdateInput = {
@@ -632,13 +632,13 @@ export type FarmUncheckedUpdateInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutFarmNestedInput
   cropCycles?: Prisma.CropCycleUncheckedUpdateManyWithoutFarmNestedInput
-  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutFarmNestedInput
   diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutFarmNestedInput
   equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutFarmNestedInput
-  weatherLogs?: Prisma.WeatherLogUncheckedUpdateManyWithoutFarmNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutFarmNestedInput
   registrationSession?: Prisma.FarmRegistrationSessionUncheckedUpdateOneWithoutFarmNestedInput
+  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutFarmNestedInput
+  weatherLogs?: Prisma.WeatherLogUncheckedUpdateManyWithoutFarmNestedInput
 }
 
 export type FarmCreateManyInput = {
@@ -1021,13 +1021,13 @@ export type FarmCreateWithoutOwnerInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutFarmInput
   cropCycles?: Prisma.CropCycleCreateNestedManyWithoutFarmInput
-  soilReports?: Prisma.SoilReportCreateNestedManyWithoutFarmInput
   diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutFarmInput
   equipments?: Prisma.EquipmentCreateNestedManyWithoutFarmInput
-  weatherLogs?: Prisma.WeatherLogCreateNestedManyWithoutFarmInput
-  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutFarmInput
   registrationSession?: Prisma.FarmRegistrationSessionCreateNestedOneWithoutFarmInput
+  soilReports?: Prisma.SoilReportCreateNestedManyWithoutFarmInput
+  weatherLogs?: Prisma.WeatherLogCreateNestedManyWithoutFarmInput
 }
 
 export type FarmUncheckedCreateWithoutOwnerInput = {
@@ -1053,13 +1053,13 @@ export type FarmUncheckedCreateWithoutOwnerInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutFarmInput
   cropCycles?: Prisma.CropCycleUncheckedCreateNestedManyWithoutFarmInput
-  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutFarmInput
   diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutFarmInput
   equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutFarmInput
-  weatherLogs?: Prisma.WeatherLogUncheckedCreateNestedManyWithoutFarmInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutFarmInput
   registrationSession?: Prisma.FarmRegistrationSessionUncheckedCreateNestedOneWithoutFarmInput
+  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutFarmInput
+  weatherLogs?: Prisma.WeatherLogUncheckedCreateNestedManyWithoutFarmInput
 }
 
 export type FarmCreateOrConnectWithoutOwnerInput = {
@@ -1140,13 +1140,13 @@ export type FarmCreateWithoutRegistrationSessionInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  owner: Prisma.UserCreateNestedOneWithoutFarmsInput
+  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutFarmInput
   cropCycles?: Prisma.CropCycleCreateNestedManyWithoutFarmInput
-  soilReports?: Prisma.SoilReportCreateNestedManyWithoutFarmInput
   diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutFarmInput
   equipments?: Prisma.EquipmentCreateNestedManyWithoutFarmInput
+  owner: Prisma.UserCreateNestedOneWithoutFarmsInput
+  soilReports?: Prisma.SoilReportCreateNestedManyWithoutFarmInput
   weatherLogs?: Prisma.WeatherLogCreateNestedManyWithoutFarmInput
-  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutFarmInput
 }
 
 export type FarmUncheckedCreateWithoutRegistrationSessionInput = {
@@ -1173,12 +1173,12 @@ export type FarmUncheckedCreateWithoutRegistrationSessionInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutFarmInput
   cropCycles?: Prisma.CropCycleUncheckedCreateNestedManyWithoutFarmInput
-  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutFarmInput
   diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutFarmInput
   equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutFarmInput
+  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutFarmInput
   weatherLogs?: Prisma.WeatherLogUncheckedCreateNestedManyWithoutFarmInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutFarmInput
 }
 
 export type FarmCreateOrConnectWithoutRegistrationSessionInput = {
@@ -1220,13 +1220,13 @@ export type FarmUpdateWithoutRegistrationSessionInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  owner?: Prisma.UserUpdateOneRequiredWithoutFarmsNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutFarmNestedInput
   cropCycles?: Prisma.CropCycleUpdateManyWithoutFarmNestedInput
-  soilReports?: Prisma.SoilReportUpdateManyWithoutFarmNestedInput
   diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutFarmNestedInput
   equipments?: Prisma.EquipmentUpdateManyWithoutFarmNestedInput
+  owner?: Prisma.UserUpdateOneRequiredWithoutFarmsNestedInput
+  soilReports?: Prisma.SoilReportUpdateManyWithoutFarmNestedInput
   weatherLogs?: Prisma.WeatherLogUpdateManyWithoutFarmNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutFarmNestedInput
 }
 
 export type FarmUncheckedUpdateWithoutRegistrationSessionInput = {
@@ -1253,12 +1253,12 @@ export type FarmUncheckedUpdateWithoutRegistrationSessionInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutFarmNestedInput
   cropCycles?: Prisma.CropCycleUncheckedUpdateManyWithoutFarmNestedInput
-  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutFarmNestedInput
   diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutFarmNestedInput
   equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutFarmNestedInput
+  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutFarmNestedInput
   weatherLogs?: Prisma.WeatherLogUncheckedUpdateManyWithoutFarmNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutFarmNestedInput
 }
 
 export type FarmCreateWithoutCropCyclesInput = {
@@ -1284,13 +1284,13 @@ export type FarmCreateWithoutCropCyclesInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  owner: Prisma.UserCreateNestedOneWithoutFarmsInput
-  soilReports?: Prisma.SoilReportCreateNestedManyWithoutFarmInput
+  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutFarmInput
   diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutFarmInput
   equipments?: Prisma.EquipmentCreateNestedManyWithoutFarmInput
-  weatherLogs?: Prisma.WeatherLogCreateNestedManyWithoutFarmInput
-  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutFarmInput
   registrationSession?: Prisma.FarmRegistrationSessionCreateNestedOneWithoutFarmInput
+  owner: Prisma.UserCreateNestedOneWithoutFarmsInput
+  soilReports?: Prisma.SoilReportCreateNestedManyWithoutFarmInput
+  weatherLogs?: Prisma.WeatherLogCreateNestedManyWithoutFarmInput
 }
 
 export type FarmUncheckedCreateWithoutCropCyclesInput = {
@@ -1317,12 +1317,12 @@ export type FarmUncheckedCreateWithoutCropCyclesInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutFarmInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutFarmInput
   diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutFarmInput
   equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutFarmInput
-  weatherLogs?: Prisma.WeatherLogUncheckedCreateNestedManyWithoutFarmInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutFarmInput
   registrationSession?: Prisma.FarmRegistrationSessionUncheckedCreateNestedOneWithoutFarmInput
+  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutFarmInput
+  weatherLogs?: Prisma.WeatherLogUncheckedCreateNestedManyWithoutFarmInput
 }
 
 export type FarmCreateOrConnectWithoutCropCyclesInput = {
@@ -1364,13 +1364,13 @@ export type FarmUpdateWithoutCropCyclesInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  owner?: Prisma.UserUpdateOneRequiredWithoutFarmsNestedInput
-  soilReports?: Prisma.SoilReportUpdateManyWithoutFarmNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutFarmNestedInput
   diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutFarmNestedInput
   equipments?: Prisma.EquipmentUpdateManyWithoutFarmNestedInput
-  weatherLogs?: Prisma.WeatherLogUpdateManyWithoutFarmNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutFarmNestedInput
   registrationSession?: Prisma.FarmRegistrationSessionUpdateOneWithoutFarmNestedInput
+  owner?: Prisma.UserUpdateOneRequiredWithoutFarmsNestedInput
+  soilReports?: Prisma.SoilReportUpdateManyWithoutFarmNestedInput
+  weatherLogs?: Prisma.WeatherLogUpdateManyWithoutFarmNestedInput
 }
 
 export type FarmUncheckedUpdateWithoutCropCyclesInput = {
@@ -1397,12 +1397,12 @@ export type FarmUncheckedUpdateWithoutCropCyclesInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutFarmNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutFarmNestedInput
   diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutFarmNestedInput
   equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutFarmNestedInput
-  weatherLogs?: Prisma.WeatherLogUncheckedUpdateManyWithoutFarmNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutFarmNestedInput
   registrationSession?: Prisma.FarmRegistrationSessionUncheckedUpdateOneWithoutFarmNestedInput
+  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutFarmNestedInput
+  weatherLogs?: Prisma.WeatherLogUncheckedUpdateManyWithoutFarmNestedInput
 }
 
 export type FarmCreateWithoutSoilReportsInput = {
@@ -1428,13 +1428,13 @@ export type FarmCreateWithoutSoilReportsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  owner: Prisma.UserCreateNestedOneWithoutFarmsInput
+  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutFarmInput
   cropCycles?: Prisma.CropCycleCreateNestedManyWithoutFarmInput
   diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutFarmInput
   equipments?: Prisma.EquipmentCreateNestedManyWithoutFarmInput
-  weatherLogs?: Prisma.WeatherLogCreateNestedManyWithoutFarmInput
-  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutFarmInput
   registrationSession?: Prisma.FarmRegistrationSessionCreateNestedOneWithoutFarmInput
+  owner: Prisma.UserCreateNestedOneWithoutFarmsInput
+  weatherLogs?: Prisma.WeatherLogCreateNestedManyWithoutFarmInput
 }
 
 export type FarmUncheckedCreateWithoutSoilReportsInput = {
@@ -1461,12 +1461,12 @@ export type FarmUncheckedCreateWithoutSoilReportsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutFarmInput
   cropCycles?: Prisma.CropCycleUncheckedCreateNestedManyWithoutFarmInput
   diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutFarmInput
   equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutFarmInput
-  weatherLogs?: Prisma.WeatherLogUncheckedCreateNestedManyWithoutFarmInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutFarmInput
   registrationSession?: Prisma.FarmRegistrationSessionUncheckedCreateNestedOneWithoutFarmInput
+  weatherLogs?: Prisma.WeatherLogUncheckedCreateNestedManyWithoutFarmInput
 }
 
 export type FarmCreateOrConnectWithoutSoilReportsInput = {
@@ -1508,13 +1508,13 @@ export type FarmUpdateWithoutSoilReportsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  owner?: Prisma.UserUpdateOneRequiredWithoutFarmsNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutFarmNestedInput
   cropCycles?: Prisma.CropCycleUpdateManyWithoutFarmNestedInput
   diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutFarmNestedInput
   equipments?: Prisma.EquipmentUpdateManyWithoutFarmNestedInput
-  weatherLogs?: Prisma.WeatherLogUpdateManyWithoutFarmNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutFarmNestedInput
   registrationSession?: Prisma.FarmRegistrationSessionUpdateOneWithoutFarmNestedInput
+  owner?: Prisma.UserUpdateOneRequiredWithoutFarmsNestedInput
+  weatherLogs?: Prisma.WeatherLogUpdateManyWithoutFarmNestedInput
 }
 
 export type FarmUncheckedUpdateWithoutSoilReportsInput = {
@@ -1541,12 +1541,12 @@ export type FarmUncheckedUpdateWithoutSoilReportsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutFarmNestedInput
   cropCycles?: Prisma.CropCycleUncheckedUpdateManyWithoutFarmNestedInput
   diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutFarmNestedInput
   equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutFarmNestedInput
-  weatherLogs?: Prisma.WeatherLogUncheckedUpdateManyWithoutFarmNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutFarmNestedInput
   registrationSession?: Prisma.FarmRegistrationSessionUncheckedUpdateOneWithoutFarmNestedInput
+  weatherLogs?: Prisma.WeatherLogUncheckedUpdateManyWithoutFarmNestedInput
 }
 
 export type FarmCreateWithoutDiseaseReportsInput = {
@@ -1572,13 +1572,13 @@ export type FarmCreateWithoutDiseaseReportsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  owner: Prisma.UserCreateNestedOneWithoutFarmsInput
-  cropCycles?: Prisma.CropCycleCreateNestedManyWithoutFarmInput
-  soilReports?: Prisma.SoilReportCreateNestedManyWithoutFarmInput
-  equipments?: Prisma.EquipmentCreateNestedManyWithoutFarmInput
-  weatherLogs?: Prisma.WeatherLogCreateNestedManyWithoutFarmInput
   aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutFarmInput
+  cropCycles?: Prisma.CropCycleCreateNestedManyWithoutFarmInput
+  equipments?: Prisma.EquipmentCreateNestedManyWithoutFarmInput
   registrationSession?: Prisma.FarmRegistrationSessionCreateNestedOneWithoutFarmInput
+  owner: Prisma.UserCreateNestedOneWithoutFarmsInput
+  soilReports?: Prisma.SoilReportCreateNestedManyWithoutFarmInput
+  weatherLogs?: Prisma.WeatherLogCreateNestedManyWithoutFarmInput
 }
 
 export type FarmUncheckedCreateWithoutDiseaseReportsInput = {
@@ -1605,12 +1605,12 @@ export type FarmUncheckedCreateWithoutDiseaseReportsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  cropCycles?: Prisma.CropCycleUncheckedCreateNestedManyWithoutFarmInput
-  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutFarmInput
-  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutFarmInput
-  weatherLogs?: Prisma.WeatherLogUncheckedCreateNestedManyWithoutFarmInput
   aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutFarmInput
+  cropCycles?: Prisma.CropCycleUncheckedCreateNestedManyWithoutFarmInput
+  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutFarmInput
   registrationSession?: Prisma.FarmRegistrationSessionUncheckedCreateNestedOneWithoutFarmInput
+  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutFarmInput
+  weatherLogs?: Prisma.WeatherLogUncheckedCreateNestedManyWithoutFarmInput
 }
 
 export type FarmCreateOrConnectWithoutDiseaseReportsInput = {
@@ -1652,13 +1652,13 @@ export type FarmUpdateWithoutDiseaseReportsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  owner?: Prisma.UserUpdateOneRequiredWithoutFarmsNestedInput
-  cropCycles?: Prisma.CropCycleUpdateManyWithoutFarmNestedInput
-  soilReports?: Prisma.SoilReportUpdateManyWithoutFarmNestedInput
-  equipments?: Prisma.EquipmentUpdateManyWithoutFarmNestedInput
-  weatherLogs?: Prisma.WeatherLogUpdateManyWithoutFarmNestedInput
   aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutFarmNestedInput
+  cropCycles?: Prisma.CropCycleUpdateManyWithoutFarmNestedInput
+  equipments?: Prisma.EquipmentUpdateManyWithoutFarmNestedInput
   registrationSession?: Prisma.FarmRegistrationSessionUpdateOneWithoutFarmNestedInput
+  owner?: Prisma.UserUpdateOneRequiredWithoutFarmsNestedInput
+  soilReports?: Prisma.SoilReportUpdateManyWithoutFarmNestedInput
+  weatherLogs?: Prisma.WeatherLogUpdateManyWithoutFarmNestedInput
 }
 
 export type FarmUncheckedUpdateWithoutDiseaseReportsInput = {
@@ -1685,12 +1685,12 @@ export type FarmUncheckedUpdateWithoutDiseaseReportsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  cropCycles?: Prisma.CropCycleUncheckedUpdateManyWithoutFarmNestedInput
-  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutFarmNestedInput
-  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutFarmNestedInput
-  weatherLogs?: Prisma.WeatherLogUncheckedUpdateManyWithoutFarmNestedInput
   aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutFarmNestedInput
+  cropCycles?: Prisma.CropCycleUncheckedUpdateManyWithoutFarmNestedInput
+  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutFarmNestedInput
   registrationSession?: Prisma.FarmRegistrationSessionUncheckedUpdateOneWithoutFarmNestedInput
+  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutFarmNestedInput
+  weatherLogs?: Prisma.WeatherLogUncheckedUpdateManyWithoutFarmNestedInput
 }
 
 export type FarmCreateWithoutEquipmentsInput = {
@@ -1716,13 +1716,13 @@ export type FarmCreateWithoutEquipmentsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  owner: Prisma.UserCreateNestedOneWithoutFarmsInput
-  cropCycles?: Prisma.CropCycleCreateNestedManyWithoutFarmInput
-  soilReports?: Prisma.SoilReportCreateNestedManyWithoutFarmInput
-  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutFarmInput
-  weatherLogs?: Prisma.WeatherLogCreateNestedManyWithoutFarmInput
   aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutFarmInput
+  cropCycles?: Prisma.CropCycleCreateNestedManyWithoutFarmInput
+  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutFarmInput
   registrationSession?: Prisma.FarmRegistrationSessionCreateNestedOneWithoutFarmInput
+  owner: Prisma.UserCreateNestedOneWithoutFarmsInput
+  soilReports?: Prisma.SoilReportCreateNestedManyWithoutFarmInput
+  weatherLogs?: Prisma.WeatherLogCreateNestedManyWithoutFarmInput
 }
 
 export type FarmUncheckedCreateWithoutEquipmentsInput = {
@@ -1749,12 +1749,12 @@ export type FarmUncheckedCreateWithoutEquipmentsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  cropCycles?: Prisma.CropCycleUncheckedCreateNestedManyWithoutFarmInput
-  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutFarmInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutFarmInput
-  weatherLogs?: Prisma.WeatherLogUncheckedCreateNestedManyWithoutFarmInput
   aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutFarmInput
+  cropCycles?: Prisma.CropCycleUncheckedCreateNestedManyWithoutFarmInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutFarmInput
   registrationSession?: Prisma.FarmRegistrationSessionUncheckedCreateNestedOneWithoutFarmInput
+  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutFarmInput
+  weatherLogs?: Prisma.WeatherLogUncheckedCreateNestedManyWithoutFarmInput
 }
 
 export type FarmCreateOrConnectWithoutEquipmentsInput = {
@@ -1796,13 +1796,13 @@ export type FarmUpdateWithoutEquipmentsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  owner?: Prisma.UserUpdateOneRequiredWithoutFarmsNestedInput
-  cropCycles?: Prisma.CropCycleUpdateManyWithoutFarmNestedInput
-  soilReports?: Prisma.SoilReportUpdateManyWithoutFarmNestedInput
-  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutFarmNestedInput
-  weatherLogs?: Prisma.WeatherLogUpdateManyWithoutFarmNestedInput
   aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutFarmNestedInput
+  cropCycles?: Prisma.CropCycleUpdateManyWithoutFarmNestedInput
+  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutFarmNestedInput
   registrationSession?: Prisma.FarmRegistrationSessionUpdateOneWithoutFarmNestedInput
+  owner?: Prisma.UserUpdateOneRequiredWithoutFarmsNestedInput
+  soilReports?: Prisma.SoilReportUpdateManyWithoutFarmNestedInput
+  weatherLogs?: Prisma.WeatherLogUpdateManyWithoutFarmNestedInput
 }
 
 export type FarmUncheckedUpdateWithoutEquipmentsInput = {
@@ -1829,12 +1829,12 @@ export type FarmUncheckedUpdateWithoutEquipmentsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  cropCycles?: Prisma.CropCycleUncheckedUpdateManyWithoutFarmNestedInput
-  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutFarmNestedInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutFarmNestedInput
-  weatherLogs?: Prisma.WeatherLogUncheckedUpdateManyWithoutFarmNestedInput
   aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutFarmNestedInput
+  cropCycles?: Prisma.CropCycleUncheckedUpdateManyWithoutFarmNestedInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutFarmNestedInput
   registrationSession?: Prisma.FarmRegistrationSessionUncheckedUpdateOneWithoutFarmNestedInput
+  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutFarmNestedInput
+  weatherLogs?: Prisma.WeatherLogUncheckedUpdateManyWithoutFarmNestedInput
 }
 
 export type FarmCreateWithoutWeatherLogsInput = {
@@ -1860,13 +1860,13 @@ export type FarmCreateWithoutWeatherLogsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  owner: Prisma.UserCreateNestedOneWithoutFarmsInput
+  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutFarmInput
   cropCycles?: Prisma.CropCycleCreateNestedManyWithoutFarmInput
-  soilReports?: Prisma.SoilReportCreateNestedManyWithoutFarmInput
   diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutFarmInput
   equipments?: Prisma.EquipmentCreateNestedManyWithoutFarmInput
-  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutFarmInput
   registrationSession?: Prisma.FarmRegistrationSessionCreateNestedOneWithoutFarmInput
+  owner: Prisma.UserCreateNestedOneWithoutFarmsInput
+  soilReports?: Prisma.SoilReportCreateNestedManyWithoutFarmInput
 }
 
 export type FarmUncheckedCreateWithoutWeatherLogsInput = {
@@ -1893,12 +1893,12 @@ export type FarmUncheckedCreateWithoutWeatherLogsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutFarmInput
   cropCycles?: Prisma.CropCycleUncheckedCreateNestedManyWithoutFarmInput
-  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutFarmInput
   diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutFarmInput
   equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutFarmInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutFarmInput
   registrationSession?: Prisma.FarmRegistrationSessionUncheckedCreateNestedOneWithoutFarmInput
+  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutFarmInput
 }
 
 export type FarmCreateOrConnectWithoutWeatherLogsInput = {
@@ -1940,13 +1940,13 @@ export type FarmUpdateWithoutWeatherLogsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  owner?: Prisma.UserUpdateOneRequiredWithoutFarmsNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutFarmNestedInput
   cropCycles?: Prisma.CropCycleUpdateManyWithoutFarmNestedInput
-  soilReports?: Prisma.SoilReportUpdateManyWithoutFarmNestedInput
   diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutFarmNestedInput
   equipments?: Prisma.EquipmentUpdateManyWithoutFarmNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutFarmNestedInput
   registrationSession?: Prisma.FarmRegistrationSessionUpdateOneWithoutFarmNestedInput
+  owner?: Prisma.UserUpdateOneRequiredWithoutFarmsNestedInput
+  soilReports?: Prisma.SoilReportUpdateManyWithoutFarmNestedInput
 }
 
 export type FarmUncheckedUpdateWithoutWeatherLogsInput = {
@@ -1973,12 +1973,12 @@ export type FarmUncheckedUpdateWithoutWeatherLogsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutFarmNestedInput
   cropCycles?: Prisma.CropCycleUncheckedUpdateManyWithoutFarmNestedInput
-  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutFarmNestedInput
   diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutFarmNestedInput
   equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutFarmNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutFarmNestedInput
   registrationSession?: Prisma.FarmRegistrationSessionUncheckedUpdateOneWithoutFarmNestedInput
+  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutFarmNestedInput
 }
 
 export type FarmCreateWithoutAiRecommendationsInput = {
@@ -2004,13 +2004,13 @@ export type FarmCreateWithoutAiRecommendationsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  owner: Prisma.UserCreateNestedOneWithoutFarmsInput
   cropCycles?: Prisma.CropCycleCreateNestedManyWithoutFarmInput
-  soilReports?: Prisma.SoilReportCreateNestedManyWithoutFarmInput
   diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutFarmInput
   equipments?: Prisma.EquipmentCreateNestedManyWithoutFarmInput
-  weatherLogs?: Prisma.WeatherLogCreateNestedManyWithoutFarmInput
   registrationSession?: Prisma.FarmRegistrationSessionCreateNestedOneWithoutFarmInput
+  owner: Prisma.UserCreateNestedOneWithoutFarmsInput
+  soilReports?: Prisma.SoilReportCreateNestedManyWithoutFarmInput
+  weatherLogs?: Prisma.WeatherLogCreateNestedManyWithoutFarmInput
 }
 
 export type FarmUncheckedCreateWithoutAiRecommendationsInput = {
@@ -2038,11 +2038,11 @@ export type FarmUncheckedCreateWithoutAiRecommendationsInput = {
   createdAt?: Date | string
   updatedAt?: Date | string
   cropCycles?: Prisma.CropCycleUncheckedCreateNestedManyWithoutFarmInput
-  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutFarmInput
   diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutFarmInput
   equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutFarmInput
-  weatherLogs?: Prisma.WeatherLogUncheckedCreateNestedManyWithoutFarmInput
   registrationSession?: Prisma.FarmRegistrationSessionUncheckedCreateNestedOneWithoutFarmInput
+  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutFarmInput
+  weatherLogs?: Prisma.WeatherLogUncheckedCreateNestedManyWithoutFarmInput
 }
 
 export type FarmCreateOrConnectWithoutAiRecommendationsInput = {
@@ -2084,13 +2084,13 @@ export type FarmUpdateWithoutAiRecommendationsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  owner?: Prisma.UserUpdateOneRequiredWithoutFarmsNestedInput
   cropCycles?: Prisma.CropCycleUpdateManyWithoutFarmNestedInput
-  soilReports?: Prisma.SoilReportUpdateManyWithoutFarmNestedInput
   diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutFarmNestedInput
   equipments?: Prisma.EquipmentUpdateManyWithoutFarmNestedInput
-  weatherLogs?: Prisma.WeatherLogUpdateManyWithoutFarmNestedInput
   registrationSession?: Prisma.FarmRegistrationSessionUpdateOneWithoutFarmNestedInput
+  owner?: Prisma.UserUpdateOneRequiredWithoutFarmsNestedInput
+  soilReports?: Prisma.SoilReportUpdateManyWithoutFarmNestedInput
+  weatherLogs?: Prisma.WeatherLogUpdateManyWithoutFarmNestedInput
 }
 
 export type FarmUncheckedUpdateWithoutAiRecommendationsInput = {
@@ -2118,11 +2118,11 @@ export type FarmUncheckedUpdateWithoutAiRecommendationsInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   cropCycles?: Prisma.CropCycleUncheckedUpdateManyWithoutFarmNestedInput
-  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutFarmNestedInput
   diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutFarmNestedInput
   equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutFarmNestedInput
-  weatherLogs?: Prisma.WeatherLogUncheckedUpdateManyWithoutFarmNestedInput
   registrationSession?: Prisma.FarmRegistrationSessionUncheckedUpdateOneWithoutFarmNestedInput
+  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutFarmNestedInput
+  weatherLogs?: Prisma.WeatherLogUncheckedUpdateManyWithoutFarmNestedInput
 }
 
 export type FarmCreateManyOwnerInput = {
@@ -2173,13 +2173,13 @@ export type FarmUpdateWithoutOwnerInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutFarmNestedInput
   cropCycles?: Prisma.CropCycleUpdateManyWithoutFarmNestedInput
-  soilReports?: Prisma.SoilReportUpdateManyWithoutFarmNestedInput
   diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutFarmNestedInput
   equipments?: Prisma.EquipmentUpdateManyWithoutFarmNestedInput
-  weatherLogs?: Prisma.WeatherLogUpdateManyWithoutFarmNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutFarmNestedInput
   registrationSession?: Prisma.FarmRegistrationSessionUpdateOneWithoutFarmNestedInput
+  soilReports?: Prisma.SoilReportUpdateManyWithoutFarmNestedInput
+  weatherLogs?: Prisma.WeatherLogUpdateManyWithoutFarmNestedInput
 }
 
 export type FarmUncheckedUpdateWithoutOwnerInput = {
@@ -2205,13 +2205,13 @@ export type FarmUncheckedUpdateWithoutOwnerInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutFarmNestedInput
   cropCycles?: Prisma.CropCycleUncheckedUpdateManyWithoutFarmNestedInput
-  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutFarmNestedInput
   diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutFarmNestedInput
   equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutFarmNestedInput
-  weatherLogs?: Prisma.WeatherLogUncheckedUpdateManyWithoutFarmNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutFarmNestedInput
   registrationSession?: Prisma.FarmRegistrationSessionUncheckedUpdateOneWithoutFarmNestedInput
+  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutFarmNestedInput
+  weatherLogs?: Prisma.WeatherLogUncheckedUpdateManyWithoutFarmNestedInput
 }
 
 export type FarmUncheckedUpdateManyWithoutOwnerInput = {
@@ -2245,21 +2245,21 @@ export type FarmUncheckedUpdateManyWithoutOwnerInput = {
  */
 
 export type FarmCountOutputType = {
+  aiRecommendations: number
   cropCycles: number
-  soilReports: number
   diseaseReports: number
   equipments: number
+  soilReports: number
   weatherLogs: number
-  aiRecommendations: number
 }
 
 export type FarmCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  aiRecommendations?: boolean | FarmCountOutputTypeCountAiRecommendationsArgs
   cropCycles?: boolean | FarmCountOutputTypeCountCropCyclesArgs
-  soilReports?: boolean | FarmCountOutputTypeCountSoilReportsArgs
   diseaseReports?: boolean | FarmCountOutputTypeCountDiseaseReportsArgs
   equipments?: boolean | FarmCountOutputTypeCountEquipmentsArgs
+  soilReports?: boolean | FarmCountOutputTypeCountSoilReportsArgs
   weatherLogs?: boolean | FarmCountOutputTypeCountWeatherLogsArgs
-  aiRecommendations?: boolean | FarmCountOutputTypeCountAiRecommendationsArgs
 }
 
 /**
@@ -2275,15 +2275,15 @@ export type FarmCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensi
 /**
  * FarmCountOutputType without action
  */
-export type FarmCountOutputTypeCountCropCyclesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.CropCycleWhereInput
+export type FarmCountOutputTypeCountAiRecommendationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.AiRecommendationWhereInput
 }
 
 /**
  * FarmCountOutputType without action
  */
-export type FarmCountOutputTypeCountSoilReportsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.SoilReportWhereInput
+export type FarmCountOutputTypeCountCropCyclesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.CropCycleWhereInput
 }
 
 /**
@@ -2303,15 +2303,15 @@ export type FarmCountOutputTypeCountEquipmentsArgs<ExtArgs extends runtime.Types
 /**
  * FarmCountOutputType without action
  */
-export type FarmCountOutputTypeCountWeatherLogsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.WeatherLogWhereInput
+export type FarmCountOutputTypeCountSoilReportsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.SoilReportWhereInput
 }
 
 /**
  * FarmCountOutputType without action
  */
-export type FarmCountOutputTypeCountAiRecommendationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.AiRecommendationWhereInput
+export type FarmCountOutputTypeCountWeatherLogsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.WeatherLogWhereInput
 }
 
 
@@ -2339,14 +2339,14 @@ export type FarmSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   deletedAt?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  owner?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  aiRecommendations?: boolean | Prisma.Farm$aiRecommendationsArgs<ExtArgs>
   cropCycles?: boolean | Prisma.Farm$cropCyclesArgs<ExtArgs>
-  soilReports?: boolean | Prisma.Farm$soilReportsArgs<ExtArgs>
   diseaseReports?: boolean | Prisma.Farm$diseaseReportsArgs<ExtArgs>
   equipments?: boolean | Prisma.Farm$equipmentsArgs<ExtArgs>
-  weatherLogs?: boolean | Prisma.Farm$weatherLogsArgs<ExtArgs>
-  aiRecommendations?: boolean | Prisma.Farm$aiRecommendationsArgs<ExtArgs>
   registrationSession?: boolean | Prisma.Farm$registrationSessionArgs<ExtArgs>
+  owner?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  soilReports?: boolean | Prisma.Farm$soilReportsArgs<ExtArgs>
+  weatherLogs?: boolean | Prisma.Farm$weatherLogsArgs<ExtArgs>
   _count?: boolean | Prisma.FarmCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["farm"]>
 
@@ -2432,14 +2432,14 @@ export type FarmSelectScalar = {
 
 export type FarmOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "ownerId" | "name" | "registrationNo" | "status" | "areaHectares" | "latitude" | "longitude" | "address" | "city" | "state" | "country" | "pincode" | "soilType" | "waterSource" | "irrigationType" | "certificateUrl" | "isVerified" | "verifiedAt" | "verifiedBy" | "deletedAt" | "createdAt" | "updatedAt", ExtArgs["result"]["farm"]>
 export type FarmInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  owner?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  aiRecommendations?: boolean | Prisma.Farm$aiRecommendationsArgs<ExtArgs>
   cropCycles?: boolean | Prisma.Farm$cropCyclesArgs<ExtArgs>
-  soilReports?: boolean | Prisma.Farm$soilReportsArgs<ExtArgs>
   diseaseReports?: boolean | Prisma.Farm$diseaseReportsArgs<ExtArgs>
   equipments?: boolean | Prisma.Farm$equipmentsArgs<ExtArgs>
-  weatherLogs?: boolean | Prisma.Farm$weatherLogsArgs<ExtArgs>
-  aiRecommendations?: boolean | Prisma.Farm$aiRecommendationsArgs<ExtArgs>
   registrationSession?: boolean | Prisma.Farm$registrationSessionArgs<ExtArgs>
+  owner?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  soilReports?: boolean | Prisma.Farm$soilReportsArgs<ExtArgs>
+  weatherLogs?: boolean | Prisma.Farm$weatherLogsArgs<ExtArgs>
   _count?: boolean | Prisma.FarmCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type FarmIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -2452,14 +2452,14 @@ export type FarmIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
 export type $FarmPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Farm"
   objects: {
-    owner: Prisma.$UserPayload<ExtArgs>
+    aiRecommendations: Prisma.$AiRecommendationPayload<ExtArgs>[]
     cropCycles: Prisma.$CropCyclePayload<ExtArgs>[]
-    soilReports: Prisma.$SoilReportPayload<ExtArgs>[]
     diseaseReports: Prisma.$DiseaseReportPayload<ExtArgs>[]
     equipments: Prisma.$EquipmentPayload<ExtArgs>[]
-    weatherLogs: Prisma.$WeatherLogPayload<ExtArgs>[]
-    aiRecommendations: Prisma.$AiRecommendationPayload<ExtArgs>[]
     registrationSession: Prisma.$FarmRegistrationSessionPayload<ExtArgs> | null
+    owner: Prisma.$UserPayload<ExtArgs>
+    soilReports: Prisma.$SoilReportPayload<ExtArgs>[]
+    weatherLogs: Prisma.$WeatherLogPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -2879,14 +2879,14 @@ readonly fields: FarmFieldRefs;
  */
 export interface Prisma__FarmClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  owner<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  aiRecommendations<T extends Prisma.Farm$aiRecommendationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Farm$aiRecommendationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AiRecommendationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   cropCycles<T extends Prisma.Farm$cropCyclesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Farm$cropCyclesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CropCyclePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  soilReports<T extends Prisma.Farm$soilReportsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Farm$soilReportsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SoilReportPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   diseaseReports<T extends Prisma.Farm$diseaseReportsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Farm$diseaseReportsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$DiseaseReportPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   equipments<T extends Prisma.Farm$equipmentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Farm$equipmentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EquipmentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  weatherLogs<T extends Prisma.Farm$weatherLogsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Farm$weatherLogsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$WeatherLogPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  aiRecommendations<T extends Prisma.Farm$aiRecommendationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Farm$aiRecommendationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AiRecommendationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   registrationSession<T extends Prisma.Farm$registrationSessionArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Farm$registrationSessionArgs<ExtArgs>>): Prisma.Prisma__FarmRegistrationSessionClient<runtime.Types.Result.GetResult<Prisma.$FarmRegistrationSessionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  owner<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  soilReports<T extends Prisma.Farm$soilReportsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Farm$soilReportsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SoilReportPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  weatherLogs<T extends Prisma.Farm$weatherLogsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Farm$weatherLogsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$WeatherLogPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -3335,6 +3335,30 @@ export type FarmDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Internal
 }
 
 /**
+ * Farm.aiRecommendations
+ */
+export type Farm$aiRecommendationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the AiRecommendation
+   */
+  select?: Prisma.AiRecommendationSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the AiRecommendation
+   */
+  omit?: Prisma.AiRecommendationOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AiRecommendationInclude<ExtArgs> | null
+  where?: Prisma.AiRecommendationWhereInput
+  orderBy?: Prisma.AiRecommendationOrderByWithRelationInput | Prisma.AiRecommendationOrderByWithRelationInput[]
+  cursor?: Prisma.AiRecommendationWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.AiRecommendationScalarFieldEnum | Prisma.AiRecommendationScalarFieldEnum[]
+}
+
+/**
  * Farm.cropCycles
  */
 export type Farm$cropCyclesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -3356,30 +3380,6 @@ export type Farm$cropCyclesArgs<ExtArgs extends runtime.Types.Extensions.Interna
   take?: number
   skip?: number
   distinct?: Prisma.CropCycleScalarFieldEnum | Prisma.CropCycleScalarFieldEnum[]
-}
-
-/**
- * Farm.soilReports
- */
-export type Farm$soilReportsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the SoilReport
-   */
-  select?: Prisma.SoilReportSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the SoilReport
-   */
-  omit?: Prisma.SoilReportOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.SoilReportInclude<ExtArgs> | null
-  where?: Prisma.SoilReportWhereInput
-  orderBy?: Prisma.SoilReportOrderByWithRelationInput | Prisma.SoilReportOrderByWithRelationInput[]
-  cursor?: Prisma.SoilReportWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.SoilReportScalarFieldEnum | Prisma.SoilReportScalarFieldEnum[]
 }
 
 /**
@@ -3431,6 +3431,49 @@ export type Farm$equipmentsArgs<ExtArgs extends runtime.Types.Extensions.Interna
 }
 
 /**
+ * Farm.registrationSession
+ */
+export type Farm$registrationSessionArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the FarmRegistrationSession
+   */
+  select?: Prisma.FarmRegistrationSessionSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the FarmRegistrationSession
+   */
+  omit?: Prisma.FarmRegistrationSessionOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.FarmRegistrationSessionInclude<ExtArgs> | null
+  where?: Prisma.FarmRegistrationSessionWhereInput
+}
+
+/**
+ * Farm.soilReports
+ */
+export type Farm$soilReportsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the SoilReport
+   */
+  select?: Prisma.SoilReportSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the SoilReport
+   */
+  omit?: Prisma.SoilReportOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.SoilReportInclude<ExtArgs> | null
+  where?: Prisma.SoilReportWhereInput
+  orderBy?: Prisma.SoilReportOrderByWithRelationInput | Prisma.SoilReportOrderByWithRelationInput[]
+  cursor?: Prisma.SoilReportWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.SoilReportScalarFieldEnum | Prisma.SoilReportScalarFieldEnum[]
+}
+
+/**
  * Farm.weatherLogs
  */
 export type Farm$weatherLogsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -3452,49 +3495,6 @@ export type Farm$weatherLogsArgs<ExtArgs extends runtime.Types.Extensions.Intern
   take?: number
   skip?: number
   distinct?: Prisma.WeatherLogScalarFieldEnum | Prisma.WeatherLogScalarFieldEnum[]
-}
-
-/**
- * Farm.aiRecommendations
- */
-export type Farm$aiRecommendationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the AiRecommendation
-   */
-  select?: Prisma.AiRecommendationSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the AiRecommendation
-   */
-  omit?: Prisma.AiRecommendationOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.AiRecommendationInclude<ExtArgs> | null
-  where?: Prisma.AiRecommendationWhereInput
-  orderBy?: Prisma.AiRecommendationOrderByWithRelationInput | Prisma.AiRecommendationOrderByWithRelationInput[]
-  cursor?: Prisma.AiRecommendationWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.AiRecommendationScalarFieldEnum | Prisma.AiRecommendationScalarFieldEnum[]
-}
-
-/**
- * Farm.registrationSession
- */
-export type Farm$registrationSessionArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the FarmRegistrationSession
-   */
-  select?: Prisma.FarmRegistrationSessionSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the FarmRegistrationSession
-   */
-  omit?: Prisma.FarmRegistrationSessionOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.FarmRegistrationSessionInclude<ExtArgs> | null
-  where?: Prisma.FarmRegistrationSessionWhereInput
 }
 
 /**

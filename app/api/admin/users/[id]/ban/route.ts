@@ -26,7 +26,7 @@ export async function POST(req: NextRequest, { params }: Params) {
             prisma.session.updateMany({ where: { userId: id }, data: { isRevoked: true, revokedAt: new Date() } }),
         ]);
 
-        await createAuditLog({ actorId: auth.user.sub, action: "BAN", entity: "User", entityId: id, req, metadata: { reason } });
+        await createAuditLog({ actorId: auth.user.sub, action: "UPDATE", entity: "User", entityId: id, req, metadata: { reason } });
         return apiSuccess(null, `User ${user.firstName} ${user.lastName} has been banned. All sessions revoked.`);
     } catch (err) {
         return apiServerError(err);

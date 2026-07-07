@@ -18,7 +18,7 @@ export async function GET(req: NextRequest, { params }: Params) {
         include: {
             buyer: { select: { id: true, firstName: true, lastName: true, email: true } },
             supplier: { select: { id: true, firstName: true, lastName: true, email: true } },
-            items: { include: { inventory: { select: { id: true, name: true, sku: true, category: true } } } },
+          items: { include: { listing: { select: { id: true, title: true, category: true } } } },
             payments: { select: { id: true, amount: true, status: true, method: true, paidAt: true } },
         },
     });

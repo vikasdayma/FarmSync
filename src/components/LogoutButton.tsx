@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { Button } from './ui/button';
 import { useAuth } from '@/context/AuthProvider';
 
-export const LogoutButton = ({className}) => {
+export const LogoutButton = (props:{className:string}) => {
     const router = useRouter();
     const {logout}=useAuth();
     
@@ -33,7 +33,7 @@ export const LogoutButton = ({className}) => {
       onClick={handleLogout}
       disabled={loading}
       variant="outline"
-      className={className}
+      className={props.className}
     >
       {loading ? "Logging out..." : "Logout"}
     </Button>

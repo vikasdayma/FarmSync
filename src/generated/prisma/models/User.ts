@@ -44,12 +44,6 @@ export type UserMinAggregateOutputType = {
   role: $Enums.Role | null
   status: $Enums.AccountStatus | null
   avatarUrl: string | null
-  bio: string | null
-  address: string | null
-  city: string | null
-  state: string | null
-  country: string | null
-  pincode: string | null
   failedLoginAttempts: number | null
   lockedUntil: Date | null
   emailVerified: boolean | null
@@ -63,6 +57,12 @@ export type UserMinAggregateOutputType = {
   deletedAt: Date | null
   createdAt: Date | null
   updatedAt: Date | null
+  address: string | null
+  bio: string | null
+  city: string | null
+  country: string | null
+  pincode: string | null
+  state: string | null
 }
 
 export type UserMaxAggregateOutputType = {
@@ -75,12 +75,6 @@ export type UserMaxAggregateOutputType = {
   role: $Enums.Role | null
   status: $Enums.AccountStatus | null
   avatarUrl: string | null
-  bio: string | null
-  address: string | null
-  city: string | null
-  state: string | null
-  country: string | null
-  pincode: string | null
   failedLoginAttempts: number | null
   lockedUntil: Date | null
   emailVerified: boolean | null
@@ -94,6 +88,12 @@ export type UserMaxAggregateOutputType = {
   deletedAt: Date | null
   createdAt: Date | null
   updatedAt: Date | null
+  address: string | null
+  bio: string | null
+  city: string | null
+  country: string | null
+  pincode: string | null
+  state: string | null
 }
 
 export type UserCountAggregateOutputType = {
@@ -106,12 +106,6 @@ export type UserCountAggregateOutputType = {
   role: number
   status: number
   avatarUrl: number
-  bio: number
-  address: number
-  city: number
-  state: number
-  country: number
-  pincode: number
   failedLoginAttempts: number
   lockedUntil: number
   emailVerified: number
@@ -125,6 +119,12 @@ export type UserCountAggregateOutputType = {
   deletedAt: number
   createdAt: number
   updatedAt: number
+  address: number
+  bio: number
+  city: number
+  country: number
+  pincode: number
+  state: number
   _all: number
 }
 
@@ -147,12 +147,6 @@ export type UserMinAggregateInputType = {
   role?: true
   status?: true
   avatarUrl?: true
-  bio?: true
-  address?: true
-  city?: true
-  state?: true
-  country?: true
-  pincode?: true
   failedLoginAttempts?: true
   lockedUntil?: true
   emailVerified?: true
@@ -166,6 +160,12 @@ export type UserMinAggregateInputType = {
   deletedAt?: true
   createdAt?: true
   updatedAt?: true
+  address?: true
+  bio?: true
+  city?: true
+  country?: true
+  pincode?: true
+  state?: true
 }
 
 export type UserMaxAggregateInputType = {
@@ -178,12 +178,6 @@ export type UserMaxAggregateInputType = {
   role?: true
   status?: true
   avatarUrl?: true
-  bio?: true
-  address?: true
-  city?: true
-  state?: true
-  country?: true
-  pincode?: true
   failedLoginAttempts?: true
   lockedUntil?: true
   emailVerified?: true
@@ -197,6 +191,12 @@ export type UserMaxAggregateInputType = {
   deletedAt?: true
   createdAt?: true
   updatedAt?: true
+  address?: true
+  bio?: true
+  city?: true
+  country?: true
+  pincode?: true
+  state?: true
 }
 
 export type UserCountAggregateInputType = {
@@ -209,12 +209,6 @@ export type UserCountAggregateInputType = {
   role?: true
   status?: true
   avatarUrl?: true
-  bio?: true
-  address?: true
-  city?: true
-  state?: true
-  country?: true
-  pincode?: true
   failedLoginAttempts?: true
   lockedUntil?: true
   emailVerified?: true
@@ -228,6 +222,12 @@ export type UserCountAggregateInputType = {
   deletedAt?: true
   createdAt?: true
   updatedAt?: true
+  address?: true
+  bio?: true
+  city?: true
+  country?: true
+  pincode?: true
+  state?: true
   _all?: true
 }
 
@@ -327,12 +327,6 @@ export type UserGroupByOutputType = {
   role: $Enums.Role
   status: $Enums.AccountStatus
   avatarUrl: string | null
-  bio: string | null
-  address: string | null
-  city: string | null
-  state: string | null
-  country: string | null
-  pincode: string | null
   failedLoginAttempts: number
   lockedUntil: Date | null
   emailVerified: boolean
@@ -346,6 +340,12 @@ export type UserGroupByOutputType = {
   deletedAt: Date | null
   createdAt: Date
   updatedAt: Date
+  address: string | null
+  bio: string | null
+  city: string | null
+  country: string | null
+  pincode: string | null
+  state: string | null
   _count: UserCountAggregateOutputType | null
   _avg: UserAvgAggregateOutputType | null
   _sum: UserSumAggregateOutputType | null
@@ -381,12 +381,6 @@ export type UserWhereInput = {
   role?: Prisma.EnumRoleFilter<"User"> | $Enums.Role
   status?: Prisma.EnumAccountStatusFilter<"User"> | $Enums.AccountStatus
   avatarUrl?: Prisma.StringNullableFilter<"User"> | string | null
-  bio?: Prisma.StringNullableFilter<"User"> | string | null
-  address?: Prisma.StringNullableFilter<"User"> | string | null
-  city?: Prisma.StringNullableFilter<"User"> | string | null
-  state?: Prisma.StringNullableFilter<"User"> | string | null
-  country?: Prisma.StringNullableFilter<"User"> | string | null
-  pincode?: Prisma.StringNullableFilter<"User"> | string | null
   failedLoginAttempts?: Prisma.IntFilter<"User"> | number
   lockedUntil?: Prisma.DateTimeNullableFilter<"User"> | Date | string | null
   emailVerified?: Prisma.BoolFilter<"User"> | boolean
@@ -400,28 +394,34 @@ export type UserWhereInput = {
   deletedAt?: Prisma.DateTimeNullableFilter<"User"> | Date | string | null
   createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"User"> | Date | string
-  sessions?: Prisma.SessionListRelationFilter
-  farms?: Prisma.FarmListRelationFilter
-  soilReports?: Prisma.SoilReportListRelationFilter
-  diseaseReports?: Prisma.DiseaseReportListRelationFilter
-  equipments?: Prisma.EquipmentListRelationFilter
-  orders?: Prisma.OrderListRelationFilter
-  suppliedOrders?: Prisma.OrderListRelationFilter
-  loans?: Prisma.LoanListRelationFilter
-  subsidies?: Prisma.SubsidyListRelationFilter
-  notifications?: Prisma.NotificationListRelationFilter
-  auditLogs?: Prisma.AuditLogListRelationFilter
+  address?: Prisma.StringNullableFilter<"User"> | string | null
+  bio?: Prisma.StringNullableFilter<"User"> | string | null
+  city?: Prisma.StringNullableFilter<"User"> | string | null
+  country?: Prisma.StringNullableFilter<"User"> | string | null
+  pincode?: Prisma.StringNullableFilter<"User"> | string | null
+  state?: Prisma.StringNullableFilter<"User"> | string | null
   activityLogs?: Prisma.ActivityLogListRelationFilter
-  reviews?: Prisma.ReviewListRelationFilter
+  aiRecommendations?: Prisma.AiRecommendationListRelationFilter
+  auditLogs?: Prisma.AuditLogListRelationFilter
   chats?: Prisma.ChatListRelationFilter
   chats2?: Prisma.ChatListRelationFilter
-  messages?: Prisma.MessageListRelationFilter
-  transactions?: Prisma.TransactionListRelationFilter
-  aiRecommendations?: Prisma.AiRecommendationListRelationFilter
-  marketplaceListings?: Prisma.MarketplaceListingListRelationFilter
-  farmRegistrations?: Prisma.FarmRegistrationSessionListRelationFilter
-  passwordResetTokens?: Prisma.PasswordResetTokenListRelationFilter
+  diseaseReports?: Prisma.DiseaseReportListRelationFilter
   emailVerifTokens?: Prisma.EmailVerificationTokenListRelationFilter
+  equipments?: Prisma.EquipmentListRelationFilter
+  farmRegistrations?: Prisma.FarmRegistrationSessionListRelationFilter
+  farms?: Prisma.FarmListRelationFilter
+  loans?: Prisma.LoanListRelationFilter
+  marketplaceListings?: Prisma.MarketplaceListingListRelationFilter
+  messages?: Prisma.MessageListRelationFilter
+  notifications?: Prisma.NotificationListRelationFilter
+  orders?: Prisma.OrderListRelationFilter
+  suppliedOrders?: Prisma.OrderListRelationFilter
+  passwordResetTokens?: Prisma.PasswordResetTokenListRelationFilter
+  reviews?: Prisma.ReviewListRelationFilter
+  sessions?: Prisma.SessionListRelationFilter
+  soilReports?: Prisma.SoilReportListRelationFilter
+  subsidies?: Prisma.SubsidyListRelationFilter
+  transactions?: Prisma.TransactionListRelationFilter
 }
 
 export type UserOrderByWithRelationInput = {
@@ -434,12 +434,6 @@ export type UserOrderByWithRelationInput = {
   role?: Prisma.SortOrder
   status?: Prisma.SortOrder
   avatarUrl?: Prisma.SortOrderInput | Prisma.SortOrder
-  bio?: Prisma.SortOrderInput | Prisma.SortOrder
-  address?: Prisma.SortOrderInput | Prisma.SortOrder
-  city?: Prisma.SortOrderInput | Prisma.SortOrder
-  state?: Prisma.SortOrderInput | Prisma.SortOrder
-  country?: Prisma.SortOrderInput | Prisma.SortOrder
-  pincode?: Prisma.SortOrderInput | Prisma.SortOrder
   failedLoginAttempts?: Prisma.SortOrder
   lockedUntil?: Prisma.SortOrderInput | Prisma.SortOrder
   emailVerified?: Prisma.SortOrder
@@ -453,28 +447,34 @@ export type UserOrderByWithRelationInput = {
   deletedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  sessions?: Prisma.SessionOrderByRelationAggregateInput
-  farms?: Prisma.FarmOrderByRelationAggregateInput
-  soilReports?: Prisma.SoilReportOrderByRelationAggregateInput
-  diseaseReports?: Prisma.DiseaseReportOrderByRelationAggregateInput
-  equipments?: Prisma.EquipmentOrderByRelationAggregateInput
-  orders?: Prisma.OrderOrderByRelationAggregateInput
-  suppliedOrders?: Prisma.OrderOrderByRelationAggregateInput
-  loans?: Prisma.LoanOrderByRelationAggregateInput
-  subsidies?: Prisma.SubsidyOrderByRelationAggregateInput
-  notifications?: Prisma.NotificationOrderByRelationAggregateInput
-  auditLogs?: Prisma.AuditLogOrderByRelationAggregateInput
+  address?: Prisma.SortOrderInput | Prisma.SortOrder
+  bio?: Prisma.SortOrderInput | Prisma.SortOrder
+  city?: Prisma.SortOrderInput | Prisma.SortOrder
+  country?: Prisma.SortOrderInput | Prisma.SortOrder
+  pincode?: Prisma.SortOrderInput | Prisma.SortOrder
+  state?: Prisma.SortOrderInput | Prisma.SortOrder
   activityLogs?: Prisma.ActivityLogOrderByRelationAggregateInput
-  reviews?: Prisma.ReviewOrderByRelationAggregateInput
+  aiRecommendations?: Prisma.AiRecommendationOrderByRelationAggregateInput
+  auditLogs?: Prisma.AuditLogOrderByRelationAggregateInput
   chats?: Prisma.ChatOrderByRelationAggregateInput
   chats2?: Prisma.ChatOrderByRelationAggregateInput
-  messages?: Prisma.MessageOrderByRelationAggregateInput
-  transactions?: Prisma.TransactionOrderByRelationAggregateInput
-  aiRecommendations?: Prisma.AiRecommendationOrderByRelationAggregateInput
-  marketplaceListings?: Prisma.MarketplaceListingOrderByRelationAggregateInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionOrderByRelationAggregateInput
-  passwordResetTokens?: Prisma.PasswordResetTokenOrderByRelationAggregateInput
+  diseaseReports?: Prisma.DiseaseReportOrderByRelationAggregateInput
   emailVerifTokens?: Prisma.EmailVerificationTokenOrderByRelationAggregateInput
+  equipments?: Prisma.EquipmentOrderByRelationAggregateInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionOrderByRelationAggregateInput
+  farms?: Prisma.FarmOrderByRelationAggregateInput
+  loans?: Prisma.LoanOrderByRelationAggregateInput
+  marketplaceListings?: Prisma.MarketplaceListingOrderByRelationAggregateInput
+  messages?: Prisma.MessageOrderByRelationAggregateInput
+  notifications?: Prisma.NotificationOrderByRelationAggregateInput
+  orders?: Prisma.OrderOrderByRelationAggregateInput
+  suppliedOrders?: Prisma.OrderOrderByRelationAggregateInput
+  passwordResetTokens?: Prisma.PasswordResetTokenOrderByRelationAggregateInput
+  reviews?: Prisma.ReviewOrderByRelationAggregateInput
+  sessions?: Prisma.SessionOrderByRelationAggregateInput
+  soilReports?: Prisma.SoilReportOrderByRelationAggregateInput
+  subsidies?: Prisma.SubsidyOrderByRelationAggregateInput
+  transactions?: Prisma.TransactionOrderByRelationAggregateInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -490,12 +490,6 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   role?: Prisma.EnumRoleFilter<"User"> | $Enums.Role
   status?: Prisma.EnumAccountStatusFilter<"User"> | $Enums.AccountStatus
   avatarUrl?: Prisma.StringNullableFilter<"User"> | string | null
-  bio?: Prisma.StringNullableFilter<"User"> | string | null
-  address?: Prisma.StringNullableFilter<"User"> | string | null
-  city?: Prisma.StringNullableFilter<"User"> | string | null
-  state?: Prisma.StringNullableFilter<"User"> | string | null
-  country?: Prisma.StringNullableFilter<"User"> | string | null
-  pincode?: Prisma.StringNullableFilter<"User"> | string | null
   failedLoginAttempts?: Prisma.IntFilter<"User"> | number
   lockedUntil?: Prisma.DateTimeNullableFilter<"User"> | Date | string | null
   emailVerified?: Prisma.BoolFilter<"User"> | boolean
@@ -509,28 +503,34 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   deletedAt?: Prisma.DateTimeNullableFilter<"User"> | Date | string | null
   createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"User"> | Date | string
-  sessions?: Prisma.SessionListRelationFilter
-  farms?: Prisma.FarmListRelationFilter
-  soilReports?: Prisma.SoilReportListRelationFilter
-  diseaseReports?: Prisma.DiseaseReportListRelationFilter
-  equipments?: Prisma.EquipmentListRelationFilter
-  orders?: Prisma.OrderListRelationFilter
-  suppliedOrders?: Prisma.OrderListRelationFilter
-  loans?: Prisma.LoanListRelationFilter
-  subsidies?: Prisma.SubsidyListRelationFilter
-  notifications?: Prisma.NotificationListRelationFilter
-  auditLogs?: Prisma.AuditLogListRelationFilter
+  address?: Prisma.StringNullableFilter<"User"> | string | null
+  bio?: Prisma.StringNullableFilter<"User"> | string | null
+  city?: Prisma.StringNullableFilter<"User"> | string | null
+  country?: Prisma.StringNullableFilter<"User"> | string | null
+  pincode?: Prisma.StringNullableFilter<"User"> | string | null
+  state?: Prisma.StringNullableFilter<"User"> | string | null
   activityLogs?: Prisma.ActivityLogListRelationFilter
-  reviews?: Prisma.ReviewListRelationFilter
+  aiRecommendations?: Prisma.AiRecommendationListRelationFilter
+  auditLogs?: Prisma.AuditLogListRelationFilter
   chats?: Prisma.ChatListRelationFilter
   chats2?: Prisma.ChatListRelationFilter
-  messages?: Prisma.MessageListRelationFilter
-  transactions?: Prisma.TransactionListRelationFilter
-  aiRecommendations?: Prisma.AiRecommendationListRelationFilter
-  marketplaceListings?: Prisma.MarketplaceListingListRelationFilter
-  farmRegistrations?: Prisma.FarmRegistrationSessionListRelationFilter
-  passwordResetTokens?: Prisma.PasswordResetTokenListRelationFilter
+  diseaseReports?: Prisma.DiseaseReportListRelationFilter
   emailVerifTokens?: Prisma.EmailVerificationTokenListRelationFilter
+  equipments?: Prisma.EquipmentListRelationFilter
+  farmRegistrations?: Prisma.FarmRegistrationSessionListRelationFilter
+  farms?: Prisma.FarmListRelationFilter
+  loans?: Prisma.LoanListRelationFilter
+  marketplaceListings?: Prisma.MarketplaceListingListRelationFilter
+  messages?: Prisma.MessageListRelationFilter
+  notifications?: Prisma.NotificationListRelationFilter
+  orders?: Prisma.OrderListRelationFilter
+  suppliedOrders?: Prisma.OrderListRelationFilter
+  passwordResetTokens?: Prisma.PasswordResetTokenListRelationFilter
+  reviews?: Prisma.ReviewListRelationFilter
+  sessions?: Prisma.SessionListRelationFilter
+  soilReports?: Prisma.SoilReportListRelationFilter
+  subsidies?: Prisma.SubsidyListRelationFilter
+  transactions?: Prisma.TransactionListRelationFilter
 }, "id" | "email" | "phone">
 
 export type UserOrderByWithAggregationInput = {
@@ -543,12 +543,6 @@ export type UserOrderByWithAggregationInput = {
   role?: Prisma.SortOrder
   status?: Prisma.SortOrder
   avatarUrl?: Prisma.SortOrderInput | Prisma.SortOrder
-  bio?: Prisma.SortOrderInput | Prisma.SortOrder
-  address?: Prisma.SortOrderInput | Prisma.SortOrder
-  city?: Prisma.SortOrderInput | Prisma.SortOrder
-  state?: Prisma.SortOrderInput | Prisma.SortOrder
-  country?: Prisma.SortOrderInput | Prisma.SortOrder
-  pincode?: Prisma.SortOrderInput | Prisma.SortOrder
   failedLoginAttempts?: Prisma.SortOrder
   lockedUntil?: Prisma.SortOrderInput | Prisma.SortOrder
   emailVerified?: Prisma.SortOrder
@@ -562,6 +556,12 @@ export type UserOrderByWithAggregationInput = {
   deletedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  address?: Prisma.SortOrderInput | Prisma.SortOrder
+  bio?: Prisma.SortOrderInput | Prisma.SortOrder
+  city?: Prisma.SortOrderInput | Prisma.SortOrder
+  country?: Prisma.SortOrderInput | Prisma.SortOrder
+  pincode?: Prisma.SortOrderInput | Prisma.SortOrder
+  state?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.UserCountOrderByAggregateInput
   _avg?: Prisma.UserAvgOrderByAggregateInput
   _max?: Prisma.UserMaxOrderByAggregateInput
@@ -582,12 +582,6 @@ export type UserScalarWhereWithAggregatesInput = {
   role?: Prisma.EnumRoleWithAggregatesFilter<"User"> | $Enums.Role
   status?: Prisma.EnumAccountStatusWithAggregatesFilter<"User"> | $Enums.AccountStatus
   avatarUrl?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
-  bio?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
-  address?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
-  city?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
-  state?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
-  country?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
-  pincode?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
   failedLoginAttempts?: Prisma.IntWithAggregatesFilter<"User"> | number
   lockedUntil?: Prisma.DateTimeNullableWithAggregatesFilter<"User"> | Date | string | null
   emailVerified?: Prisma.BoolWithAggregatesFilter<"User"> | boolean
@@ -601,6 +595,12 @@ export type UserScalarWhereWithAggregatesInput = {
   deletedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"User"> | Date | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"User"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"User"> | Date | string
+  address?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
+  bio?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
+  city?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
+  country?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
+  pincode?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
+  state?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
 }
 
 export type UserCreateInput = {
@@ -613,12 +613,6 @@ export type UserCreateInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -632,28 +626,34 @@ export type UserCreateInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateInput = {
@@ -666,12 +666,6 @@ export type UserUncheckedCreateInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -685,28 +679,34 @@ export type UserUncheckedCreateInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogUncheckedCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatUncheckedCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatUncheckedCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserUpdateInput = {
@@ -719,12 +719,6 @@ export type UserUpdateInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -738,28 +732,34 @@ export type UserUpdateInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
@@ -772,12 +772,6 @@ export type UserUncheckedUpdateInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -791,28 +785,34 @@ export type UserUncheckedUpdateInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUncheckedUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUncheckedUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUncheckedUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateManyInput = {
@@ -825,12 +825,6 @@ export type UserCreateManyInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -844,6 +838,12 @@ export type UserCreateManyInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
 }
 
 export type UserUpdateManyMutationInput = {
@@ -856,12 +856,6 @@ export type UserUpdateManyMutationInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -875,6 +869,12 @@ export type UserUpdateManyMutationInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type UserUncheckedUpdateManyInput = {
@@ -887,12 +887,6 @@ export type UserUncheckedUpdateManyInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -906,6 +900,12 @@ export type UserUncheckedUpdateManyInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type UserCountOrderByAggregateInput = {
@@ -918,12 +918,6 @@ export type UserCountOrderByAggregateInput = {
   role?: Prisma.SortOrder
   status?: Prisma.SortOrder
   avatarUrl?: Prisma.SortOrder
-  bio?: Prisma.SortOrder
-  address?: Prisma.SortOrder
-  city?: Prisma.SortOrder
-  state?: Prisma.SortOrder
-  country?: Prisma.SortOrder
-  pincode?: Prisma.SortOrder
   failedLoginAttempts?: Prisma.SortOrder
   lockedUntil?: Prisma.SortOrder
   emailVerified?: Prisma.SortOrder
@@ -937,6 +931,12 @@ export type UserCountOrderByAggregateInput = {
   deletedAt?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  address?: Prisma.SortOrder
+  bio?: Prisma.SortOrder
+  city?: Prisma.SortOrder
+  country?: Prisma.SortOrder
+  pincode?: Prisma.SortOrder
+  state?: Prisma.SortOrder
 }
 
 export type UserAvgOrderByAggregateInput = {
@@ -953,12 +953,6 @@ export type UserMaxOrderByAggregateInput = {
   role?: Prisma.SortOrder
   status?: Prisma.SortOrder
   avatarUrl?: Prisma.SortOrder
-  bio?: Prisma.SortOrder
-  address?: Prisma.SortOrder
-  city?: Prisma.SortOrder
-  state?: Prisma.SortOrder
-  country?: Prisma.SortOrder
-  pincode?: Prisma.SortOrder
   failedLoginAttempts?: Prisma.SortOrder
   lockedUntil?: Prisma.SortOrder
   emailVerified?: Prisma.SortOrder
@@ -972,6 +966,12 @@ export type UserMaxOrderByAggregateInput = {
   deletedAt?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  address?: Prisma.SortOrder
+  bio?: Prisma.SortOrder
+  city?: Prisma.SortOrder
+  country?: Prisma.SortOrder
+  pincode?: Prisma.SortOrder
+  state?: Prisma.SortOrder
 }
 
 export type UserMinOrderByAggregateInput = {
@@ -984,12 +984,6 @@ export type UserMinOrderByAggregateInput = {
   role?: Prisma.SortOrder
   status?: Prisma.SortOrder
   avatarUrl?: Prisma.SortOrder
-  bio?: Prisma.SortOrder
-  address?: Prisma.SortOrder
-  city?: Prisma.SortOrder
-  state?: Prisma.SortOrder
-  country?: Prisma.SortOrder
-  pincode?: Prisma.SortOrder
   failedLoginAttempts?: Prisma.SortOrder
   lockedUntil?: Prisma.SortOrder
   emailVerified?: Prisma.SortOrder
@@ -1003,6 +997,12 @@ export type UserMinOrderByAggregateInput = {
   deletedAt?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  address?: Prisma.SortOrder
+  bio?: Prisma.SortOrder
+  city?: Prisma.SortOrder
+  country?: Prisma.SortOrder
+  pincode?: Prisma.SortOrder
+  state?: Prisma.SortOrder
 }
 
 export type UserSumOrderByAggregateInput = {
@@ -1375,12 +1375,6 @@ export type UserCreateWithoutSessionsInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -1394,27 +1388,33 @@ export type UserCreateWithoutSessionsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutSessionsInput = {
@@ -1427,12 +1427,6 @@ export type UserUncheckedCreateWithoutSessionsInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -1446,27 +1440,33 @@ export type UserUncheckedCreateWithoutSessionsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogUncheckedCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatUncheckedCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatUncheckedCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutSessionsInput = {
@@ -1495,12 +1495,6 @@ export type UserUpdateWithoutSessionsInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -1514,27 +1508,33 @@ export type UserUpdateWithoutSessionsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutSessionsInput = {
@@ -1547,12 +1547,6 @@ export type UserUncheckedUpdateWithoutSessionsInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -1566,27 +1560,33 @@ export type UserUncheckedUpdateWithoutSessionsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUncheckedUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUncheckedUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUncheckedUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutPasswordResetTokensInput = {
@@ -1599,12 +1599,6 @@ export type UserCreateWithoutPasswordResetTokensInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -1618,27 +1612,33 @@ export type UserCreateWithoutPasswordResetTokensInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutPasswordResetTokensInput = {
@@ -1651,12 +1651,6 @@ export type UserUncheckedCreateWithoutPasswordResetTokensInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -1670,27 +1664,33 @@ export type UserUncheckedCreateWithoutPasswordResetTokensInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogUncheckedCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatUncheckedCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatUncheckedCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutPasswordResetTokensInput = {
@@ -1719,12 +1719,6 @@ export type UserUpdateWithoutPasswordResetTokensInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -1738,27 +1732,33 @@ export type UserUpdateWithoutPasswordResetTokensInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutPasswordResetTokensInput = {
@@ -1771,12 +1771,6 @@ export type UserUncheckedUpdateWithoutPasswordResetTokensInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -1790,27 +1784,33 @@ export type UserUncheckedUpdateWithoutPasswordResetTokensInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUncheckedUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUncheckedUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUncheckedUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutEmailVerifTokensInput = {
@@ -1823,12 +1823,6 @@ export type UserCreateWithoutEmailVerifTokensInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -1842,27 +1836,33 @@ export type UserCreateWithoutEmailVerifTokensInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
+  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
   farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
   passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutEmailVerifTokensInput = {
@@ -1875,12 +1875,6 @@ export type UserUncheckedCreateWithoutEmailVerifTokensInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -1894,27 +1888,33 @@ export type UserUncheckedCreateWithoutEmailVerifTokensInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogUncheckedCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatUncheckedCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatUncheckedCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
   farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
   passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutEmailVerifTokensInput = {
@@ -1943,12 +1943,6 @@ export type UserUpdateWithoutEmailVerifTokensInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -1962,27 +1956,33 @@ export type UserUpdateWithoutEmailVerifTokensInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
+  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
   farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
   passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutEmailVerifTokensInput = {
@@ -1995,12 +1995,6 @@ export type UserUncheckedUpdateWithoutEmailVerifTokensInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -2014,27 +2008,33 @@ export type UserUncheckedUpdateWithoutEmailVerifTokensInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUncheckedUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUncheckedUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUncheckedUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
   farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
   passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutFarmsInput = {
@@ -2047,12 +2047,6 @@ export type UserCreateWithoutFarmsInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -2066,27 +2060,33 @@ export type UserCreateWithoutFarmsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
-  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
+  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutFarmsInput = {
@@ -2099,12 +2099,6 @@ export type UserUncheckedCreateWithoutFarmsInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -2118,27 +2112,33 @@ export type UserUncheckedCreateWithoutFarmsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
-  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogUncheckedCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatUncheckedCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatUncheckedCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
+  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutFarmsInput = {
@@ -2167,12 +2167,6 @@ export type UserUpdateWithoutFarmsInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -2186,27 +2180,33 @@ export type UserUpdateWithoutFarmsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
-  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
+  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutFarmsInput = {
@@ -2219,12 +2219,6 @@ export type UserUncheckedUpdateWithoutFarmsInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -2238,27 +2232,33 @@ export type UserUncheckedUpdateWithoutFarmsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
-  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUncheckedUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUncheckedUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUncheckedUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
+  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutFarmRegistrationsInput = {
@@ -2271,12 +2271,6 @@ export type UserCreateWithoutFarmRegistrationsInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -2290,27 +2284,33 @@ export type UserCreateWithoutFarmRegistrationsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
-  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutFarmRegistrationsInput = {
@@ -2323,12 +2323,6 @@ export type UserUncheckedCreateWithoutFarmRegistrationsInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -2342,27 +2336,33 @@ export type UserUncheckedCreateWithoutFarmRegistrationsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogUncheckedCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatUncheckedCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatUncheckedCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutFarmRegistrationsInput = {
@@ -2391,12 +2391,6 @@ export type UserUpdateWithoutFarmRegistrationsInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -2410,27 +2404,33 @@ export type UserUpdateWithoutFarmRegistrationsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutFarmRegistrationsInput = {
@@ -2443,12 +2443,6 @@ export type UserUncheckedUpdateWithoutFarmRegistrationsInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -2462,27 +2456,33 @@ export type UserUncheckedUpdateWithoutFarmRegistrationsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUncheckedUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUncheckedUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUncheckedUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutSoilReportsInput = {
@@ -2495,12 +2495,6 @@ export type UserCreateWithoutSoilReportsInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -2514,27 +2508,33 @@ export type UserCreateWithoutSoilReportsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
-  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutSoilReportsInput = {
@@ -2547,12 +2547,6 @@ export type UserUncheckedCreateWithoutSoilReportsInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -2566,27 +2560,33 @@ export type UserUncheckedCreateWithoutSoilReportsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogUncheckedCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatUncheckedCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatUncheckedCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutSoilReportsInput = {
@@ -2615,12 +2615,6 @@ export type UserUpdateWithoutSoilReportsInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -2634,27 +2628,33 @@ export type UserUpdateWithoutSoilReportsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
-  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutSoilReportsInput = {
@@ -2667,12 +2667,6 @@ export type UserUncheckedUpdateWithoutSoilReportsInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -2686,27 +2680,33 @@ export type UserUncheckedUpdateWithoutSoilReportsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUncheckedUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUncheckedUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUncheckedUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutDiseaseReportsInput = {
@@ -2719,12 +2719,6 @@ export type UserCreateWithoutDiseaseReportsInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -2738,27 +2732,33 @@ export type UserCreateWithoutDiseaseReportsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutDiseaseReportsInput = {
@@ -2771,12 +2771,6 @@ export type UserUncheckedCreateWithoutDiseaseReportsInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -2790,27 +2784,33 @@ export type UserUncheckedCreateWithoutDiseaseReportsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogUncheckedCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatUncheckedCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatUncheckedCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutDiseaseReportsInput = {
@@ -2839,12 +2839,6 @@ export type UserUpdateWithoutDiseaseReportsInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -2858,27 +2852,33 @@ export type UserUpdateWithoutDiseaseReportsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutDiseaseReportsInput = {
@@ -2891,12 +2891,6 @@ export type UserUncheckedUpdateWithoutDiseaseReportsInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -2910,27 +2904,33 @@ export type UserUncheckedUpdateWithoutDiseaseReportsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUncheckedUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUncheckedUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUncheckedUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutEquipmentsInput = {
@@ -2943,12 +2943,6 @@ export type UserCreateWithoutEquipmentsInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -2962,27 +2956,33 @@ export type UserCreateWithoutEquipmentsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutEquipmentsInput = {
@@ -2995,12 +2995,6 @@ export type UserUncheckedCreateWithoutEquipmentsInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -3014,27 +3008,33 @@ export type UserUncheckedCreateWithoutEquipmentsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogUncheckedCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatUncheckedCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatUncheckedCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutEquipmentsInput = {
@@ -3063,12 +3063,6 @@ export type UserUpdateWithoutEquipmentsInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -3082,27 +3076,33 @@ export type UserUpdateWithoutEquipmentsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutEquipmentsInput = {
@@ -3115,12 +3115,6 @@ export type UserUncheckedUpdateWithoutEquipmentsInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -3134,27 +3128,33 @@ export type UserUncheckedUpdateWithoutEquipmentsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUncheckedUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUncheckedUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUncheckedUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutOrdersInput = {
@@ -3167,12 +3167,6 @@ export type UserCreateWithoutOrdersInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -3186,27 +3180,33 @@ export type UserCreateWithoutOrdersInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
-  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutOrdersInput = {
@@ -3219,12 +3219,6 @@ export type UserUncheckedCreateWithoutOrdersInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -3238,27 +3232,33 @@ export type UserUncheckedCreateWithoutOrdersInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
-  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogUncheckedCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatUncheckedCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatUncheckedCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutOrdersInput = {
@@ -3276,12 +3276,6 @@ export type UserCreateWithoutSuppliedOrdersInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -3295,27 +3289,33 @@ export type UserCreateWithoutSuppliedOrdersInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
-  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutSuppliedOrdersInput = {
@@ -3328,12 +3328,6 @@ export type UserUncheckedCreateWithoutSuppliedOrdersInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -3347,27 +3341,33 @@ export type UserUncheckedCreateWithoutSuppliedOrdersInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
-  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogUncheckedCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatUncheckedCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatUncheckedCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutSuppliedOrdersInput = {
@@ -3396,12 +3396,6 @@ export type UserUpdateWithoutOrdersInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -3415,27 +3409,33 @@ export type UserUpdateWithoutOrdersInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
-  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutOrdersInput = {
@@ -3448,12 +3448,6 @@ export type UserUncheckedUpdateWithoutOrdersInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -3467,27 +3461,33 @@ export type UserUncheckedUpdateWithoutOrdersInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
-  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUncheckedUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUncheckedUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUncheckedUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserUpsertWithoutSuppliedOrdersInput = {
@@ -3511,12 +3511,6 @@ export type UserUpdateWithoutSuppliedOrdersInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -3530,27 +3524,33 @@ export type UserUpdateWithoutSuppliedOrdersInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
-  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutSuppliedOrdersInput = {
@@ -3563,12 +3563,6 @@ export type UserUncheckedUpdateWithoutSuppliedOrdersInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -3582,27 +3576,33 @@ export type UserUncheckedUpdateWithoutSuppliedOrdersInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
-  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUncheckedUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUncheckedUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUncheckedUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutTransactionsInput = {
@@ -3615,12 +3615,6 @@ export type UserCreateWithoutTransactionsInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -3634,27 +3628,33 @@ export type UserCreateWithoutTransactionsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
-  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutTransactionsInput = {
@@ -3667,12 +3667,6 @@ export type UserUncheckedCreateWithoutTransactionsInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -3686,27 +3680,33 @@ export type UserUncheckedCreateWithoutTransactionsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogUncheckedCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatUncheckedCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatUncheckedCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutTransactionsInput = {
@@ -3735,12 +3735,6 @@ export type UserUpdateWithoutTransactionsInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -3754,27 +3748,33 @@ export type UserUpdateWithoutTransactionsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutTransactionsInput = {
@@ -3787,12 +3787,6 @@ export type UserUncheckedUpdateWithoutTransactionsInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -3806,27 +3800,33 @@ export type UserUncheckedUpdateWithoutTransactionsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUncheckedUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUncheckedUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUncheckedUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutMarketplaceListingsInput = {
@@ -3839,12 +3839,6 @@ export type UserCreateWithoutMarketplaceListingsInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -3858,27 +3852,33 @@ export type UserCreateWithoutMarketplaceListingsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
+  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutMarketplaceListingsInput = {
@@ -3891,12 +3891,6 @@ export type UserUncheckedCreateWithoutMarketplaceListingsInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -3910,27 +3904,33 @@ export type UserUncheckedCreateWithoutMarketplaceListingsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogUncheckedCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatUncheckedCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatUncheckedCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
+  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutMarketplaceListingsInput = {
@@ -3959,12 +3959,6 @@ export type UserUpdateWithoutMarketplaceListingsInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -3978,27 +3972,33 @@ export type UserUpdateWithoutMarketplaceListingsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
+  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutMarketplaceListingsInput = {
@@ -4011,12 +4011,6 @@ export type UserUncheckedUpdateWithoutMarketplaceListingsInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -4030,27 +4024,33 @@ export type UserUncheckedUpdateWithoutMarketplaceListingsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUncheckedUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUncheckedUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUncheckedUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
+  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutLoansInput = {
@@ -4063,12 +4063,6 @@ export type UserCreateWithoutLoansInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -4082,27 +4076,33 @@ export type UserCreateWithoutLoansInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
-  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
+  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutLoansInput = {
@@ -4115,12 +4115,6 @@ export type UserUncheckedCreateWithoutLoansInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -4134,27 +4128,33 @@ export type UserUncheckedCreateWithoutLoansInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
-  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogUncheckedCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatUncheckedCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatUncheckedCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutLoansInput = {
@@ -4183,12 +4183,6 @@ export type UserUpdateWithoutLoansInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -4202,27 +4196,33 @@ export type UserUpdateWithoutLoansInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
-  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutLoansInput = {
@@ -4235,12 +4235,6 @@ export type UserUncheckedUpdateWithoutLoansInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -4254,27 +4248,33 @@ export type UserUncheckedUpdateWithoutLoansInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
-  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUncheckedUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUncheckedUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUncheckedUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutSubsidiesInput = {
@@ -4287,12 +4287,6 @@ export type UserCreateWithoutSubsidiesInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -4306,27 +4300,33 @@ export type UserCreateWithoutSubsidiesInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutSubsidiesInput = {
@@ -4339,12 +4339,6 @@ export type UserUncheckedCreateWithoutSubsidiesInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -4358,27 +4352,33 @@ export type UserUncheckedCreateWithoutSubsidiesInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogUncheckedCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatUncheckedCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatUncheckedCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutSubsidiesInput = {
@@ -4407,12 +4407,6 @@ export type UserUpdateWithoutSubsidiesInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -4426,27 +4420,33 @@ export type UserUpdateWithoutSubsidiesInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutSubsidiesInput = {
@@ -4459,12 +4459,6 @@ export type UserUncheckedUpdateWithoutSubsidiesInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -4478,27 +4472,33 @@ export type UserUncheckedUpdateWithoutSubsidiesInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUncheckedUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUncheckedUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUncheckedUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutAiRecommendationsInput = {
@@ -4511,12 +4511,6 @@ export type UserCreateWithoutAiRecommendationsInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -4530,27 +4524,33 @@ export type UserCreateWithoutAiRecommendationsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutAiRecommendationsInput = {
@@ -4563,12 +4563,6 @@ export type UserUncheckedCreateWithoutAiRecommendationsInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -4582,27 +4576,33 @@ export type UserUncheckedCreateWithoutAiRecommendationsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogUncheckedCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatUncheckedCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatUncheckedCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutAiRecommendationsInput = {
@@ -4631,12 +4631,6 @@ export type UserUpdateWithoutAiRecommendationsInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -4650,27 +4644,33 @@ export type UserUpdateWithoutAiRecommendationsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAiRecommendationsInput = {
@@ -4683,12 +4683,6 @@ export type UserUncheckedUpdateWithoutAiRecommendationsInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -4702,27 +4696,33 @@ export type UserUncheckedUpdateWithoutAiRecommendationsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUncheckedUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUncheckedUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUncheckedUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutNotificationsInput = {
@@ -4735,12 +4735,6 @@ export type UserCreateWithoutNotificationsInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -4754,27 +4748,33 @@ export type UserCreateWithoutNotificationsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
+  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutNotificationsInput = {
@@ -4787,12 +4787,6 @@ export type UserUncheckedCreateWithoutNotificationsInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -4806,27 +4800,33 @@ export type UserUncheckedCreateWithoutNotificationsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogUncheckedCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatUncheckedCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatUncheckedCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
+  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutNotificationsInput = {
@@ -4855,12 +4855,6 @@ export type UserUpdateWithoutNotificationsInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -4874,27 +4868,33 @@ export type UserUpdateWithoutNotificationsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
+  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutNotificationsInput = {
@@ -4907,12 +4907,6 @@ export type UserUncheckedUpdateWithoutNotificationsInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -4926,27 +4920,33 @@ export type UserUncheckedUpdateWithoutNotificationsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUncheckedUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUncheckedUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUncheckedUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
+  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutAuditLogsInput = {
@@ -4959,12 +4959,6 @@ export type UserCreateWithoutAuditLogsInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -4978,27 +4972,33 @@ export type UserCreateWithoutAuditLogsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
   chats?: Prisma.ChatCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutAuditLogsInput = {
@@ -5011,12 +5011,6 @@ export type UserUncheckedCreateWithoutAuditLogsInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -5030,27 +5024,33 @@ export type UserUncheckedCreateWithoutAuditLogsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogUncheckedCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
   chats?: Prisma.ChatUncheckedCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatUncheckedCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutAuditLogsInput = {
@@ -5079,12 +5079,6 @@ export type UserUpdateWithoutAuditLogsInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -5098,27 +5092,33 @@ export type UserUpdateWithoutAuditLogsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
   chats?: Prisma.ChatUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutAuditLogsInput = {
@@ -5131,12 +5131,6 @@ export type UserUncheckedUpdateWithoutAuditLogsInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -5150,27 +5144,33 @@ export type UserUncheckedUpdateWithoutAuditLogsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUncheckedUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
   chats?: Prisma.ChatUncheckedUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUncheckedUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutActivityLogsInput = {
@@ -5183,12 +5183,6 @@ export type UserCreateWithoutActivityLogsInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -5202,27 +5196,33 @@ export type UserCreateWithoutActivityLogsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
+  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
   auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
-  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
   chats?: Prisma.ChatCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutActivityLogsInput = {
@@ -5235,12 +5235,6 @@ export type UserUncheckedCreateWithoutActivityLogsInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -5254,27 +5248,33 @@ export type UserUncheckedCreateWithoutActivityLogsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
+  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
   auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
-  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
   chats?: Prisma.ChatUncheckedCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatUncheckedCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutActivityLogsInput = {
@@ -5303,12 +5303,6 @@ export type UserUpdateWithoutActivityLogsInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -5322,27 +5316,33 @@ export type UserUpdateWithoutActivityLogsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
   auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
-  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
   chats?: Prisma.ChatUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutActivityLogsInput = {
@@ -5355,12 +5355,6 @@ export type UserUncheckedUpdateWithoutActivityLogsInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -5374,27 +5368,33 @@ export type UserUncheckedUpdateWithoutActivityLogsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
   auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
-  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
   chats?: Prisma.ChatUncheckedUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUncheckedUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutReviewsInput = {
@@ -5407,12 +5407,6 @@ export type UserCreateWithoutReviewsInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -5426,27 +5420,33 @@ export type UserCreateWithoutReviewsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutReviewsInput = {
@@ -5459,12 +5459,6 @@ export type UserUncheckedCreateWithoutReviewsInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -5478,27 +5472,33 @@ export type UserUncheckedCreateWithoutReviewsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogUncheckedCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatUncheckedCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatUncheckedCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutReviewsInput = {
@@ -5527,12 +5527,6 @@ export type UserUpdateWithoutReviewsInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -5546,27 +5540,33 @@ export type UserUpdateWithoutReviewsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutReviewsInput = {
@@ -5579,12 +5579,6 @@ export type UserUncheckedUpdateWithoutReviewsInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -5598,27 +5592,33 @@ export type UserUncheckedUpdateWithoutReviewsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUncheckedUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUncheckedUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUncheckedUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutChatsInput = {
@@ -5631,12 +5631,6 @@ export type UserCreateWithoutChatsInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -5650,27 +5644,33 @@ export type UserCreateWithoutChatsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
+  activityLogs?: Prisma.ActivityLogCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  chats2?: Prisma.ChatCreateNestedManyWithoutUser2Input
   diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
+  emailVerifTokens?: Prisma.EmailVerificationTokenCreateNestedManyWithoutUserInput
   equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
   orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
   suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
-  activityLogs?: Prisma.ActivityLogCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
-  chats2?: Prisma.ChatCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
   passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
-  emailVerifTokens?: Prisma.EmailVerificationTokenCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutChatsInput = {
@@ -5683,12 +5683,6 @@ export type UserUncheckedCreateWithoutChatsInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -5702,27 +5696,33 @@ export type UserUncheckedCreateWithoutChatsInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
+  activityLogs?: Prisma.ActivityLogUncheckedCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  chats2?: Prisma.ChatUncheckedCreateNestedManyWithoutUser2Input
   diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
+  emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedCreateNestedManyWithoutUserInput
   equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
   orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
   suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
-  activityLogs?: Prisma.ActivityLogUncheckedCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
-  chats2?: Prisma.ChatUncheckedCreateNestedManyWithoutUser2Input
-  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
   passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
-  emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutChatsInput = {
@@ -5740,12 +5740,6 @@ export type UserCreateWithoutChats2Input = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -5759,27 +5753,33 @@ export type UserCreateWithoutChats2Input = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
+  activityLogs?: Prisma.ActivityLogCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  chats?: Prisma.ChatCreateNestedManyWithoutUser1Input
   diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
+  emailVerifTokens?: Prisma.EmailVerificationTokenCreateNestedManyWithoutUserInput
   equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
   orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
   suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
-  activityLogs?: Prisma.ActivityLogCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
-  chats?: Prisma.ChatCreateNestedManyWithoutUser1Input
-  messages?: Prisma.MessageCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
   passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
-  emailVerifTokens?: Prisma.EmailVerificationTokenCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutChats2Input = {
@@ -5792,12 +5792,6 @@ export type UserUncheckedCreateWithoutChats2Input = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -5811,27 +5805,33 @@ export type UserUncheckedCreateWithoutChats2Input = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
+  activityLogs?: Prisma.ActivityLogUncheckedCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  chats?: Prisma.ChatUncheckedCreateNestedManyWithoutUser1Input
   diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
+  emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedCreateNestedManyWithoutUserInput
   equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
+  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
   orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
   suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
-  activityLogs?: Prisma.ActivityLogUncheckedCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
-  chats?: Prisma.ChatUncheckedCreateNestedManyWithoutUser1Input
-  messages?: Prisma.MessageUncheckedCreateNestedManyWithoutSenderInput
-  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
   passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
-  emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutChats2Input = {
@@ -5860,12 +5860,6 @@ export type UserUpdateWithoutChatsInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -5879,27 +5873,33 @@ export type UserUpdateWithoutChatsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  activityLogs?: Prisma.ActivityLogUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  chats2?: Prisma.ChatUpdateManyWithoutUser2NestedInput
   diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
+  emailVerifTokens?: Prisma.EmailVerificationTokenUpdateManyWithoutUserNestedInput
   equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
   orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
   suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
-  activityLogs?: Prisma.ActivityLogUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
-  chats2?: Prisma.ChatUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
   passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
-  emailVerifTokens?: Prisma.EmailVerificationTokenUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutChatsInput = {
@@ -5912,12 +5912,6 @@ export type UserUncheckedUpdateWithoutChatsInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -5931,27 +5925,33 @@ export type UserUncheckedUpdateWithoutChatsInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  activityLogs?: Prisma.ActivityLogUncheckedUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  chats2?: Prisma.ChatUncheckedUpdateManyWithoutUser2NestedInput
   diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
+  emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedUpdateManyWithoutUserNestedInput
   equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
   orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
   suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
-  activityLogs?: Prisma.ActivityLogUncheckedUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
-  chats2?: Prisma.ChatUncheckedUpdateManyWithoutUser2NestedInput
-  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
   passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
-  emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserUpsertWithoutChats2Input = {
@@ -5975,12 +5975,6 @@ export type UserUpdateWithoutChats2Input = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -5994,27 +5988,33 @@ export type UserUpdateWithoutChats2Input = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  activityLogs?: Prisma.ActivityLogUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  chats?: Prisma.ChatUpdateManyWithoutUser1NestedInput
   diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
+  emailVerifTokens?: Prisma.EmailVerificationTokenUpdateManyWithoutUserNestedInput
   equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
   orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
   suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
-  activityLogs?: Prisma.ActivityLogUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
-  chats?: Prisma.ChatUpdateManyWithoutUser1NestedInput
-  messages?: Prisma.MessageUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
   passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
-  emailVerifTokens?: Prisma.EmailVerificationTokenUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutChats2Input = {
@@ -6027,12 +6027,6 @@ export type UserUncheckedUpdateWithoutChats2Input = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -6046,27 +6040,33 @@ export type UserUncheckedUpdateWithoutChats2Input = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  activityLogs?: Prisma.ActivityLogUncheckedUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  chats?: Prisma.ChatUncheckedUpdateManyWithoutUser1NestedInput
   diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
+  emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedUpdateManyWithoutUserNestedInput
   equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
+  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
   orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
   suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
-  activityLogs?: Prisma.ActivityLogUncheckedUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
-  chats?: Prisma.ChatUncheckedUpdateManyWithoutUser1NestedInput
-  messages?: Prisma.MessageUncheckedUpdateManyWithoutSenderNestedInput
-  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
   passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
-  emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutMessagesInput = {
@@ -6079,12 +6079,6 @@ export type UserCreateWithoutMessagesInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -6098,27 +6092,33 @@ export type UserCreateWithoutMessagesInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatCreateNestedManyWithoutUser2Input
-  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingCreateNestedManyWithoutSellerInput
+  notifications?: Prisma.NotificationCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutMessagesInput = {
@@ -6131,12 +6131,6 @@ export type UserUncheckedCreateWithoutMessagesInput = {
   role?: $Enums.Role
   status?: $Enums.AccountStatus
   avatarUrl?: string | null
-  bio?: string | null
-  address?: string | null
-  city?: string | null
-  state?: string | null
-  country?: string | null
-  pincode?: string | null
   failedLoginAttempts?: number
   lockedUntil?: Date | string | null
   emailVerified?: boolean
@@ -6150,27 +6144,33 @@ export type UserUncheckedCreateWithoutMessagesInput = {
   deletedAt?: Date | string | null
   createdAt?: Date | string
   updatedAt?: Date | string
-  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
-  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
-  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
-  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
-  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
-  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
-  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
-  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
-  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
-  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
+  address?: string | null
+  bio?: string | null
+  city?: string | null
+  country?: string | null
+  pincode?: string | null
+  state?: string | null
   activityLogs?: Prisma.ActivityLogUncheckedCreateNestedManyWithoutUserInput
-  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
+  auditLogs?: Prisma.AuditLogUncheckedCreateNestedManyWithoutActorInput
   chats?: Prisma.ChatUncheckedCreateNestedManyWithoutUser1Input
   chats2?: Prisma.ChatUncheckedCreateNestedManyWithoutUser2Input
-  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedCreateNestedManyWithoutUserInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedCreateNestedManyWithoutUserInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedCreateNestedManyWithoutUserInput
+  equipments?: Prisma.EquipmentUncheckedCreateNestedManyWithoutUserInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedCreateNestedManyWithoutUserInput
+  farms?: Prisma.FarmUncheckedCreateNestedManyWithoutOwnerInput
+  loans?: Prisma.LoanUncheckedCreateNestedManyWithoutUserInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedCreateNestedManyWithoutSellerInput
+  notifications?: Prisma.NotificationUncheckedCreateNestedManyWithoutUserInput
+  orders?: Prisma.OrderUncheckedCreateNestedManyWithoutBuyerInput
+  suppliedOrders?: Prisma.OrderUncheckedCreateNestedManyWithoutSupplierInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedCreateNestedManyWithoutUserInput
+  reviews?: Prisma.ReviewUncheckedCreateNestedManyWithoutUserInput
+  sessions?: Prisma.SessionUncheckedCreateNestedManyWithoutUserInput
+  soilReports?: Prisma.SoilReportUncheckedCreateNestedManyWithoutUserInput
+  subsidies?: Prisma.SubsidyUncheckedCreateNestedManyWithoutUserInput
+  transactions?: Prisma.TransactionUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutMessagesInput = {
@@ -6199,12 +6199,6 @@ export type UserUpdateWithoutMessagesInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -6218,27 +6212,33 @@ export type UserUpdateWithoutMessagesInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUpdateManyWithoutUser2NestedInput
-  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUpdateManyWithoutSellerNestedInput
+  notifications?: Prisma.NotificationUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutMessagesInput = {
@@ -6251,12 +6251,6 @@ export type UserUncheckedUpdateWithoutMessagesInput = {
   role?: Prisma.EnumRoleFieldUpdateOperationsInput | $Enums.Role
   status?: Prisma.EnumAccountStatusFieldUpdateOperationsInput | $Enums.AccountStatus
   avatarUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   failedLoginAttempts?: Prisma.IntFieldUpdateOperationsInput | number
   lockedUntil?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   emailVerified?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -6270,27 +6264,33 @@ export type UserUncheckedUpdateWithoutMessagesInput = {
   deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
-  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
-  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
-  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
-  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
-  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
-  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
-  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
-  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
-  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
-  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
+  address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  bio?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  pincode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  state?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   activityLogs?: Prisma.ActivityLogUncheckedUpdateManyWithoutUserNestedInput
-  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
+  auditLogs?: Prisma.AuditLogUncheckedUpdateManyWithoutActorNestedInput
   chats?: Prisma.ChatUncheckedUpdateManyWithoutUser1NestedInput
   chats2?: Prisma.ChatUncheckedUpdateManyWithoutUser2NestedInput
-  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
-  aiRecommendations?: Prisma.AiRecommendationUncheckedUpdateManyWithoutUserNestedInput
-  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
-  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
-  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  diseaseReports?: Prisma.DiseaseReportUncheckedUpdateManyWithoutUserNestedInput
   emailVerifTokens?: Prisma.EmailVerificationTokenUncheckedUpdateManyWithoutUserNestedInput
+  equipments?: Prisma.EquipmentUncheckedUpdateManyWithoutUserNestedInput
+  farmRegistrations?: Prisma.FarmRegistrationSessionUncheckedUpdateManyWithoutUserNestedInput
+  farms?: Prisma.FarmUncheckedUpdateManyWithoutOwnerNestedInput
+  loans?: Prisma.LoanUncheckedUpdateManyWithoutUserNestedInput
+  marketplaceListings?: Prisma.MarketplaceListingUncheckedUpdateManyWithoutSellerNestedInput
+  notifications?: Prisma.NotificationUncheckedUpdateManyWithoutUserNestedInput
+  orders?: Prisma.OrderUncheckedUpdateManyWithoutBuyerNestedInput
+  suppliedOrders?: Prisma.OrderUncheckedUpdateManyWithoutSupplierNestedInput
+  passwordResetTokens?: Prisma.PasswordResetTokenUncheckedUpdateManyWithoutUserNestedInput
+  reviews?: Prisma.ReviewUncheckedUpdateManyWithoutUserNestedInput
+  sessions?: Prisma.SessionUncheckedUpdateManyWithoutUserNestedInput
+  soilReports?: Prisma.SoilReportUncheckedUpdateManyWithoutUserNestedInput
+  subsidies?: Prisma.SubsidyUncheckedUpdateManyWithoutUserNestedInput
+  transactions?: Prisma.TransactionUncheckedUpdateManyWithoutUserNestedInput
 }
 
 
@@ -6299,53 +6299,53 @@ export type UserUncheckedUpdateWithoutMessagesInput = {
  */
 
 export type UserCountOutputType = {
-  sessions: number
-  farms: number
-  soilReports: number
-  diseaseReports: number
-  equipments: number
-  orders: number
-  suppliedOrders: number
-  loans: number
-  subsidies: number
-  notifications: number
-  auditLogs: number
   activityLogs: number
-  reviews: number
+  aiRecommendations: number
+  auditLogs: number
   chats: number
   chats2: number
-  messages: number
-  transactions: number
-  aiRecommendations: number
-  marketplaceListings: number
-  farmRegistrations: number
-  passwordResetTokens: number
+  diseaseReports: number
   emailVerifTokens: number
+  equipments: number
+  farmRegistrations: number
+  farms: number
+  loans: number
+  marketplaceListings: number
+  messages: number
+  notifications: number
+  orders: number
+  suppliedOrders: number
+  passwordResetTokens: number
+  reviews: number
+  sessions: number
+  soilReports: number
+  subsidies: number
+  transactions: number
 }
 
 export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  sessions?: boolean | UserCountOutputTypeCountSessionsArgs
-  farms?: boolean | UserCountOutputTypeCountFarmsArgs
-  soilReports?: boolean | UserCountOutputTypeCountSoilReportsArgs
-  diseaseReports?: boolean | UserCountOutputTypeCountDiseaseReportsArgs
-  equipments?: boolean | UserCountOutputTypeCountEquipmentsArgs
-  orders?: boolean | UserCountOutputTypeCountOrdersArgs
-  suppliedOrders?: boolean | UserCountOutputTypeCountSuppliedOrdersArgs
-  loans?: boolean | UserCountOutputTypeCountLoansArgs
-  subsidies?: boolean | UserCountOutputTypeCountSubsidiesArgs
-  notifications?: boolean | UserCountOutputTypeCountNotificationsArgs
-  auditLogs?: boolean | UserCountOutputTypeCountAuditLogsArgs
   activityLogs?: boolean | UserCountOutputTypeCountActivityLogsArgs
-  reviews?: boolean | UserCountOutputTypeCountReviewsArgs
+  aiRecommendations?: boolean | UserCountOutputTypeCountAiRecommendationsArgs
+  auditLogs?: boolean | UserCountOutputTypeCountAuditLogsArgs
   chats?: boolean | UserCountOutputTypeCountChatsArgs
   chats2?: boolean | UserCountOutputTypeCountChats2Args
-  messages?: boolean | UserCountOutputTypeCountMessagesArgs
-  transactions?: boolean | UserCountOutputTypeCountTransactionsArgs
-  aiRecommendations?: boolean | UserCountOutputTypeCountAiRecommendationsArgs
-  marketplaceListings?: boolean | UserCountOutputTypeCountMarketplaceListingsArgs
-  farmRegistrations?: boolean | UserCountOutputTypeCountFarmRegistrationsArgs
-  passwordResetTokens?: boolean | UserCountOutputTypeCountPasswordResetTokensArgs
+  diseaseReports?: boolean | UserCountOutputTypeCountDiseaseReportsArgs
   emailVerifTokens?: boolean | UserCountOutputTypeCountEmailVerifTokensArgs
+  equipments?: boolean | UserCountOutputTypeCountEquipmentsArgs
+  farmRegistrations?: boolean | UserCountOutputTypeCountFarmRegistrationsArgs
+  farms?: boolean | UserCountOutputTypeCountFarmsArgs
+  loans?: boolean | UserCountOutputTypeCountLoansArgs
+  marketplaceListings?: boolean | UserCountOutputTypeCountMarketplaceListingsArgs
+  messages?: boolean | UserCountOutputTypeCountMessagesArgs
+  notifications?: boolean | UserCountOutputTypeCountNotificationsArgs
+  orders?: boolean | UserCountOutputTypeCountOrdersArgs
+  suppliedOrders?: boolean | UserCountOutputTypeCountSuppliedOrdersArgs
+  passwordResetTokens?: boolean | UserCountOutputTypeCountPasswordResetTokensArgs
+  reviews?: boolean | UserCountOutputTypeCountReviewsArgs
+  sessions?: boolean | UserCountOutputTypeCountSessionsArgs
+  soilReports?: boolean | UserCountOutputTypeCountSoilReportsArgs
+  subsidies?: boolean | UserCountOutputTypeCountSubsidiesArgs
+  transactions?: boolean | UserCountOutputTypeCountTransactionsArgs
 }
 
 /**
@@ -6361,83 +6361,6 @@ export type UserCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensi
 /**
  * UserCountOutputType without action
  */
-export type UserCountOutputTypeCountSessionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.SessionWhereInput
-}
-
-/**
- * UserCountOutputType without action
- */
-export type UserCountOutputTypeCountFarmsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.FarmWhereInput
-}
-
-/**
- * UserCountOutputType without action
- */
-export type UserCountOutputTypeCountSoilReportsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.SoilReportWhereInput
-}
-
-/**
- * UserCountOutputType without action
- */
-export type UserCountOutputTypeCountDiseaseReportsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.DiseaseReportWhereInput
-}
-
-/**
- * UserCountOutputType without action
- */
-export type UserCountOutputTypeCountEquipmentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.EquipmentWhereInput
-}
-
-/**
- * UserCountOutputType without action
- */
-export type UserCountOutputTypeCountOrdersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.OrderWhereInput
-}
-
-/**
- * UserCountOutputType without action
- */
-export type UserCountOutputTypeCountSuppliedOrdersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.OrderWhereInput
-}
-
-/**
- * UserCountOutputType without action
- */
-export type UserCountOutputTypeCountLoansArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.LoanWhereInput
-}
-
-/**
- * UserCountOutputType without action
- */
-export type UserCountOutputTypeCountSubsidiesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.SubsidyWhereInput
-}
-
-/**
- * UserCountOutputType without action
- */
-export type UserCountOutputTypeCountNotificationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.NotificationWhereInput
-}
-
-/**
- * UserCountOutputType without action
- */
-export type UserCountOutputTypeCountAuditLogsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.AuditLogWhereInput
-}
-
-/**
- * UserCountOutputType without action
- */
 export type UserCountOutputTypeCountActivityLogsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   where?: Prisma.ActivityLogWhereInput
 }
@@ -6445,8 +6368,15 @@ export type UserCountOutputTypeCountActivityLogsArgs<ExtArgs extends runtime.Typ
 /**
  * UserCountOutputType without action
  */
-export type UserCountOutputTypeCountReviewsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ReviewWhereInput
+export type UserCountOutputTypeCountAiRecommendationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.AiRecommendationWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountAuditLogsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.AuditLogWhereInput
 }
 
 /**
@@ -6466,29 +6396,22 @@ export type UserCountOutputTypeCountChats2Args<ExtArgs extends runtime.Types.Ext
 /**
  * UserCountOutputType without action
  */
-export type UserCountOutputTypeCountMessagesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.MessageWhereInput
+export type UserCountOutputTypeCountDiseaseReportsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.DiseaseReportWhereInput
 }
 
 /**
  * UserCountOutputType without action
  */
-export type UserCountOutputTypeCountTransactionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.TransactionWhereInput
+export type UserCountOutputTypeCountEmailVerifTokensArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.EmailVerificationTokenWhereInput
 }
 
 /**
  * UserCountOutputType without action
  */
-export type UserCountOutputTypeCountAiRecommendationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.AiRecommendationWhereInput
-}
-
-/**
- * UserCountOutputType without action
- */
-export type UserCountOutputTypeCountMarketplaceListingsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.MarketplaceListingWhereInput
+export type UserCountOutputTypeCountEquipmentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.EquipmentWhereInput
 }
 
 /**
@@ -6501,6 +6424,55 @@ export type UserCountOutputTypeCountFarmRegistrationsArgs<ExtArgs extends runtim
 /**
  * UserCountOutputType without action
  */
+export type UserCountOutputTypeCountFarmsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.FarmWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountLoansArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.LoanWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountMarketplaceListingsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.MarketplaceListingWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountMessagesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.MessageWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountNotificationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.NotificationWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountOrdersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.OrderWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountSuppliedOrdersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.OrderWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
 export type UserCountOutputTypeCountPasswordResetTokensArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   where?: Prisma.PasswordResetTokenWhereInput
 }
@@ -6508,8 +6480,36 @@ export type UserCountOutputTypeCountPasswordResetTokensArgs<ExtArgs extends runt
 /**
  * UserCountOutputType without action
  */
-export type UserCountOutputTypeCountEmailVerifTokensArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.EmailVerificationTokenWhereInput
+export type UserCountOutputTypeCountReviewsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ReviewWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountSessionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.SessionWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountSoilReportsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.SoilReportWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountSubsidiesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.SubsidyWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountTransactionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.TransactionWhereInput
 }
 
 
@@ -6523,12 +6523,6 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   role?: boolean
   status?: boolean
   avatarUrl?: boolean
-  bio?: boolean
-  address?: boolean
-  city?: boolean
-  state?: boolean
-  country?: boolean
-  pincode?: boolean
   failedLoginAttempts?: boolean
   lockedUntil?: boolean
   emailVerified?: boolean
@@ -6542,28 +6536,34 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   deletedAt?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  sessions?: boolean | Prisma.User$sessionsArgs<ExtArgs>
-  farms?: boolean | Prisma.User$farmsArgs<ExtArgs>
-  soilReports?: boolean | Prisma.User$soilReportsArgs<ExtArgs>
-  diseaseReports?: boolean | Prisma.User$diseaseReportsArgs<ExtArgs>
-  equipments?: boolean | Prisma.User$equipmentsArgs<ExtArgs>
-  orders?: boolean | Prisma.User$ordersArgs<ExtArgs>
-  suppliedOrders?: boolean | Prisma.User$suppliedOrdersArgs<ExtArgs>
-  loans?: boolean | Prisma.User$loansArgs<ExtArgs>
-  subsidies?: boolean | Prisma.User$subsidiesArgs<ExtArgs>
-  notifications?: boolean | Prisma.User$notificationsArgs<ExtArgs>
-  auditLogs?: boolean | Prisma.User$auditLogsArgs<ExtArgs>
+  address?: boolean
+  bio?: boolean
+  city?: boolean
+  country?: boolean
+  pincode?: boolean
+  state?: boolean
   activityLogs?: boolean | Prisma.User$activityLogsArgs<ExtArgs>
-  reviews?: boolean | Prisma.User$reviewsArgs<ExtArgs>
+  aiRecommendations?: boolean | Prisma.User$aiRecommendationsArgs<ExtArgs>
+  auditLogs?: boolean | Prisma.User$auditLogsArgs<ExtArgs>
   chats?: boolean | Prisma.User$chatsArgs<ExtArgs>
   chats2?: boolean | Prisma.User$chats2Args<ExtArgs>
-  messages?: boolean | Prisma.User$messagesArgs<ExtArgs>
-  transactions?: boolean | Prisma.User$transactionsArgs<ExtArgs>
-  aiRecommendations?: boolean | Prisma.User$aiRecommendationsArgs<ExtArgs>
-  marketplaceListings?: boolean | Prisma.User$marketplaceListingsArgs<ExtArgs>
-  farmRegistrations?: boolean | Prisma.User$farmRegistrationsArgs<ExtArgs>
-  passwordResetTokens?: boolean | Prisma.User$passwordResetTokensArgs<ExtArgs>
+  diseaseReports?: boolean | Prisma.User$diseaseReportsArgs<ExtArgs>
   emailVerifTokens?: boolean | Prisma.User$emailVerifTokensArgs<ExtArgs>
+  equipments?: boolean | Prisma.User$equipmentsArgs<ExtArgs>
+  farmRegistrations?: boolean | Prisma.User$farmRegistrationsArgs<ExtArgs>
+  farms?: boolean | Prisma.User$farmsArgs<ExtArgs>
+  loans?: boolean | Prisma.User$loansArgs<ExtArgs>
+  marketplaceListings?: boolean | Prisma.User$marketplaceListingsArgs<ExtArgs>
+  messages?: boolean | Prisma.User$messagesArgs<ExtArgs>
+  notifications?: boolean | Prisma.User$notificationsArgs<ExtArgs>
+  orders?: boolean | Prisma.User$ordersArgs<ExtArgs>
+  suppliedOrders?: boolean | Prisma.User$suppliedOrdersArgs<ExtArgs>
+  passwordResetTokens?: boolean | Prisma.User$passwordResetTokensArgs<ExtArgs>
+  reviews?: boolean | Prisma.User$reviewsArgs<ExtArgs>
+  sessions?: boolean | Prisma.User$sessionsArgs<ExtArgs>
+  soilReports?: boolean | Prisma.User$soilReportsArgs<ExtArgs>
+  subsidies?: boolean | Prisma.User$subsidiesArgs<ExtArgs>
+  transactions?: boolean | Prisma.User$transactionsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -6577,12 +6577,6 @@ export type UserSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   role?: boolean
   status?: boolean
   avatarUrl?: boolean
-  bio?: boolean
-  address?: boolean
-  city?: boolean
-  state?: boolean
-  country?: boolean
-  pincode?: boolean
   failedLoginAttempts?: boolean
   lockedUntil?: boolean
   emailVerified?: boolean
@@ -6596,6 +6590,12 @@ export type UserSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   deletedAt?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  address?: boolean
+  bio?: boolean
+  city?: boolean
+  country?: boolean
+  pincode?: boolean
+  state?: boolean
 }, ExtArgs["result"]["user"]>
 
 export type UserSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -6608,12 +6608,6 @@ export type UserSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   role?: boolean
   status?: boolean
   avatarUrl?: boolean
-  bio?: boolean
-  address?: boolean
-  city?: boolean
-  state?: boolean
-  country?: boolean
-  pincode?: boolean
   failedLoginAttempts?: boolean
   lockedUntil?: boolean
   emailVerified?: boolean
@@ -6627,6 +6621,12 @@ export type UserSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensio
   deletedAt?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  address?: boolean
+  bio?: boolean
+  city?: boolean
+  country?: boolean
+  pincode?: boolean
+  state?: boolean
 }, ExtArgs["result"]["user"]>
 
 export type UserSelectScalar = {
@@ -6639,12 +6639,6 @@ export type UserSelectScalar = {
   role?: boolean
   status?: boolean
   avatarUrl?: boolean
-  bio?: boolean
-  address?: boolean
-  city?: boolean
-  state?: boolean
-  country?: boolean
-  pincode?: boolean
   failedLoginAttempts?: boolean
   lockedUntil?: boolean
   emailVerified?: boolean
@@ -6658,32 +6652,38 @@ export type UserSelectScalar = {
   deletedAt?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  address?: boolean
+  bio?: boolean
+  city?: boolean
+  country?: boolean
+  pincode?: boolean
+  state?: boolean
 }
 
-export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "email" | "phone" | "passwordHash" | "firstName" | "lastName" | "role" | "status" | "avatarUrl" | "bio" | "address" | "city" | "state" | "country" | "pincode" | "failedLoginAttempts" | "lockedUntil" | "emailVerified" | "emailVerifiedAt" | "lastLoginAt" | "lastLoginIp" | "twoFactorEnabled" | "twoFactorSecret" | "refreshTokenHash" | "passwordChangedAt" | "deletedAt" | "createdAt" | "updatedAt", ExtArgs["result"]["user"]>
+export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "email" | "phone" | "passwordHash" | "firstName" | "lastName" | "role" | "status" | "avatarUrl" | "failedLoginAttempts" | "lockedUntil" | "emailVerified" | "emailVerifiedAt" | "lastLoginAt" | "lastLoginIp" | "twoFactorEnabled" | "twoFactorSecret" | "refreshTokenHash" | "passwordChangedAt" | "deletedAt" | "createdAt" | "updatedAt" | "address" | "bio" | "city" | "country" | "pincode" | "state", ExtArgs["result"]["user"]>
 export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  sessions?: boolean | Prisma.User$sessionsArgs<ExtArgs>
-  farms?: boolean | Prisma.User$farmsArgs<ExtArgs>
-  soilReports?: boolean | Prisma.User$soilReportsArgs<ExtArgs>
-  diseaseReports?: boolean | Prisma.User$diseaseReportsArgs<ExtArgs>
-  equipments?: boolean | Prisma.User$equipmentsArgs<ExtArgs>
-  orders?: boolean | Prisma.User$ordersArgs<ExtArgs>
-  suppliedOrders?: boolean | Prisma.User$suppliedOrdersArgs<ExtArgs>
-  loans?: boolean | Prisma.User$loansArgs<ExtArgs>
-  subsidies?: boolean | Prisma.User$subsidiesArgs<ExtArgs>
-  notifications?: boolean | Prisma.User$notificationsArgs<ExtArgs>
-  auditLogs?: boolean | Prisma.User$auditLogsArgs<ExtArgs>
   activityLogs?: boolean | Prisma.User$activityLogsArgs<ExtArgs>
-  reviews?: boolean | Prisma.User$reviewsArgs<ExtArgs>
+  aiRecommendations?: boolean | Prisma.User$aiRecommendationsArgs<ExtArgs>
+  auditLogs?: boolean | Prisma.User$auditLogsArgs<ExtArgs>
   chats?: boolean | Prisma.User$chatsArgs<ExtArgs>
   chats2?: boolean | Prisma.User$chats2Args<ExtArgs>
-  messages?: boolean | Prisma.User$messagesArgs<ExtArgs>
-  transactions?: boolean | Prisma.User$transactionsArgs<ExtArgs>
-  aiRecommendations?: boolean | Prisma.User$aiRecommendationsArgs<ExtArgs>
-  marketplaceListings?: boolean | Prisma.User$marketplaceListingsArgs<ExtArgs>
-  farmRegistrations?: boolean | Prisma.User$farmRegistrationsArgs<ExtArgs>
-  passwordResetTokens?: boolean | Prisma.User$passwordResetTokensArgs<ExtArgs>
+  diseaseReports?: boolean | Prisma.User$diseaseReportsArgs<ExtArgs>
   emailVerifTokens?: boolean | Prisma.User$emailVerifTokensArgs<ExtArgs>
+  equipments?: boolean | Prisma.User$equipmentsArgs<ExtArgs>
+  farmRegistrations?: boolean | Prisma.User$farmRegistrationsArgs<ExtArgs>
+  farms?: boolean | Prisma.User$farmsArgs<ExtArgs>
+  loans?: boolean | Prisma.User$loansArgs<ExtArgs>
+  marketplaceListings?: boolean | Prisma.User$marketplaceListingsArgs<ExtArgs>
+  messages?: boolean | Prisma.User$messagesArgs<ExtArgs>
+  notifications?: boolean | Prisma.User$notificationsArgs<ExtArgs>
+  orders?: boolean | Prisma.User$ordersArgs<ExtArgs>
+  suppliedOrders?: boolean | Prisma.User$suppliedOrdersArgs<ExtArgs>
+  passwordResetTokens?: boolean | Prisma.User$passwordResetTokensArgs<ExtArgs>
+  reviews?: boolean | Prisma.User$reviewsArgs<ExtArgs>
+  sessions?: boolean | Prisma.User$sessionsArgs<ExtArgs>
+  soilReports?: boolean | Prisma.User$soilReportsArgs<ExtArgs>
+  subsidies?: boolean | Prisma.User$subsidiesArgs<ExtArgs>
+  transactions?: boolean | Prisma.User$transactionsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -6692,28 +6692,28 @@ export type UserIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
 export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "User"
   objects: {
-    sessions: Prisma.$SessionPayload<ExtArgs>[]
-    farms: Prisma.$FarmPayload<ExtArgs>[]
-    soilReports: Prisma.$SoilReportPayload<ExtArgs>[]
-    diseaseReports: Prisma.$DiseaseReportPayload<ExtArgs>[]
-    equipments: Prisma.$EquipmentPayload<ExtArgs>[]
-    orders: Prisma.$OrderPayload<ExtArgs>[]
-    suppliedOrders: Prisma.$OrderPayload<ExtArgs>[]
-    loans: Prisma.$LoanPayload<ExtArgs>[]
-    subsidies: Prisma.$SubsidyPayload<ExtArgs>[]
-    notifications: Prisma.$NotificationPayload<ExtArgs>[]
-    auditLogs: Prisma.$AuditLogPayload<ExtArgs>[]
     activityLogs: Prisma.$ActivityLogPayload<ExtArgs>[]
-    reviews: Prisma.$ReviewPayload<ExtArgs>[]
+    aiRecommendations: Prisma.$AiRecommendationPayload<ExtArgs>[]
+    auditLogs: Prisma.$AuditLogPayload<ExtArgs>[]
     chats: Prisma.$ChatPayload<ExtArgs>[]
     chats2: Prisma.$ChatPayload<ExtArgs>[]
-    messages: Prisma.$MessagePayload<ExtArgs>[]
-    transactions: Prisma.$TransactionPayload<ExtArgs>[]
-    aiRecommendations: Prisma.$AiRecommendationPayload<ExtArgs>[]
-    marketplaceListings: Prisma.$MarketplaceListingPayload<ExtArgs>[]
-    farmRegistrations: Prisma.$FarmRegistrationSessionPayload<ExtArgs>[]
-    passwordResetTokens: Prisma.$PasswordResetTokenPayload<ExtArgs>[]
+    diseaseReports: Prisma.$DiseaseReportPayload<ExtArgs>[]
     emailVerifTokens: Prisma.$EmailVerificationTokenPayload<ExtArgs>[]
+    equipments: Prisma.$EquipmentPayload<ExtArgs>[]
+    farmRegistrations: Prisma.$FarmRegistrationSessionPayload<ExtArgs>[]
+    farms: Prisma.$FarmPayload<ExtArgs>[]
+    loans: Prisma.$LoanPayload<ExtArgs>[]
+    marketplaceListings: Prisma.$MarketplaceListingPayload<ExtArgs>[]
+    messages: Prisma.$MessagePayload<ExtArgs>[]
+    notifications: Prisma.$NotificationPayload<ExtArgs>[]
+    orders: Prisma.$OrderPayload<ExtArgs>[]
+    suppliedOrders: Prisma.$OrderPayload<ExtArgs>[]
+    passwordResetTokens: Prisma.$PasswordResetTokenPayload<ExtArgs>[]
+    reviews: Prisma.$ReviewPayload<ExtArgs>[]
+    sessions: Prisma.$SessionPayload<ExtArgs>[]
+    soilReports: Prisma.$SoilReportPayload<ExtArgs>[]
+    subsidies: Prisma.$SubsidyPayload<ExtArgs>[]
+    transactions: Prisma.$TransactionPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -6725,12 +6725,6 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     role: $Enums.Role
     status: $Enums.AccountStatus
     avatarUrl: string | null
-    bio: string | null
-    address: string | null
-    city: string | null
-    state: string | null
-    country: string | null
-    pincode: string | null
     failedLoginAttempts: number
     lockedUntil: Date | null
     emailVerified: boolean
@@ -6744,6 +6738,12 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     deletedAt: Date | null
     createdAt: Date
     updatedAt: Date
+    address: string | null
+    bio: string | null
+    city: string | null
+    country: string | null
+    pincode: string | null
+    state: string | null
   }, ExtArgs["result"]["user"]>
   composites: {}
 }
@@ -7138,28 +7138,28 @@ readonly fields: UserFieldRefs;
  */
 export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  sessions<T extends Prisma.User$sessionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$sessionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SessionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  farms<T extends Prisma.User$farmsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$farmsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$FarmPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  soilReports<T extends Prisma.User$soilReportsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$soilReportsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SoilReportPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  diseaseReports<T extends Prisma.User$diseaseReportsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$diseaseReportsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$DiseaseReportPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  equipments<T extends Prisma.User$equipmentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$equipmentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EquipmentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  orders<T extends Prisma.User$ordersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$ordersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$OrderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  suppliedOrders<T extends Prisma.User$suppliedOrdersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$suppliedOrdersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$OrderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  loans<T extends Prisma.User$loansArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$loansArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LoanPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  subsidies<T extends Prisma.User$subsidiesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$subsidiesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SubsidyPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  notifications<T extends Prisma.User$notificationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$notificationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$NotificationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  auditLogs<T extends Prisma.User$auditLogsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$auditLogsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AuditLogPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   activityLogs<T extends Prisma.User$activityLogsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$activityLogsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ActivityLogPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  reviews<T extends Prisma.User$reviewsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$reviewsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ReviewPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  aiRecommendations<T extends Prisma.User$aiRecommendationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$aiRecommendationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AiRecommendationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  auditLogs<T extends Prisma.User$auditLogsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$auditLogsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AuditLogPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   chats<T extends Prisma.User$chatsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$chatsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ChatPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   chats2<T extends Prisma.User$chats2Args<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$chats2Args<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ChatPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  messages<T extends Prisma.User$messagesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$messagesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  transactions<T extends Prisma.User$transactionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$transactionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TransactionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  aiRecommendations<T extends Prisma.User$aiRecommendationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$aiRecommendationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AiRecommendationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  marketplaceListings<T extends Prisma.User$marketplaceListingsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$marketplaceListingsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MarketplaceListingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  farmRegistrations<T extends Prisma.User$farmRegistrationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$farmRegistrationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$FarmRegistrationSessionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  passwordResetTokens<T extends Prisma.User$passwordResetTokensArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$passwordResetTokensArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PasswordResetTokenPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  diseaseReports<T extends Prisma.User$diseaseReportsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$diseaseReportsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$DiseaseReportPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   emailVerifTokens<T extends Prisma.User$emailVerifTokensArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$emailVerifTokensArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EmailVerificationTokenPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  equipments<T extends Prisma.User$equipmentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$equipmentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$EquipmentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  farmRegistrations<T extends Prisma.User$farmRegistrationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$farmRegistrationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$FarmRegistrationSessionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  farms<T extends Prisma.User$farmsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$farmsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$FarmPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  loans<T extends Prisma.User$loansArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$loansArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LoanPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  marketplaceListings<T extends Prisma.User$marketplaceListingsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$marketplaceListingsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MarketplaceListingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  messages<T extends Prisma.User$messagesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$messagesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  notifications<T extends Prisma.User$notificationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$notificationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$NotificationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  orders<T extends Prisma.User$ordersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$ordersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$OrderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  suppliedOrders<T extends Prisma.User$suppliedOrdersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$suppliedOrdersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$OrderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  passwordResetTokens<T extends Prisma.User$passwordResetTokensArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$passwordResetTokensArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PasswordResetTokenPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  reviews<T extends Prisma.User$reviewsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$reviewsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ReviewPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  sessions<T extends Prisma.User$sessionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$sessionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SessionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  soilReports<T extends Prisma.User$soilReportsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$soilReportsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SoilReportPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  subsidies<T extends Prisma.User$subsidiesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$subsidiesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SubsidyPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  transactions<T extends Prisma.User$transactionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$transactionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TransactionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -7198,12 +7198,6 @@ export interface UserFieldRefs {
   readonly role: Prisma.FieldRef<"User", 'Role'>
   readonly status: Prisma.FieldRef<"User", 'AccountStatus'>
   readonly avatarUrl: Prisma.FieldRef<"User", 'String'>
-  readonly bio: Prisma.FieldRef<"User", 'String'>
-  readonly address: Prisma.FieldRef<"User", 'String'>
-  readonly city: Prisma.FieldRef<"User", 'String'>
-  readonly state: Prisma.FieldRef<"User", 'String'>
-  readonly country: Prisma.FieldRef<"User", 'String'>
-  readonly pincode: Prisma.FieldRef<"User", 'String'>
   readonly failedLoginAttempts: Prisma.FieldRef<"User", 'Int'>
   readonly lockedUntil: Prisma.FieldRef<"User", 'DateTime'>
   readonly emailVerified: Prisma.FieldRef<"User", 'Boolean'>
@@ -7217,6 +7211,12 @@ export interface UserFieldRefs {
   readonly deletedAt: Prisma.FieldRef<"User", 'DateTime'>
   readonly createdAt: Prisma.FieldRef<"User", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"User", 'DateTime'>
+  readonly address: Prisma.FieldRef<"User", 'String'>
+  readonly bio: Prisma.FieldRef<"User", 'String'>
+  readonly city: Prisma.FieldRef<"User", 'String'>
+  readonly country: Prisma.FieldRef<"User", 'String'>
+  readonly pincode: Prisma.FieldRef<"User", 'String'>
+  readonly state: Prisma.FieldRef<"User", 'String'>
 }
     
 
@@ -7605,270 +7605,6 @@ export type UserDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Internal
 }
 
 /**
- * User.sessions
- */
-export type User$sessionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Session
-   */
-  select?: Prisma.SessionSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Session
-   */
-  omit?: Prisma.SessionOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.SessionInclude<ExtArgs> | null
-  where?: Prisma.SessionWhereInput
-  orderBy?: Prisma.SessionOrderByWithRelationInput | Prisma.SessionOrderByWithRelationInput[]
-  cursor?: Prisma.SessionWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.SessionScalarFieldEnum | Prisma.SessionScalarFieldEnum[]
-}
-
-/**
- * User.farms
- */
-export type User$farmsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Farm
-   */
-  select?: Prisma.FarmSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Farm
-   */
-  omit?: Prisma.FarmOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.FarmInclude<ExtArgs> | null
-  where?: Prisma.FarmWhereInput
-  orderBy?: Prisma.FarmOrderByWithRelationInput | Prisma.FarmOrderByWithRelationInput[]
-  cursor?: Prisma.FarmWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.FarmScalarFieldEnum | Prisma.FarmScalarFieldEnum[]
-}
-
-/**
- * User.soilReports
- */
-export type User$soilReportsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the SoilReport
-   */
-  select?: Prisma.SoilReportSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the SoilReport
-   */
-  omit?: Prisma.SoilReportOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.SoilReportInclude<ExtArgs> | null
-  where?: Prisma.SoilReportWhereInput
-  orderBy?: Prisma.SoilReportOrderByWithRelationInput | Prisma.SoilReportOrderByWithRelationInput[]
-  cursor?: Prisma.SoilReportWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.SoilReportScalarFieldEnum | Prisma.SoilReportScalarFieldEnum[]
-}
-
-/**
- * User.diseaseReports
- */
-export type User$diseaseReportsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the DiseaseReport
-   */
-  select?: Prisma.DiseaseReportSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the DiseaseReport
-   */
-  omit?: Prisma.DiseaseReportOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.DiseaseReportInclude<ExtArgs> | null
-  where?: Prisma.DiseaseReportWhereInput
-  orderBy?: Prisma.DiseaseReportOrderByWithRelationInput | Prisma.DiseaseReportOrderByWithRelationInput[]
-  cursor?: Prisma.DiseaseReportWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.DiseaseReportScalarFieldEnum | Prisma.DiseaseReportScalarFieldEnum[]
-}
-
-/**
- * User.equipments
- */
-export type User$equipmentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Equipment
-   */
-  select?: Prisma.EquipmentSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Equipment
-   */
-  omit?: Prisma.EquipmentOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.EquipmentInclude<ExtArgs> | null
-  where?: Prisma.EquipmentWhereInput
-  orderBy?: Prisma.EquipmentOrderByWithRelationInput | Prisma.EquipmentOrderByWithRelationInput[]
-  cursor?: Prisma.EquipmentWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.EquipmentScalarFieldEnum | Prisma.EquipmentScalarFieldEnum[]
-}
-
-/**
- * User.orders
- */
-export type User$ordersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Order
-   */
-  select?: Prisma.OrderSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Order
-   */
-  omit?: Prisma.OrderOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.OrderInclude<ExtArgs> | null
-  where?: Prisma.OrderWhereInput
-  orderBy?: Prisma.OrderOrderByWithRelationInput | Prisma.OrderOrderByWithRelationInput[]
-  cursor?: Prisma.OrderWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.OrderScalarFieldEnum | Prisma.OrderScalarFieldEnum[]
-}
-
-/**
- * User.suppliedOrders
- */
-export type User$suppliedOrdersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Order
-   */
-  select?: Prisma.OrderSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Order
-   */
-  omit?: Prisma.OrderOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.OrderInclude<ExtArgs> | null
-  where?: Prisma.OrderWhereInput
-  orderBy?: Prisma.OrderOrderByWithRelationInput | Prisma.OrderOrderByWithRelationInput[]
-  cursor?: Prisma.OrderWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.OrderScalarFieldEnum | Prisma.OrderScalarFieldEnum[]
-}
-
-/**
- * User.loans
- */
-export type User$loansArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Loan
-   */
-  select?: Prisma.LoanSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Loan
-   */
-  omit?: Prisma.LoanOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.LoanInclude<ExtArgs> | null
-  where?: Prisma.LoanWhereInput
-  orderBy?: Prisma.LoanOrderByWithRelationInput | Prisma.LoanOrderByWithRelationInput[]
-  cursor?: Prisma.LoanWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.LoanScalarFieldEnum | Prisma.LoanScalarFieldEnum[]
-}
-
-/**
- * User.subsidies
- */
-export type User$subsidiesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Subsidy
-   */
-  select?: Prisma.SubsidySelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Subsidy
-   */
-  omit?: Prisma.SubsidyOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.SubsidyInclude<ExtArgs> | null
-  where?: Prisma.SubsidyWhereInput
-  orderBy?: Prisma.SubsidyOrderByWithRelationInput | Prisma.SubsidyOrderByWithRelationInput[]
-  cursor?: Prisma.SubsidyWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.SubsidyScalarFieldEnum | Prisma.SubsidyScalarFieldEnum[]
-}
-
-/**
- * User.notifications
- */
-export type User$notificationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Notification
-   */
-  select?: Prisma.NotificationSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Notification
-   */
-  omit?: Prisma.NotificationOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.NotificationInclude<ExtArgs> | null
-  where?: Prisma.NotificationWhereInput
-  orderBy?: Prisma.NotificationOrderByWithRelationInput | Prisma.NotificationOrderByWithRelationInput[]
-  cursor?: Prisma.NotificationWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.NotificationScalarFieldEnum | Prisma.NotificationScalarFieldEnum[]
-}
-
-/**
- * User.auditLogs
- */
-export type User$auditLogsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the AuditLog
-   */
-  select?: Prisma.AuditLogSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the AuditLog
-   */
-  omit?: Prisma.AuditLogOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.AuditLogInclude<ExtArgs> | null
-  where?: Prisma.AuditLogWhereInput
-  orderBy?: Prisma.AuditLogOrderByWithRelationInput | Prisma.AuditLogOrderByWithRelationInput[]
-  cursor?: Prisma.AuditLogWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.AuditLogScalarFieldEnum | Prisma.AuditLogScalarFieldEnum[]
-}
-
-/**
  * User.activityLogs
  */
 export type User$activityLogsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -7893,27 +7629,51 @@ export type User$activityLogsArgs<ExtArgs extends runtime.Types.Extensions.Inter
 }
 
 /**
- * User.reviews
+ * User.aiRecommendations
  */
-export type User$reviewsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type User$aiRecommendationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Review
+   * Select specific fields to fetch from the AiRecommendation
    */
-  select?: Prisma.ReviewSelect<ExtArgs> | null
+  select?: Prisma.AiRecommendationSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Review
+   * Omit specific fields from the AiRecommendation
    */
-  omit?: Prisma.ReviewOmit<ExtArgs> | null
+  omit?: Prisma.AiRecommendationOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ReviewInclude<ExtArgs> | null
-  where?: Prisma.ReviewWhereInput
-  orderBy?: Prisma.ReviewOrderByWithRelationInput | Prisma.ReviewOrderByWithRelationInput[]
-  cursor?: Prisma.ReviewWhereUniqueInput
+  include?: Prisma.AiRecommendationInclude<ExtArgs> | null
+  where?: Prisma.AiRecommendationWhereInput
+  orderBy?: Prisma.AiRecommendationOrderByWithRelationInput | Prisma.AiRecommendationOrderByWithRelationInput[]
+  cursor?: Prisma.AiRecommendationWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.ReviewScalarFieldEnum | Prisma.ReviewScalarFieldEnum[]
+  distinct?: Prisma.AiRecommendationScalarFieldEnum | Prisma.AiRecommendationScalarFieldEnum[]
+}
+
+/**
+ * User.auditLogs
+ */
+export type User$auditLogsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the AuditLog
+   */
+  select?: Prisma.AuditLogSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the AuditLog
+   */
+  omit?: Prisma.AuditLogOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AuditLogInclude<ExtArgs> | null
+  where?: Prisma.AuditLogWhereInput
+  orderBy?: Prisma.AuditLogOrderByWithRelationInput | Prisma.AuditLogOrderByWithRelationInput[]
+  cursor?: Prisma.AuditLogWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.AuditLogScalarFieldEnum | Prisma.AuditLogScalarFieldEnum[]
 }
 
 /**
@@ -7965,99 +7725,75 @@ export type User$chats2Args<ExtArgs extends runtime.Types.Extensions.InternalArg
 }
 
 /**
- * User.messages
+ * User.diseaseReports
  */
-export type User$messagesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type User$diseaseReportsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Message
+   * Select specific fields to fetch from the DiseaseReport
    */
-  select?: Prisma.MessageSelect<ExtArgs> | null
+  select?: Prisma.DiseaseReportSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Message
+   * Omit specific fields from the DiseaseReport
    */
-  omit?: Prisma.MessageOmit<ExtArgs> | null
+  omit?: Prisma.DiseaseReportOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.MessageInclude<ExtArgs> | null
-  where?: Prisma.MessageWhereInput
-  orderBy?: Prisma.MessageOrderByWithRelationInput | Prisma.MessageOrderByWithRelationInput[]
-  cursor?: Prisma.MessageWhereUniqueInput
+  include?: Prisma.DiseaseReportInclude<ExtArgs> | null
+  where?: Prisma.DiseaseReportWhereInput
+  orderBy?: Prisma.DiseaseReportOrderByWithRelationInput | Prisma.DiseaseReportOrderByWithRelationInput[]
+  cursor?: Prisma.DiseaseReportWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.MessageScalarFieldEnum | Prisma.MessageScalarFieldEnum[]
+  distinct?: Prisma.DiseaseReportScalarFieldEnum | Prisma.DiseaseReportScalarFieldEnum[]
 }
 
 /**
- * User.transactions
+ * User.emailVerifTokens
  */
-export type User$transactionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type User$emailVerifTokensArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Transaction
+   * Select specific fields to fetch from the EmailVerificationToken
    */
-  select?: Prisma.TransactionSelect<ExtArgs> | null
+  select?: Prisma.EmailVerificationTokenSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Transaction
+   * Omit specific fields from the EmailVerificationToken
    */
-  omit?: Prisma.TransactionOmit<ExtArgs> | null
+  omit?: Prisma.EmailVerificationTokenOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.TransactionInclude<ExtArgs> | null
-  where?: Prisma.TransactionWhereInput
-  orderBy?: Prisma.TransactionOrderByWithRelationInput | Prisma.TransactionOrderByWithRelationInput[]
-  cursor?: Prisma.TransactionWhereUniqueInput
+  include?: Prisma.EmailVerificationTokenInclude<ExtArgs> | null
+  where?: Prisma.EmailVerificationTokenWhereInput
+  orderBy?: Prisma.EmailVerificationTokenOrderByWithRelationInput | Prisma.EmailVerificationTokenOrderByWithRelationInput[]
+  cursor?: Prisma.EmailVerificationTokenWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.TransactionScalarFieldEnum | Prisma.TransactionScalarFieldEnum[]
+  distinct?: Prisma.EmailVerificationTokenScalarFieldEnum | Prisma.EmailVerificationTokenScalarFieldEnum[]
 }
 
 /**
- * User.aiRecommendations
+ * User.equipments
  */
-export type User$aiRecommendationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type User$equipmentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the AiRecommendation
+   * Select specific fields to fetch from the Equipment
    */
-  select?: Prisma.AiRecommendationSelect<ExtArgs> | null
+  select?: Prisma.EquipmentSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the AiRecommendation
+   * Omit specific fields from the Equipment
    */
-  omit?: Prisma.AiRecommendationOmit<ExtArgs> | null
+  omit?: Prisma.EquipmentOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.AiRecommendationInclude<ExtArgs> | null
-  where?: Prisma.AiRecommendationWhereInput
-  orderBy?: Prisma.AiRecommendationOrderByWithRelationInput | Prisma.AiRecommendationOrderByWithRelationInput[]
-  cursor?: Prisma.AiRecommendationWhereUniqueInput
+  include?: Prisma.EquipmentInclude<ExtArgs> | null
+  where?: Prisma.EquipmentWhereInput
+  orderBy?: Prisma.EquipmentOrderByWithRelationInput | Prisma.EquipmentOrderByWithRelationInput[]
+  cursor?: Prisma.EquipmentWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.AiRecommendationScalarFieldEnum | Prisma.AiRecommendationScalarFieldEnum[]
-}
-
-/**
- * User.marketplaceListings
- */
-export type User$marketplaceListingsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the MarketplaceListing
-   */
-  select?: Prisma.MarketplaceListingSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the MarketplaceListing
-   */
-  omit?: Prisma.MarketplaceListingOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.MarketplaceListingInclude<ExtArgs> | null
-  where?: Prisma.MarketplaceListingWhereInput
-  orderBy?: Prisma.MarketplaceListingOrderByWithRelationInput | Prisma.MarketplaceListingOrderByWithRelationInput[]
-  cursor?: Prisma.MarketplaceListingWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.MarketplaceListingScalarFieldEnum | Prisma.MarketplaceListingScalarFieldEnum[]
+  distinct?: Prisma.EquipmentScalarFieldEnum | Prisma.EquipmentScalarFieldEnum[]
 }
 
 /**
@@ -8085,6 +7821,174 @@ export type User$farmRegistrationsArgs<ExtArgs extends runtime.Types.Extensions.
 }
 
 /**
+ * User.farms
+ */
+export type User$farmsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Farm
+   */
+  select?: Prisma.FarmSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Farm
+   */
+  omit?: Prisma.FarmOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.FarmInclude<ExtArgs> | null
+  where?: Prisma.FarmWhereInput
+  orderBy?: Prisma.FarmOrderByWithRelationInput | Prisma.FarmOrderByWithRelationInput[]
+  cursor?: Prisma.FarmWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.FarmScalarFieldEnum | Prisma.FarmScalarFieldEnum[]
+}
+
+/**
+ * User.loans
+ */
+export type User$loansArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Loan
+   */
+  select?: Prisma.LoanSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Loan
+   */
+  omit?: Prisma.LoanOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.LoanInclude<ExtArgs> | null
+  where?: Prisma.LoanWhereInput
+  orderBy?: Prisma.LoanOrderByWithRelationInput | Prisma.LoanOrderByWithRelationInput[]
+  cursor?: Prisma.LoanWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.LoanScalarFieldEnum | Prisma.LoanScalarFieldEnum[]
+}
+
+/**
+ * User.marketplaceListings
+ */
+export type User$marketplaceListingsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the MarketplaceListing
+   */
+  select?: Prisma.MarketplaceListingSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the MarketplaceListing
+   */
+  omit?: Prisma.MarketplaceListingOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.MarketplaceListingInclude<ExtArgs> | null
+  where?: Prisma.MarketplaceListingWhereInput
+  orderBy?: Prisma.MarketplaceListingOrderByWithRelationInput | Prisma.MarketplaceListingOrderByWithRelationInput[]
+  cursor?: Prisma.MarketplaceListingWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.MarketplaceListingScalarFieldEnum | Prisma.MarketplaceListingScalarFieldEnum[]
+}
+
+/**
+ * User.messages
+ */
+export type User$messagesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Message
+   */
+  select?: Prisma.MessageSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Message
+   */
+  omit?: Prisma.MessageOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.MessageInclude<ExtArgs> | null
+  where?: Prisma.MessageWhereInput
+  orderBy?: Prisma.MessageOrderByWithRelationInput | Prisma.MessageOrderByWithRelationInput[]
+  cursor?: Prisma.MessageWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.MessageScalarFieldEnum | Prisma.MessageScalarFieldEnum[]
+}
+
+/**
+ * User.notifications
+ */
+export type User$notificationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Notification
+   */
+  select?: Prisma.NotificationSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Notification
+   */
+  omit?: Prisma.NotificationOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.NotificationInclude<ExtArgs> | null
+  where?: Prisma.NotificationWhereInput
+  orderBy?: Prisma.NotificationOrderByWithRelationInput | Prisma.NotificationOrderByWithRelationInput[]
+  cursor?: Prisma.NotificationWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.NotificationScalarFieldEnum | Prisma.NotificationScalarFieldEnum[]
+}
+
+/**
+ * User.orders
+ */
+export type User$ordersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Order
+   */
+  select?: Prisma.OrderSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Order
+   */
+  omit?: Prisma.OrderOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.OrderInclude<ExtArgs> | null
+  where?: Prisma.OrderWhereInput
+  orderBy?: Prisma.OrderOrderByWithRelationInput | Prisma.OrderOrderByWithRelationInput[]
+  cursor?: Prisma.OrderWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.OrderScalarFieldEnum | Prisma.OrderScalarFieldEnum[]
+}
+
+/**
+ * User.suppliedOrders
+ */
+export type User$suppliedOrdersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Order
+   */
+  select?: Prisma.OrderSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Order
+   */
+  omit?: Prisma.OrderOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.OrderInclude<ExtArgs> | null
+  where?: Prisma.OrderWhereInput
+  orderBy?: Prisma.OrderOrderByWithRelationInput | Prisma.OrderOrderByWithRelationInput[]
+  cursor?: Prisma.OrderWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.OrderScalarFieldEnum | Prisma.OrderScalarFieldEnum[]
+}
+
+/**
  * User.passwordResetTokens
  */
 export type User$passwordResetTokensArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -8109,27 +8013,123 @@ export type User$passwordResetTokensArgs<ExtArgs extends runtime.Types.Extension
 }
 
 /**
- * User.emailVerifTokens
+ * User.reviews
  */
-export type User$emailVerifTokensArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type User$reviewsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the EmailVerificationToken
+   * Select specific fields to fetch from the Review
    */
-  select?: Prisma.EmailVerificationTokenSelect<ExtArgs> | null
+  select?: Prisma.ReviewSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the EmailVerificationToken
+   * Omit specific fields from the Review
    */
-  omit?: Prisma.EmailVerificationTokenOmit<ExtArgs> | null
+  omit?: Prisma.ReviewOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.EmailVerificationTokenInclude<ExtArgs> | null
-  where?: Prisma.EmailVerificationTokenWhereInput
-  orderBy?: Prisma.EmailVerificationTokenOrderByWithRelationInput | Prisma.EmailVerificationTokenOrderByWithRelationInput[]
-  cursor?: Prisma.EmailVerificationTokenWhereUniqueInput
+  include?: Prisma.ReviewInclude<ExtArgs> | null
+  where?: Prisma.ReviewWhereInput
+  orderBy?: Prisma.ReviewOrderByWithRelationInput | Prisma.ReviewOrderByWithRelationInput[]
+  cursor?: Prisma.ReviewWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.EmailVerificationTokenScalarFieldEnum | Prisma.EmailVerificationTokenScalarFieldEnum[]
+  distinct?: Prisma.ReviewScalarFieldEnum | Prisma.ReviewScalarFieldEnum[]
+}
+
+/**
+ * User.sessions
+ */
+export type User$sessionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Session
+   */
+  select?: Prisma.SessionSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Session
+   */
+  omit?: Prisma.SessionOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.SessionInclude<ExtArgs> | null
+  where?: Prisma.SessionWhereInput
+  orderBy?: Prisma.SessionOrderByWithRelationInput | Prisma.SessionOrderByWithRelationInput[]
+  cursor?: Prisma.SessionWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.SessionScalarFieldEnum | Prisma.SessionScalarFieldEnum[]
+}
+
+/**
+ * User.soilReports
+ */
+export type User$soilReportsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the SoilReport
+   */
+  select?: Prisma.SoilReportSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the SoilReport
+   */
+  omit?: Prisma.SoilReportOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.SoilReportInclude<ExtArgs> | null
+  where?: Prisma.SoilReportWhereInput
+  orderBy?: Prisma.SoilReportOrderByWithRelationInput | Prisma.SoilReportOrderByWithRelationInput[]
+  cursor?: Prisma.SoilReportWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.SoilReportScalarFieldEnum | Prisma.SoilReportScalarFieldEnum[]
+}
+
+/**
+ * User.subsidies
+ */
+export type User$subsidiesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Subsidy
+   */
+  select?: Prisma.SubsidySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Subsidy
+   */
+  omit?: Prisma.SubsidyOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.SubsidyInclude<ExtArgs> | null
+  where?: Prisma.SubsidyWhereInput
+  orderBy?: Prisma.SubsidyOrderByWithRelationInput | Prisma.SubsidyOrderByWithRelationInput[]
+  cursor?: Prisma.SubsidyWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.SubsidyScalarFieldEnum | Prisma.SubsidyScalarFieldEnum[]
+}
+
+/**
+ * User.transactions
+ */
+export type User$transactionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Transaction
+   */
+  select?: Prisma.TransactionSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Transaction
+   */
+  omit?: Prisma.TransactionOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TransactionInclude<ExtArgs> | null
+  where?: Prisma.TransactionWhereInput
+  orderBy?: Prisma.TransactionOrderByWithRelationInput | Prisma.TransactionOrderByWithRelationInput[]
+  cursor?: Prisma.TransactionWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.TransactionScalarFieldEnum | Prisma.TransactionScalarFieldEnum[]
 }
 
 /**

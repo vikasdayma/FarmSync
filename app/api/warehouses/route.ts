@@ -28,7 +28,7 @@ export async function GET(req: NextRequest) {
         prisma.warehouse.findMany({
             where, skip, take: limit,
             orderBy: { name: "asc" },
-            include: { manager: { select: { id: true, firstName: true, lastName: true } } },
+            // include: { manager: { select: { id: true, firstName: true, lastName: true } } },
         }),
         prisma.warehouse.count({ where }),
     ]);
