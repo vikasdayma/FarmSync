@@ -1,0 +1,156 @@
+
+          @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500&display=swap');
+
+          .fs-nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 5%;
+            height: 64px;
+            background: rgba(15, 25, 20, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(82, 183, 136, 0.12);
+            font-family: 'DM Sans', sans-serif;
+          }
+
+          .fs-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem; font-weight: 900;
+            color: #f0ede6;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+            flex-shrink: 0;
+            cursor: pointer;
+          }
+          .fs-logo span { color: #52b788; }
+
+          .fs-links {
+            display: flex; align-items: center;
+            gap: 0.25rem; list-style: none;
+            margin: 0; padding: 0;
+          }
+          .fs-links li a, .fs-links li button {
+            background: none; border: none;
+            color: rgba(240,237,230,0.65);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.88rem; font-weight: 500;
+            padding: 0.4rem 0.9rem;
+            border-radius: 8px;
+            cursor: pointer; text-decoration: none;
+            transition: color 0.2s, background 0.2s;
+            display: block;
+          }
+          .fs-links li a:hover, .fs-links li button:hover {
+            color: #f0ede6;
+            background: rgba(82,183,136,0.08);
+          }
+
+          .fs-right { display: flex; align-items: center; gap: 0.6rem; flex-shrink: 0; }
+
+          .fs-skeleton {
+            width: 34px; height: 34px; border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+            animation: fs-shimmer 1.4s ease-in-out infinite;
+          }
+          @keyframes fs-shimmer {
+            0%,100% { opacity: 0.5; }
+            50% { opacity: 1; }
+          }
+
+          .fs-myfarm-btn {
+            display: flex; align-items: center; gap: 0.4rem;
+            background: rgba(82,183,136,0.1);
+            color: #52b788;
+            border: 1px solid rgba(82,183,136,0.25);
+            padding: 0.4rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem; font-weight: 500;
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+            transition: all 0.2s;
+          }
+          .fs-myfarm-btn:hover {
+            background: rgba(82,183,136,0.2);
+            border-color: rgba(82,183,136,0.5);
+            color: #d8f3dc;
+            transform: translateY(-1px);
+          }
+          .fs-myfarm-btn::before { content: '🌾'; font-size: 0.85rem; }
+
+          .fs-avatar-wrap {
+            display: flex; align-items: center; gap: 0.6rem;
+            padding: 0.3rem 0.7rem 0.3rem 0.3rem;
+            border-radius: 100px;
+            border: 1px solid rgba(82,183,136,0.2);
+            background: rgba(82,183,136,0.06);
+            cursor: pointer;
+            transition: border-color 0.2s, background 0.2s;
+          }
+          .fs-avatar-wrap:hover {
+            border-color: rgba(82,183,136,0.45);
+            background: rgba(82,183,136,0.12);
+          }
+          .fs-avatar-img {
+            width: 30px; height: 30px; border-radius: 50%;
+            object-fit: cover;
+            border: 1.5px solid rgba(82,183,136,0.4);
+          }
+          .fs-avatar-letter {
+            width: 30px; height: 30px; border-radius: 50%;
+            background: #2d6a4f;
+            display: flex; align-items: center; justify-content: center;
+            color: #d8f3dc; font-weight: 700; font-size: 0.85rem;
+            border: 1.5px solid rgba(82,183,136,0.4);
+            flex-shrink: 0;
+          }
+          .fs-avatar-name {
+            font-size: 0.82rem; font-weight: 500;
+            color: rgba(240,237,230,0.85);
+            max-width: 90px;
+            overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+          }
+
+          .fs-btn-login {
+            background: transparent;
+            color: rgba(240,237,230,0.75);
+            border: 1px solid rgba(240,237,230,0.18);
+            padding: 0.45rem 1.1rem;
+            border-radius: 8px;
+            font-size: 0.85rem; font-weight: 500;
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+            transition: all 0.2s;
+          }
+          .fs-btn-login:hover {
+            border-color: rgba(240,237,230,0.45);
+            color: #f0ede6;
+            background: rgba(255,255,255,0.04);
+          }
+
+          .fs-btn-signup {
+            background: #2d6a4f;
+            color: #d8f3dc;
+            border: none;
+            padding: 0.45rem 1.2rem;
+            border-radius: 8px;
+            font-size: 0.85rem; font-weight: 500;
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+            transition: all 0.2s;
+          }
+          .fs-btn-signup:hover {
+            background: #52b788;
+            color: white;
+            transform: translateY(-1px);
+          }
+
+          .fs-dot {
+            width: 6px; height: 6px; border-radius: 50%;
+            background: #52b788;
+            animation: fs-pulse 2s infinite;
+            flex-shrink: 0;
+          }
+          @keyframes fs-pulse {
+            0%,100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.4); }
+          }
+       
