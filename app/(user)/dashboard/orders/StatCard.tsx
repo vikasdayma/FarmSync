@@ -1,4 +1,4 @@
-export const StatCard = ({ label, value, color, }: { label: string; value: string |number; color: string ; }) => (
+export const StatCard = ({ label, value, color,unit }: { label: string; value: string |number; color: string ;unit:string }) => (
   <div style={{
     background: '#fff',
     border: '1px solid #e8e4df',
