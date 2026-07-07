@@ -47,7 +47,7 @@ const AddProduct = () => {
     // If it's an existing Cloudinary URL
     setForm((prev) => ({
       ...prev,
-      imageUrls: prev.imageUrls.filter((_, i) => i !== index),
+      imageUrls: prev.imageUrls?.filter((_, i) => i !== index),
     }));
   }
   function handleCreateListing(

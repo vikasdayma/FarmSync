@@ -47,7 +47,7 @@ export interface CreateMarketplaceListing {
   unit: string
   quantityAvailable: number
   location: string
-  imageUrls?: string[]
+  imageUrls: string[]
   expiresAt?: string
 }
 
