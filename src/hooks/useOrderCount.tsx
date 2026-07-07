@@ -26,16 +26,16 @@ export const getOrderCount = async ({ status, role }: OrderCountParams = {}): Pr
   })
 
   if (!res.ok) {
-    console.log('error fetching order count', res.status)
+    
     return 0
   }
 
   try {
     const data = await res.json()
-    console.log('🔍 raw order count response:', JSON.stringify(data, null, 2)) // temp debug
+  
     return extractCount(data)
   } catch (e) {
-    console.log('failed to parse order count response', e)
+  
     return 0
   }
 }

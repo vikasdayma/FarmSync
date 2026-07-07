@@ -109,7 +109,7 @@ function IconTile({
 }: {
   icon: React.ReactNode;
   active: boolean;
-  badge?: number;
+  badge?: number |undefined ;
 }) {
   return (
     <span
@@ -136,11 +136,13 @@ function IconTile({
 export default function Sidebar({ collapsed, onToggle }: SidebarProps) {
   const pathname = usePathname();
   const { data: countNotification = 0, isLoading } = useNotificationCount()
-  console.log(countNotification)
+  
   const {data:countOrder}=useOrderCount({role:'seller'});
-  console.log(countOrder)
+ 
   const {data:countProdcut}=useProductCount();
-
+console.log(typeof countNotification, countNotification);
+console.log(typeof countOrder, countOrder);
+console.log(typeof countProdcut, countProdcut);
   return (
     <aside
       className={`
