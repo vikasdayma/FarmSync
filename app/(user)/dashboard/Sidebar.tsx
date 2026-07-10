@@ -147,7 +147,7 @@ console.log(typeof countProdcut, countProdcut);
     <aside
       className={`
         fixed left-0 top-0 z-40
-        flex h-screen flex-col
+        hidden sm:flex h-screen flex-col
         border-r border-black/[0.06] bg-[#FBFBF8]
         transition-all duration-300 ease-in-out
         ${collapsed ? "w-[84px]" : "w-64"}

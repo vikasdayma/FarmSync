@@ -60,7 +60,7 @@ const leftProducts: Product[] = [
     price: "₹28/kg",
     tag: "Harvested Mon",
     image:
-      "https://images.unsplash.com/photo-1601593768799-76e7b3535f00?q=80&w=200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1676993842552-c0bb1c2ab2cc?w=600&auto=format&fit=crop",
   },
   {
     name: "Fresh Onions",
@@ -122,7 +122,7 @@ function ProductPill({
             src={product.image}
             alt={product.name}
             fill
-            className="object-cover"
+            className="object-cover rounded-full"
           />
         </div>
 
@@ -242,7 +242,7 @@ export default function FarmHeroPoster() {
                   style={{y:filter}}
          
                   transition={{duration:1,repeat:0}}
-                  className="h-[70vh]  w-auto object-contain z-50 drop-shadow-2xl"
+                  className="h-[70vh]   w-auto object-contain z-50 drop-shadow-2xl"
                 ></motion.img>
 
                 <div className="absolute -right-2 top-[35%] flex h-20 w-20 flex-col items-center justify-center rounded-full border-4 border-[#EAF3E4] bg-[#C9E86B] text-center shadow-lg sm:h-24 sm:w-24">

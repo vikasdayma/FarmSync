@@ -6,7 +6,8 @@ import { poppins } from "./HeroSection";
 const Track = () => {
   return (
     <section
-      className={`${poppins.variable} relative overflow-hidden bg-[#0c3d2d] px-6 py-24 font-[family-name:var(--font-display)] sm:px-10 lg:px-20`}
+      className={`${poppins.variable} relative overflow-hidden 
+        bg-[#0c3d2d] px-6 py-24 font-[family-name:var(--font-display)] sm:px-10 lg:px-20`}
     >
       {/* decorative glow */}
       <div className="pointer-events-none absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-[#C9E86B]/10 blur-[120px]" />

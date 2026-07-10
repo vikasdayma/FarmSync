@@ -1,0 +1,151 @@
+
+          @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500&display=swap');
+
+          
+          .fs-avatar-wrap {
+            display: flex; align-items: center; gap: 0.6rem;
+            padding: 0.3rem 0.7rem 0.3rem 0.3rem;
+            border-radius: 100px;
+            border: 1px solid rgba(82,183,136,0.2);
+            background: rgba(82,183,136,0.06);
+            cursor: pointer;
+            transition: border-color 0.2s, background 0.2s;
+          }
+          .fs-avatar-wrap:hover {
+            border-color: rgba(82,183,136,0.45);
+            background: rgba(82,183,136,0.12);
+          }
+          .fs-avatar-img {
+            width: 30px; height: 30px; border-radius: 50%;
+            object-fit: cover;
+            border: 1.5px solid rgba(82,183,136,0.4);
+          }
+          .fs-avatar-letter {
+            width: 30px; height: 30px; border-radius: 50%;
+            background: #2d6a4f;
+            display: flex; align-items: center; justify-content: center;
+            color: #d8f3dc; font-weight: 700; font-size: 0.85rem;
+            border: 1.5px solid rgba(82,183,136,0.4);
+            flex-shrink: 0;
+          }
+          .fs-avatar-name {
+            font-size: 0.82rem; font-weight: 500;
+            color: rgba(240,237,230,0.85);
+            max-width: 90px;
+            overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+          }
+
+          
+         
+          .fs-dot {
+            width: 6px; height: 6px; border-radius: 50%;
+            background: #52b788;
+            animation: fs-pulse 2s infinite;
+            flex-shrink: 0;
+          }
+          @keyframes fs-pulse {
+            0%,100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.4); }
+          }
+       
+
+          /* ===== Dashboard mobile nav — append to NavbarDash.css ===== */
+
+.fsd-burger {
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 28px;
+  height: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 60;
+}
+
+.fsd-burger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: #12331f;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.fsd-burger-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.fsd-burger-open span:nth-child(2) { opacity: 0; }
+.fsd-burger-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.fsd-mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: min(78vw, 300px);
+  background: #ffffff;
+  border-left: 1px solid #eaeaea;
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 5.5rem 1.25rem 2rem;
+  transform: translateX(100%);
+  transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 55;
+  overflow-y: auto;
+}
+
+.fsd-mobile-menu-open {
+  transform: translateX(0);
+}
+
+.fsd-mobile-menu button {
+  display: block;
+  text-align: left;
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #12331f;
+  padding: 0.85rem 0.9rem;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.18s ease;
+}
+
+.fsd-mobile-menu button:hover {
+  background: rgba(18, 51, 31, 0.06);
+}
+
+/* Currently active section — the one spot of color among the links */
+.fsd-link-active {
+  background: #12331f !important;
+  color: #ffffff !important;
+}
+
+.fsd-link-active:hover {
+  background: #12331f !important;
+}
+
+.fsd-mobile-menu-divider {
+  height: 1px;
+  background: #eaeaea;
+  margin: 0.75rem 0.25rem;
+}
+
+.fsd-logout {
+  color: #dc2626 !important;
+}
+
+.fsd-logout:hover {
+  background: rgba(220, 38, 38, 0.06) !important;
+}
+
+.fsd-mobile-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 50;
+}

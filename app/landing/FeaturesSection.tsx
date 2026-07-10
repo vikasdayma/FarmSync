@@ -60,11 +60,11 @@ export function FeaturesSection() {
           </h2>
         </div>
 
-        <div className="mt-14 flex justify-evenly items-center ">
+        <div className="mt-14 flex flex-wrap flex-row justify-evenly items-center ">
           {features.map((f) => (
             <div
               key={f.title}
-              className="animate-fade-up group overflow-hidden rounded-3xl border border-[#12331F]/10 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg w-80 h-full"
+              className="animate-fade-up mt-4   group overflow-hidden rounded-3xl border border-[#12331F]/10 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg w-80 h-full"
             >
               <div className="relative h-60   overflow-hidden">
                 <Image

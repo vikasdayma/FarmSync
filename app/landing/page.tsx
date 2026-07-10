@@ -1,12 +1,13 @@
 import React from "react";
 import HeroSection from "./HeroSection";
 import FeaturesSection from "./FeaturesSection";
-import StatsSection from "./StatsSection";
+import StatsSection from "./Contact";
 import Track from "./Track";
-import Loader from "./Loader";
+import Leaves from "./Leaves";
 import Footer from "./Footer";
 import MagicBento from "@/components/MagicBento";
 import Bento from "./Bento";
+import Contact from "./Contact";
 
 const Home = () => {
   return (
@@ -20,10 +21,11 @@ const Home = () => {
       <FeaturesSection />
 
       <div className="flex justify-between overflow-hidden">
-        <Loader className="justify-end" />
+        <Leaves className="justify-end" />
       </div>
-      {/* <StatsSection/>
-       */}
+
+      <Contact/>
+      <Footer/>
     </div>
   );
 };

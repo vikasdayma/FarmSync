@@ -17,10 +17,10 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
       <main
         className={`
-          flex-1 h-screen overflow-y-auto
+         flex-1 h-screen overflow-y-auto
           transition-all duration-300
          
-          ${collapsed ? "ml-[72px]" : "ml-64"}
+          ${collapsed ? "sm:ml-[72px]" : "sm:ml-64"}
         `}
       >
          <NavbarDash/>
