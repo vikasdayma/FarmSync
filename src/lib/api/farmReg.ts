@@ -156,10 +156,21 @@ export async function getMyFarm(): Promise<MyFarm | null> {
       method: 'GET',
       credentials: 'include',
     })
-    if (!res.ok) return null  
+
+    // No farm yet — expected for new users, not an error
+    if (res.status === 404) {
+      return null
+    }
+
+    if (!res.ok) {
+      const text = await res.text()
+      throw new Error(`getMyFarm failed: ${res.status} ${text}`)
+    }
+
     const json = await res.json()
-    return json.data  
-  } catch {
+    return json.data
+  } catch (error) {
+    console.error(error)
     return null
   }
 }

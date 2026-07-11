@@ -5,17 +5,21 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useAuth } from "@/context/AuthProvider";
 import "./NavbarDash.css";
+import { MdCancel } from "react-icons/md";
+import MobileDashNav from "./MovileDashNav";
+import LogoutButton from "../LogoutButton";
 
-interface NavLink {
+export interface NavLink {
+  id:number,
   label: string;
   href: string;
 }
 
 const NAV_LINKS: NavLink[] = [
-  { label: "Home", href: "/dashboard" },
-  { label: "Features", href: "/features" },
-  { label: "Marketplace", href: "/marketplace" },
-  { label: "Contact", href: "/contact" },
+  {id:0, label: "Home", href: "/" },
+  { id:1,label: "Features", href: "/#features" },
+  {id:2, label: "Marketplace", href: "/marketplace" },
+  { id:3,label: "Contact", href: "/#contact" },
 ];
 
 export default function NavbarDash() {
@@ -25,7 +29,7 @@ export default function NavbarDash() {
   const { user, isLoading, isLoggedIn } = useAuth();
   const router = useRouter();
   const firstLetter = user?.firstName?.charAt(0)?.toUpperCase() || "";
-
+  const {logout}=useAuth();
   const isActive = (href: string) =>
     href === "/dashboard"
       ? pathname === "/dashboard"
@@ -39,7 +43,7 @@ export default function NavbarDash() {
   return (
     <>
       <header className="sticky top-0 z-30 flex h-16 w-full items-center justify-between border-b border-black/[0.06] bg-[#FBFBF8]/90 px-6 backdrop-blur-md">
-        {/* Left: logo — also the mobile "back to dashboard home" escape hatch */}
+        
         <div
           className="flex items-center gap-2 cursor-pointer"
           onClick={() => go("/dashboard")}
@@ -52,7 +56,6 @@ export default function NavbarDash() {
           </span>
         </div>
 
-        {/* Center: nav links — desktop only */}
         <nav className="hidden md:flex items-center gap-1">
           {NAV_LINKS.map((link) => (
             <Link
@@ -121,26 +124,7 @@ export default function NavbarDash() {
                   Profile
                 </button>
                 <div style={{ height: "1px", background: "#f0ece8" }} />
-                <button
-                  onClick={() => {
-                    setProfileOpen(false);
-                    // apna logout logic yahan call karo
-                    // handleLogout()
-                  }}
-                  style={{
-                    display: "block",
-                    width: "100%",
-                    textAlign: "left",
-                    padding: "0.75rem 1rem",
-                    background: "none",
-                    border: "none",
-                    cursor: "pointer",
-                    fontSize: "0.9rem",
-                    color: "#dc2626",
-                  }}
-                >
-                  Logout
-                </button>
+               <LogoutButton className=""/>
               </div>
             )}
           </div>
@@ -159,35 +143,9 @@ export default function NavbarDash() {
         </div>
       </header>
 
-      {/* Mobile drawer */}
-      <div className={` fsd-mobile-menu ${menuOpen ? "fsd-mobile-menu-open" : ""}`}>
-        {NAV_LINKS.map((link) => (
-          <button
-            key={link.href}
-            onClick={() => go(link.href)}
-            className={isActive(link.href) ? "fsd-link-active" : ""}
-          >
-            {link.label}
-          </button>
-        ))}
+      {/* Mobile drawer */} 
+      {menuOpen && <MobileDashNav menuOpen={menuOpen} setMenuOpen={setMenuOpen} />}
 
-        <div className="fsd-mobile-menu-divider" />
-
-        <button onClick={() => go("/profile")}>Profile</button>
-        <button
-          className="fsd-logout"
-          onClick={() => {
-            setMenuOpen(false);
-            // handleLogout()
-          }}
-        >
-          Logout
-        </button>
-      </div>
-
-      {menuOpen && (
-        <div className="fsd-mobile-backdrop" onClick={() => setMenuOpen(false)} />
-      )}
     </>
   );
 }

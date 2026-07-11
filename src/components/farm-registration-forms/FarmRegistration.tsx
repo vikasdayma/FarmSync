@@ -15,23 +15,27 @@ const FarmRegistration = () => {
   const [currentStep, setCurrentStep] = useState(1)
   const [sessionId, setSessionId] = useState<string | null>(null)
 const [checking, setChecking] = useState(true)  
+const [error,setError]=useState('');
 useEffect(() => {
   const checkFarmExist = async () => {
-    const farm = await getMyFarm()
-    if(farm) {
-      router.push('/dashboard')
-      return  // ← stop here
+    try {
+      const farm = await getMyFarm()
+      if (farm) {
+        router.push('/dashboard')
+        return
+      }
+      // farm is null here — either no farm yet, or getMyFarm swallowed an error
+      const savedSessionId = localStorage.getItem('farmSessionId')
+      const savedStep = localStorage.getItem('farmCurrentStep')
+      if (savedSessionId && savedStep) {
+        setSessionId(savedSessionId)
+        setCurrentStep(Number(savedStep))
+      }
+    } catch (err) {
+      setError('Something went wrong loading your farm. Please refresh.')
+    } finally {
+      setChecking(false)
     }
-
-    // no farm → check localStorage
-    const savedSessionId = localStorage.getItem('farmSessionId')
-    const savedStep = localStorage.getItem('farmCurrentStep')
-    if (savedSessionId && savedStep) {
-      setSessionId(savedSessionId)
-      setCurrentStep(Number(savedStep))
-    }
-
-    setChecking(false)  // ← done checking, show form
   }
   checkFarmExist()
 }, [])
@@ -76,7 +80,9 @@ if(checking) return null
   }
 
 
-
+if(error){
+  return <h1>{error}</h1>
+}
   return (
     <div className=' flex flex-col items-center justify-start '>
    <StepTracker currentStep={currentStep}/>

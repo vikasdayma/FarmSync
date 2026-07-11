@@ -1,5 +1,5 @@
 'use client'
-import FarmRegistration from '@/components/farmer/FarmRegistration'
+import FarmRegistration from '@/components/farm-registration-forms/FarmRegistration'
 import React from 'react'
 
 const Steps = () => {

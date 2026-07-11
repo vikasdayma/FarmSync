@@ -4,17 +4,31 @@
 import Navbar from "@/components/Navbar";
 import { Poppins } from "next/font/google";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
-
+import { useAuth } from "@/context/AuthProvider";
 export const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-display",
 });
 
+
 export default function HeroSection() {
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const router=useRouter();
+  const {user,isLoading}=useAuth();
+  const handleGetStarted=()=>{
+    if(user?.role==='AGRONOMIST'){
+      router.push('/agronomist/dashboard')
+    }
+    if(user?.role==='FARMER'){
+        router.push('/dashboard')
+    }
+    if(user?.role==='SUPER_ADMIN'){
+      router.push('/admin')
+    }
+  }
   return (
     <section
       className={`${poppins.variable} relative h-screen w-full overflow-hidden font-(family-name:--font-display)`}
@@ -52,11 +66,11 @@ export default function HeroSection() {
           </p>
 
           <div className="mt-9 flex flex-wrap items-center gap-4">
-            <button className="rounded-full bg-[#EAF3E4] px-7 py-3.5 text-sm font-semibold text-[#0F3D2E] transition-transform hover:-translate-y-0.5 hover:shadow-lg">
-              Get started
+            <button  onClick={handleGetStarted} className="rounded-full bg-[#EAF3E4] px-7 py-3.5 text-sm font-semibold text-[#0F3D2E] transition-transform hover:-translate-y-0.5 hover:shadow-lg">
+       {isLoading ? "Loading..." : user?.role==='FARMER' ? "My-Farm" : user?.role==='AGRONOMIST' ? 'Dashboard' :  user?.role==='SUPER_ADMIN' ? 'Master Dashboard': "Get Started"}
             </button>
-            <button className="flex items-center gap-2 rounded-full border border-[#EAF3E4]/40 px-7 py-3.5 text-sm font-semibold text-[#EAF3E4] backdrop-blur-sm transition-colors hover:bg-white/10">
-              Watch demo
+            <button onClick={()=>{router.push('#features')}} className="flex items-center gap-2 rounded-full border border-[#EAF3E4]/40 px-7 py-3.5 text-sm font-semibold text-[#EAF3E4] backdrop-blur-sm transition-colors hover:bg-white/10">
+              Explore Features
               <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2}>
                 <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
               </svg>

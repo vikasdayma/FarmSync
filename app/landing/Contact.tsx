@@ -58,7 +58,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="bg-[#0c3d2d]  text-[#fbf9f2]">
+    <div id="contact" className="bg-[#0c3d2d]  text-[#fbf9f2]">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap');
         .ff-display { font-family: 'Fraunces', serif; font-optical-sizing: auto; }

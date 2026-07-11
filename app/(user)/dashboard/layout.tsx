@@ -4,7 +4,7 @@ import Navbar from '@/components/Navbar'
 import Sidebar from './Sidebar'
 import React, { useState } from 'react'
 
-import NavbarDash from '@/components/dashboard/NavbarDash'
+import NavbarDash from '@/components/farmer/NavbarDash'
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const [collapsed, setCollapsed] = useState(true)

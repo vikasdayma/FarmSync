@@ -18,10 +18,15 @@ import {
   FiLogOut,
   FiChevronLeft,
   FiChevronRight,
+  
 } from "react-icons/fi";
+
 import { useNotificationCount } from "@/hooks/useNotificationCount";
 import { useOrderCount } from "@/hooks/useOrderCount";
 import { useProductCount } from "@/hooks/useProductCount";
+import { GiBank, GiRupee } from "react-icons/gi";
+import { FaHandHoldingUsd, FaRupeeSign } from "react-icons/fa";
+import { Banknote, BanknoteX, DollarSign, PiggyBank } from "lucide-react";
 interface NavItem {
   label: string;
   href: string;
@@ -53,7 +58,7 @@ const Ico = ({ children, size = 20 }: { children: React.ReactNode; size?: number
 
 const Icons = {
   dashboard: <FiGrid size={20} />,
-  farm: <FiHome size={20} />,
+  farm: <FaRupeeSign size={20} />,
   crops: <FiPieChart size={20} />,
   weather: <FiCloud size={20} />,
   market: <FiTrendingUp size={20} />,
@@ -77,7 +82,7 @@ const NAV_GROUPS: NavGroup[] = [
   {
     title: "Farm Management",
     items: [
-      { label: "My Farm", href: "/dashboard/my-farm", icon: Icons.farm },
+      { label: "My Loan", href: "/dashboard/loan", icon: Icons.farm },
       { label: "Orders", href: "/dashboard/orders", icon: Icons.weather },
     ],
   },

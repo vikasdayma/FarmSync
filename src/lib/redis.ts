@@ -106,3 +106,11 @@ export async function checkRateLimit(
         return { allowed: true, remaining: maxRequests, resetAt };
     }
 }
+
+export async function cacheDelete(pattern: string) {
+  const keys = await redis.keys(pattern);
+
+  if (keys.length > 0) {
+    await redis.del(...keys);
+  }
+}

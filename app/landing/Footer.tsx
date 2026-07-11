@@ -33,7 +33,7 @@ const Footer = () => {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Sprout size={22} className="text-[#9fd98a]" />
-                <span className="ff-display text-xl">FarmSync</span>
+                <span className="ff-display text-2xl font-medium text-white">FarmSync</span>
               </div>
               <p className="text-[#8fa696] text-sm leading-relaxed max-w-[240px]">
                 A digital home for Indian farms — registration, marketplace,

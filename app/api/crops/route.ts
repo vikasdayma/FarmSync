@@ -45,21 +45,51 @@ export async function GET(req: NextRequest) {
     return apiSuccess(crops, "Crops retrieved", meta);
 }
 
+// export async function POST(req: NextRequest) {
+//     const auth = await getAuthUser(req);
+//     if ("error" in auth) return auth.error;
+//     if (!["SUPER_ADMIN", "AGRONOMIST"].includes(auth.user.role)) {
+//         return apiForbidden("Only admins and agronomists can add crops");
+//     }
+
+//     try {
+//         const body = await req.json();
+//         const parsed = CreateCropSchema.safeParse(body);
+//         if (!parsed.success) return apiValidationError(parsed.error.flatten().fieldErrors);
+
+//         const crop = await prisma.crop.create({ data: parsed.data });
+//         return apiCreated(crop, "Crop created successfully");
+//     } catch (err) {
+//         return apiServerError(err);
+//     }
+// }
+import { cacheDelete } from "@/lib/redis";
+
 export async function POST(req: NextRequest) {
-    const auth = await getAuthUser(req);
-    if ("error" in auth) return auth.error;
-    if (!["SUPER_ADMIN", "AGRONOMIST"].includes(auth.user.role)) {
-        return apiForbidden("Only admins and agronomists can add crops");
+  const auth = await getAuthUser(req);
+  if ("error" in auth) return auth.error;
+
+  if (!["SUPER_ADMIN", "AGRONOMIST"].includes(auth.user.role)) {
+    return apiForbidden("Only admins and agronomists can add crops");
+  }
+
+  try {
+    const body = await req.json();
+    const parsed = CreateCropSchema.safeParse(body);
+
+    if (!parsed.success) {
+      return apiValidationError(parsed.error.flatten().fieldErrors);
     }
 
-    try {
-        const body = await req.json();
-        const parsed = CreateCropSchema.safeParse(body);
-        if (!parsed.success) return apiValidationError(parsed.error.flatten().fieldErrors);
+    const crop = await prisma.crop.create({
+      data: parsed.data,
+    });
 
-        const crop = await prisma.crop.create({ data: parsed.data });
-        return apiCreated(crop, "Crop created successfully");
-    } catch (err) {
-        return apiServerError(err);
-    }
+    // Clear all cached crop lists
+    await cacheDelete("crops:*");
+
+    return apiCreated(crop, "Crop created successfully");
+  } catch (err) {
+    return apiServerError(err);
+  }
 }

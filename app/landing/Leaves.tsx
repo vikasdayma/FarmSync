@@ -18,7 +18,7 @@ export default function Leaves({ className }: { className?: string }) {
     lottieRef.current?.setSpeed(12);
     }, []);
   return (
-    <div className={`fixed  inset-0 z-30 flex ${className} h-full w-full`} >
+    <div className={`fixed right-0 top-0   z-30 flex ${className} `} >
     <style>
      
     </style>

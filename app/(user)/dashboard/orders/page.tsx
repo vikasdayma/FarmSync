@@ -61,7 +61,7 @@ const SellerOrders = () => {
       <div
         style={{
           minHeight: "100vh",
-          background: "#e3f3e3 ",
+          background: "#e3f3e3",
           fontFamily: "'Segoe UI', sans-serif",
           padding: "2.5rem 1.5rem",
         }}
