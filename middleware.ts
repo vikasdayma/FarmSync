@@ -1,13 +1,20 @@
 import { NextRequest, NextResponse } from "next/server";
 import { jwtVerify } from "jose";
 
-const protectedRoutes = ["/dashboard", "/admin", "/profile", "/settings", "/farmregistration"];
+const protectedRoutes = [
+  "/dashboard",
+  "/admin",
+  "/profile",
+  "/settings",
+  "/farmregistration",
+  "/agronomist", // 👈 added — was missing, meant unauthenticated users could hit agronomist pages freely
+];
 
 // ✅ Role → home page mapping
 const roleHomeMap: Record<string, string> = {
   SUPER_ADMIN: "/admin",
   FARMER: "/dashboard",
-  AGRONOMIST: "/dashboard",
+  AGRONOMIST: "/agronomist/dashboard", // 👈 fixed — was "/dashboard", which caused a redirect loop
   SUPPLIER: "/dashboard",
   WAREHOUSE_MANAGER: "/dashboard",
   GOVERNMENT_OFFICER: "/dashboard",
@@ -71,8 +78,14 @@ export async function middleware(req: NextRequest) {
       return NextResponse.redirect(new URL(home, req.url));
     }
 
-    console.log("✅ Access granted");
+    // ✅ Only AGRONOMIST can access agronomist section
+    if (pathname.startsWith("/agronomist") && role !== "AGRONOMIST") {
+      const home = roleHomeMap[role] ?? "/dashboard";
+      console.log(`⛔ Non-AGRONOMIST tried /agronomist → ${home}`);
+      return NextResponse.redirect(new URL(home, req.url));
+    }
 
+    console.log("✅ Access granted");
   } catch (error) {
     console.log("💥 Token FAILED:", (error as Error).message);
     if (isProtected) {
@@ -97,5 +110,6 @@ export const config = {
     "/settings/:path*",
     "/farmregistration/:path*",
     "/farmregistration",
+    "/agronomist/:path*", // 👈 added — without this, the middleware never even runs on /agronomist routes, making the role check dead code
   ],
 };

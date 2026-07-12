@@ -19,7 +19,7 @@ export async function GET(req: NextRequest) {
     const sortOrder = getSortOrder(searchParams, ["name", "areaHectares", "createdAt"]);
 
     
-    const isAdmin = ["SUPER_ADMIN", "GOVERNMENT_OFFICER"].includes(auth.user.role);
+    const isAdmin = ["SUPER_ADMIN", "GOVERNMENT_OFFICER","AGRONOMIST"].includes(auth.user.role);
     const ownerFilter = isAdmin ? {} : { ownerId: auth.user.sub };
 
     const cacheKey = `farms:${auth.user.sub}:${auth.user.role}:p${page}:l${limit}:s:${search}:st:${status}`;

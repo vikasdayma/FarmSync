@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 
 import Navbar from "@/components/Navbar";
-import { ToastContainer } from 'react-toastify';
+
 
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
