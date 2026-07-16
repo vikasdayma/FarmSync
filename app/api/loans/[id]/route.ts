@@ -10,6 +10,13 @@ import { notDeleted, softDeletePayload } from "@/lib/response";
 type Params = { params: Promise<{ id: string }> };
 const REVIEW_ROLES = ["GOVERNMENT_OFFICER", "SUPER_ADMIN","AGRONOMIST"];
 
+export function serializeLoan<T extends { loanAmount: unknown }>(loan: T) {
+  return {
+    ...loan,
+    loanAmount: (loan.loanAmount as any).toString(),
+  };
+}
+
 export async function GET(req: NextRequest, { params }: Params) {
     const auth = await getAuthUser(req);
     if ("error" in auth) return auth.error;

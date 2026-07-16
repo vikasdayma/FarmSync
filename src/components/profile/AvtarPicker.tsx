@@ -171,7 +171,7 @@ function AvatarPicker({
               }}
               onDragLeave={() => setIsDragging(false)}
               onDrop={handleDrop}
-              className="relative h-1/3 w-[40%] "
+              className="relative h-1/3 w-[90%] sm:w-[40%] "
             >
               <div
                 className={`flex h-full w-full items-center justify-center overflow-hidden rounded-[20px] ${
@@ -228,7 +228,7 @@ function AvatarPicker({
 
             {/* preset strip, aligned under the avatar */}
             <div className="relative ">
-              <div className="absolute left-0 right-0 top-1/2 h-12 -translate-y-1/2 rounded-2xl bg-[repeating-linear-gradient(180deg,#5B413055_0px,#5B413055_3px,transparent_3px,transparent_13px)] opacity-45" />
+              <div className="absolute left-0 right-0 top-1/2 h-8 sm:h-12 -translate-y-1/2 rounded-2xl bg-[repeating-linear-gradient(180deg,#5B413055_0px,#5B413055_3px,transparent_3px,transparent_13px)] opacity-45" />
               <div className="relative flex justify-center gap-3.5 overflow-x-auto px-1 py-3 [scrollbar-color:#3A4F3D_transparent] [scrollbar-width:thin] md:justify-start">
                 {FARMERS.map((f, i) => {
                   const active =
@@ -258,7 +258,7 @@ function AvatarPicker({
           </div>
 
           {/* RIGHT: title, details, message, save */}
-          <div className="flex min-w-0 flex-col items-center pt-1.5 md:items-start">
+          <div className="flex min-w-0 flex-col items-center md:pt-1.5 md:items-start">
             <h1 className="font-display text-[clamp(28px,4vw,40px)] font-semibold tracking-tight text-[#F4EEDC]">
               Choose your farmer
             </h1>

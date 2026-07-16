@@ -7,7 +7,26 @@ import { getAuthUser, createAuditLog, createNotification } from "@/middleware/au
 import { CreateLoanSchema } from "@/validators/schemas";
 import { getPagination, buildMeta, notDeleted } from "@/lib/response";
 import { enqueueJob } from "@/jobs/queue";
-
+export function serializeLoan<T extends {
+  loanAmount: unknown;
+  createdAt: Date;
+  updatedAt: Date;
+  deletedAt: Date | null;
+  reviewedAt: Date | null;
+  disbursedAt: Date | null;
+  repaidAt: Date | null;
+}>(loan: T) {
+  return {
+    ...loan,
+    loanAmount: (loan.loanAmount as any).toString(),
+    createdAt: loan.createdAt.toISOString(),
+    updatedAt: loan.updatedAt.toISOString(),
+    deletedAt: loan.deletedAt?.toISOString() ?? null,
+    reviewedAt: loan.reviewedAt?.toISOString() ?? null,
+    disbursedAt: loan.disbursedAt?.toISOString() ?? null,
+    repaidAt: loan.repaidAt?.toISOString() ?? null,
+  };
+}
 export async function GET(req: NextRequest) {
     const auth = await getAuthUser(req);
     if ("error" in auth) return auth.error;

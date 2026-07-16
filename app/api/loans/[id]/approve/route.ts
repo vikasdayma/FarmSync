@@ -7,7 +7,12 @@ import { getAuthUser, createAuditLog, createNotification } from "@/middleware/au
 import { ReviewLoanSchema } from "@/validators/schemas";
 import { enqueueJob } from "@/jobs/queue";
 import { notDeleted } from "@/lib/response";
-
+export function serializeLoan<T extends { loanAmount: unknown }>(loan: T) {
+  return {
+    ...loan,
+    loanAmount: (loan.loanAmount as any).toString(),
+  };
+}
 type Params = { params: Promise<{ id: string }> };
 
 export async function POST(req: NextRequest, { params }: Params) {

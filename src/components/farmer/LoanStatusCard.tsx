@@ -15,7 +15,7 @@ import {
 
 import LoanDetailsCard, { statusConfig } from "./AlreadyAppliedLoan";
 import { Loan } from "@/generated/prisma/client";
-
+import { serializeLoan } from "../../../app/api/loans/route"; 
 const STEPS: { key: "SUBMITTED" | "UNDER_REVIEW" | "APPROVED" | "DISBURSED"; label: string }[] = [
   { key: "SUBMITTED", label: "Submitted" },
   { key: "UNDER_REVIEW", label: "Under Review" },
@@ -23,7 +23,7 @@ const STEPS: { key: "SUBMITTED" | "UNDER_REVIEW" | "APPROVED" | "DISBURSED"; lab
   { key: "DISBURSED", label: "Disbursed" },
 ];
 
-// Maps every possible loan status to how far along the 4-step tracker it should show.
+
 function getStepIndex(status: Loan["status"]): number {
   switch (status) {
     case "DRAFT":
@@ -54,7 +54,7 @@ export default function LoanStatusPage({ data }: { data: Loan[] }) {
   const StatusIcon = config.icon;
   const isRejected = loan.status === "REJECTED";
   const currentStep = getStepIndex(loan.status);
-
+  const serializedLoan = serializeLoan(loan);
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#F8FFF6] via-[#F3FBF1] to-[#EEF8EA] pb-16">
       {/* Hero */}
@@ -153,7 +153,8 @@ export default function LoanStatusPage({ data }: { data: Loan[] }) {
         {/* Main content grid */}
         <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-3">
           <div className="lg:col-span-2">
-            <LoanDetailsCard loan={loan} />
+            
+            <LoanDetailsCard loan={serializedLoan} />
           </div>
 
           <div className="space-y-6">
