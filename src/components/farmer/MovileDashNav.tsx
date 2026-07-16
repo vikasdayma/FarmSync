@@ -9,7 +9,7 @@ import LogoutButton from "../LogoutButton";
 const MOBILE_NAV_LINKS: NavLink[] = [
   { id: 0, label: "Dashboard", href: "/dashboard" },
   { id: 1, label: "My Store", href: "/dashboard/mystore" },
-  { id: 1, label: "Farm", href: "/dashboard/my-farm" },
+  { id: 1, label: "Loan", href: "/dashboard/loan" },
   { id: 3, label: "Orders", href: "/dashboard/orders" },
   { id: 4, label: "Alerts", href: "/dashboard/notification" },
   { id: 5, label: "Marketplace", href: "/marketplace" },

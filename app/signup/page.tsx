@@ -358,7 +358,7 @@ const ROLES: {
 }[] = [
   { value: "FARMER", label: "Farmer", icon: Sprout },
   { value: "AGRONOMIST", label: "Agronomist", icon: Users },
-  { value: "SUPPLIER", label: "Supplier", icon: Truck },
+
 ];
 
 export default function Register() {
@@ -600,7 +600,7 @@ export default function Register() {
               <label className="text-xs font-semibold uppercase tracking-wide text-[#12331F]/50">
                 Select Role
               </label>
-              <div className="mt-2 grid grid-cols-3 gap-2">
+              <div className="mt-2 grid grid-cols-2 gap-2">
                 {ROLES.map(({ value, label, icon: Icon }) => {
                   const active = form.role === value;
                   return (
@@ -615,7 +615,7 @@ export default function Register() {
                       }`}
                     >
                       <Icon
-                        className={`h-4 w-4 ${
+                        className={`h-6 w-6 ${
                           active ? "text-[#C9E86B]" : "text-[#12331F]/40"
                         }`}
                       />

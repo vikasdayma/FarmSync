@@ -16,7 +16,7 @@ type Crop = {
 
 function SkeletonCard() {
   return (
-    <div className="bg-white rounded-2xl overflow-hidden border border-green-100 animate-pulse shadow-sm">
+    <div className="bg-[#e3f3e3] rounded-2xl overflow-hidden border border-green-100 animate-pulse shadow-sm">
       <div className="h-40 bg-green-50" />
       <div className="p-4 flex flex-col gap-3">
         <div className="h-3 bg-green-100 rounded w-2/3" />
@@ -50,12 +50,12 @@ function CropCard({ item }: { item: Crop }) {
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
 
-        {/* Category pill */}
+   
         <span className="absolute top-2.5 left-2.5 bg-white/80 backdrop-blur-sm text-green-700 text-[10px] font-semibold tracking-wide uppercase px-2 py-0.5 rounded-full border border-green-200/60 truncate max-w-[120px]">
           {item.category}
         </span>
 
-        {/* Status badge */}
+
         <span className={`absolute top-2.5 right-2.5 flex items-center gap-1 text-[10px] font-semibold px-2 py-0.5 rounded-full border backdrop-blur-sm
           ${item.isActive
             ? 'bg-emerald-50/90 text-emerald-600 border-emerald-200'
@@ -64,7 +64,7 @@ function CropCard({ item }: { item: Crop }) {
           {item.isActive ? 'Active' : 'Inactive'}
         </span>
 
-        {/* Title overlay */}
+
         <div className="absolute bottom-0 left-0 right-0 px-3 pb-2.5">
           <h3 className="text-white font-bold text-sm leading-tight truncate drop-shadow">
             {item.name}
@@ -77,7 +77,6 @@ function CropCard({ item }: { item: Crop }) {
         </div>
       </div>
 
-      {/* Body */}
       <div className="flex flex-col gap-2.5 p-3.5 flex-1">
         <p className="text-green-700/60 text-xs leading-relaxed line-clamp-2 min-h-[2.2em]">
           {item.description || 'No description added yet.'}
@@ -113,7 +112,7 @@ const CropsCatalog = () => {
       const res = await fetch('/api/crops')
       if (!res.ok) throw new Error(`${res.status}: Failed to load crops`)
       const data = await res.json()
-      setCrops(data.data) // adjust key if your apiSuccess() wraps differently
+      setCrops(data.data) 
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong')
     } finally {

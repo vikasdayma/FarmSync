@@ -5,6 +5,7 @@ import { Poppins, Caveat } from "next/font/google";
 import {motion, useTransform} from 'framer-motion'
 import { useScroll } from "framer-motion";
 import { useRef } from "react";
+import { useRouter } from "next/navigation";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -165,7 +166,7 @@ export default function FarmHeroPoster() {
     // "start start"-> progress = 1 when TOP of target hits TOP of viewport (element fully scrolled past its entry)
   });
   const filter = useTransform(scrollYProgress, [0, 0.6], ["-600px", "0px"])
-
+  const router=useRouter();
   return (
     <section
       className={`${poppins.variable} ${caveat.variable} relative overflow-hidde bg-[#0F3D2E] px-6 py-12 font-[family-name:var(--font-display)] sm:px-10 `}
@@ -242,7 +243,7 @@ export default function FarmHeroPoster() {
                   style={{y:filter}}
          
                   transition={{duration:1,repeat:0}}
-                  className="h-[70vh]   w-auto object-contain z-50 drop-shadow-2xl"
+                  className="h-[70vh]   w-auto object-contain z-30 drop-shadow-2xl"
                 ></motion.img>
 
                 <div className="absolute -right-2 top-[35%] flex h-20 w-20 flex-col items-center justify-center rounded-full border-4 border-[#EAF3E4] bg-[#C9E86B] text-center shadow-lg sm:h-24 sm:w-24">
@@ -254,7 +255,7 @@ export default function FarmHeroPoster() {
                   </span>
                 </div>
               </div>
-              <button className="text-xl bg-amber-300 px-6 py-2 rounded-lg text-white">
+              <button   onClick={()=>router.push('/login')} className="text-xl bg-amber-300 px-6 py-2 rounded-lg text-white">
                 Explore Now
               </button>
             </div>

@@ -13,7 +13,7 @@ type Params = { params: Promise<{ id: string }> };
 export async function POST(req: NextRequest, { params }: Params) {
     const auth = await getAuthUser(req);
     if ("error" in auth) return auth.error;
-    if (!["GOVERNMENT_OFFICER", "SUPER_ADMIN"].includes(auth.user.role)) {
+    if (!["GOVERNMENT_OFFICER", "SUPER_ADMIN","AGRONOMIST"].includes(auth.user.role)) {
         return apiForbidden("Only government officers and super admins can approve loans");
     }
     const { id } = await params;

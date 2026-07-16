@@ -66,7 +66,7 @@ const SellerOrders = () => {
           padding: "2.5rem 1.5rem",
         }}
       >
-        <div style={{ maxWidth: "760px", margin: "0 auto" }}>
+        <div style={{  margin: "0 auto" }} className="max-w-6xl">
           {/* Header */}
           <div style={{ marginBottom: "1.75rem" }}>
             <p

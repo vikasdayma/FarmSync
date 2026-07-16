@@ -13,7 +13,7 @@ export async function GET(req: NextRequest) {
     const { searchParams } = new URL(req.url);
     const { page, limit, skip } = getPagination(searchParams);
     const status = searchParams.get("status");
-    const isAdmin = ["SUPER_ADMIN", "GOVERNMENT_OFFICER"].includes(auth.user.role);
+    const isAdmin = ["SUPER_ADMIN", "GOVERNMENT_OFFICER","AGRONOMIST"].includes(auth.user.role);
 
     const where = {
         ...notDeleted(),

@@ -1,4 +1,6 @@
-import React from "react";
+
+'use client'
+import React, { useEffect, useState } from "react";
 import HeroSection from "./HeroSection";
 import FeaturesSection from "./FeaturesSection";
 import StatsSection from "./Contact";
@@ -8,10 +10,14 @@ import Footer from "./Footer";
 import MagicBento from "@/components/MagicBento";
 import Bento from "./Bento";
 import Contact from "./Contact";
+import PreLoader from "./PreLoader";
 
 const Home = () => {
+ 
   return (
     <div>
+ 
+    <>
       <HeroSection />
 
       <Track />
@@ -26,6 +32,9 @@ const Home = () => {
 
       <Contact/>
       <Footer/>
+      </>
+      
+     
     </div>
   );
 };

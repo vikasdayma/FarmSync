@@ -1,6 +1,8 @@
 "use client";
 
 import { useAuth } from "@/context/AuthProvider";
+import { useGetCrops } from "@/hooks/useGetCrops";
+import useLoanHook from "@/hooks/useLoanHook";
 import {
   Sprout,
   ClipboardCheck,
@@ -16,12 +18,7 @@ import {
   Minus,
 } from "lucide-react";
 
-const stats = [
-  { label: "Farms Supervised", value: "34", icon: Sprout, trend: "+2 this month", stripe: "bg-[#7C8A6E]" },
-  { label: "Pending Reviews", value: "07", icon: ClipboardCheck, trend: "3 urgent", stripe: "bg-[#B5502E]", urgent: true },
-  { label: "Active Alerts", value: "02", icon: AlertTriangle, trend: "Needs attention", stripe: "bg-[#A63B32]", urgent: true },
-  { label: "Visits This Week", value: "05", icon: CalendarDays, trend: "2 scheduled today", stripe: "bg-[#7C8A6E]" },
-];
+
 
 const reviewQueue = [
   { id: 1, farmer: "Ramesh Patidar", farm: "Patidar Farm, Dhar", type: "Soil Report", submitted: "2 hours ago", priority: "high" },
@@ -44,22 +41,15 @@ const farms = [
   { name: "Rathore Farms", location: "Dhar", crop: "Soybean", health: 45, trend: "down" },
 ];
 
-function healthColor(score: number) {
-  if (score >= 75) return { bar: "bg-[#7C8A6E]", text: "text-[#5C6B4E]" };
-  if (score >= 55) return { bar: "bg-[#C99A44]", text: "text-[#96731F]" };
-  return { bar: "bg-[#B5502E]", text: "text-[#96401F]" };
-}
 
-const priorityStyle = {
-  high: "bg-[#A63B32]/[0.08] text-[#A63B32] border-[#A63B32]/20",
-  medium: "bg-[#C99A44]/[0.10] text-[#96731F] border-[#C99A44]/25",
-  low: "bg-black/[0.03] text-[#2B2620]/40 border-black/10",
-};
 
 const mono = { fontFamily: "ui-monospace, 'SF Mono', 'JetBrains Mono', monospace" };
 
 export default function AgronomistDashboard() {
   const { user, isLoading } = useAuth();
+  const {loading,data,error}=useLoanHook();
+  const {loading:LoadingCrops,error:ErrorCrops,crops}=useGetCrops();
+console.log(crops)
 
   if (isLoading) {
     return (
@@ -73,9 +63,29 @@ export default function AgronomistDashboard() {
       </div>
     );
   }
-
+  if(error){
+    return <h1>{error}</h1>
+  }
+const stats = [
+  { label: "Farms Supervised", value: "0", icon: Sprout, trend: "+2 this month", stripe: "bg-[#7C8A6E]" },
+  {
+    label: "Pending Loan Application",
+    value: loading ? "..." : data.filter((l) => l.status === "SUBMITTED").length,
+    icon: ClipboardCheck,
+    trend: "3 urgent",
+    stripe: "bg-[#B5502E]",
+    urgent: true,
+  },
+  { label: "Crops Listed",
+         value: loading ? "..." :crops.length,
+      icon: AlertTriangle, 
+      trend: "Needs attention",
+       stripe: "bg-[#A63B32]", 
+       urgent: true },
+  { label: "Visits This Week", value: "0", icon: CalendarDays, trend: "2 scheduled today", stripe: "bg-[#7C8A6E]" },
+];
   return (
-    <div className="min-h-screen bg-[#ccdacc] p-5 sm:p-8">
+    <div className="min-h-screen bg-[#e3f3e3] p-5 sm:p-8">
       <div className="mx-auto max-w-6xl">
         {/* Header */}
         <div className="mb-8 flex flex-wrap items-start justify-between gap-4 border-b border-[#2B2620]/10 pb-6">
@@ -150,7 +160,7 @@ export default function AgronomistDashboard() {
             </div>
 
             <div className="space-y-1">
-              {reviewQueue.map((item) => (
+              {/* {reviewQueue.map((item) => (
                 <div
                   key={item.id}
                   className="group   flex items-center justify-between border-b border-[#2B2620]/[0.05] py-3.5 last:border-0 transition hover:bg-[#B5502E]/[0.02]"
@@ -187,7 +197,8 @@ export default function AgronomistDashboard() {
                     <ChevronRight className="h-4 w-4 text-[#2B2620]/20 transition group-hover:translate-x-0.5" />
                   </div>
                 </div>
-              ))}
+              ))} */}
+         <h1 className="text-center mt-20 text-gray-400">  No Data Yet</h1>    
             </div>
           </div>
 
@@ -198,7 +209,7 @@ export default function AgronomistDashboard() {
             </h2>
 
             <div className="space-y-4">
-              {schedule.map((item, i) => (
+              {/* {schedule.map((item, i) => (
                 <div key={i} className="flex gap-3">
                   <span
                     className="w-11 shrink-0 pt-0.5 text-[12px] font-medium text-[#B5502E]"
@@ -216,7 +227,8 @@ export default function AgronomistDashboard() {
                     </p>
                   </div>
                 </div>
-              ))}
+              ))} */}
+   <h1 className="text-center mt-20 text-gray-400">  No Data Yet</h1>    
             </div>
 
             <button className="mt-5 w-full rounded-md border border-dashed border-[#2B2620]/15 py-2.5 text-[12px] font-medium text-[#2B2620]/50 transition hover:border-[#B5502E]/40 hover:text-[#B5502E]">
@@ -247,7 +259,7 @@ export default function AgronomistDashboard() {
                 </tr>
               </thead>
               <tbody>
-                {farms.map((farm, i) => {
+                {/* { farms.map((farm, i) => {
                   const colors = healthColor(farm.health);
                   return (
                     <tr
@@ -289,7 +301,7 @@ export default function AgronomistDashboard() {
                       </td>
                     </tr>
                   );
-                })}
+                })} */}
               </tbody>
             </table>
           </div>

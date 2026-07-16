@@ -22,7 +22,7 @@ const AllFarms = () => {
   }, [])
 
   if (loading) return (
-    <div className="flex min-h-[60vh] items-center justify-center bg-[#e3f3e3]">
+    <div className="flex min-h-screen items-center justify-center bg-[#e3f3e3]">
       <div className="flex flex-col items-center gap-3">
         <div className="h-7 w-7 animate-spin rounded-full border-[2.5px] border-[#3F7A3E]/15 border-t-[#3F7A3E]" />
         <p className="text-[13px] font-medium uppercase tracking-widest text-[#14201A]/40">
@@ -47,7 +47,7 @@ const AllFarms = () => {
   ]
   
   return (
-    <div className="min-h-screen bg-[#ccdacc] px-[5%] py-10">
+    <div className="min-h-screen bg-[#e3f3e3] px-[5%] py-10">
       {/* Header */}
       <div className="mb-8 flex flex-wrap items-center gap-4">
         <div className="flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-[13px] bg-gradient-to-br from-[#6FA35A] to-[#3F7A3E] shadow-lg shadow-[#3F7A3E]/25">

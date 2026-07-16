@@ -8,7 +8,7 @@ import { CreateLoanSchema } from "@/validators/schemas";
 import { notDeleted, softDeletePayload } from "@/lib/response";
 
 type Params = { params: Promise<{ id: string }> };
-const REVIEW_ROLES = ["GOVERNMENT_OFFICER", "SUPER_ADMIN"];
+const REVIEW_ROLES = ["GOVERNMENT_OFFICER", "SUPER_ADMIN","AGRONOMIST"];
 
 export async function GET(req: NextRequest, { params }: Params) {
     const auth = await getAuthUser(req);

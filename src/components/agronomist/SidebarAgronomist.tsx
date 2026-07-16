@@ -28,6 +28,7 @@ import { useProductCount } from "@/hooks/useProductCount";
 
 import { FaRupeeSign, FaUsers, FaVirus } from "react-icons/fa";
 import { GiGroundSprout, GiPlantRoots } from "react-icons/gi";
+import { Banknote } from "lucide-react";
 
 interface NavItem {
   label: string;
@@ -65,7 +66,7 @@ crops: <GiPlantRoots className="font-bold" size={20} />,
 soil: <GiGroundSprout size={20} />,
 disease: <FaVirus size={20} />,
 messages: <FiMessageCircle size={20} />,
-reports: <FiFileText size={20} />,
+reports: <Banknote size={20} />,
 alerts: <FiBell size={20} />,
   settings: <FiSettings size={20} />,
   help: <FiHelpCircle size={20} />,
@@ -98,8 +99,8 @@ const NAV_GROUPS: NavGroup[] = [
       },
      
       {
-        label: "Soil Inspections",
-        href: "/dashboard/soil",
+        label: "Loan Applications",
+        href: "/agronomist/dashboard/loan-applications",
         icon: Icons.reports,
       },
     ],

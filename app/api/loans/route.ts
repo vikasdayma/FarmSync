@@ -14,7 +14,7 @@ export async function GET(req: NextRequest) {
     const { searchParams } = new URL(req.url);
     const { page, limit, skip } = getPagination(searchParams);
     const status = searchParams.get("status");
-    const isAdmin = ["SUPER_ADMIN", "GOVERNMENT_OFFICER"].includes(auth.user.role);
+    const isAdmin = ["SUPER_ADMIN", "GOVERNMENT_OFFICER","AGRONOMIST"].includes(auth.user.role);
 
     const where = {
         ...notDeleted(),
@@ -42,9 +42,24 @@ export async function POST(req: NextRequest) {
     }
 
     try {
-        const body = await req.json();
+        const formData = await req.formData();
+
+        const body = {
+            loanAmount: Number(formData.get("loanAmount")),
+            purpose: formData.get("purpose") as string,
+            tenureMonths: Number(formData.get("tenureMonths")),
+            interestRatePct: formData.get("interestRatePct")
+                ? Number(formData.get("interestRatePct"))
+                : undefined,
+            collateralDetails: (formData.get("collateralDetails") as string) || undefined,
+        };
+
         const parsed = CreateLoanSchema.safeParse(body);
         if (!parsed.success) return apiValidationError(parsed.error.flatten().fieldErrors);
+
+        // handle file uploads separately (documents come in as File objects)
+        const files = formData.getAll("documents") as File[];
+        // const documentUrls = await uploadDocumentsToCloudinary(files); // implement if needed
 
         const loan = await prisma.loan.create({
             data: {
@@ -52,11 +67,10 @@ export async function POST(req: NextRequest) {
                 userId: auth.user.sub,
                 status: "SUBMITTED",
                 interestRatePct: parsed.data.interestRatePct ?? 7.5,
-                documents: parsed.data.documents ?? [],
+                documents: [], // documentUrls once upload is wired in
             },
         });
 
-        
         const officers = await prisma.user.findMany({
             where: { role: "GOVERNMENT_OFFICER", status: "ACTIVE" },
             select: { id: true },

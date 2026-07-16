@@ -44,8 +44,8 @@ export default function HeroSection() {
       />
      
       
+       
       <div className="absolute inset-0 bg-linear-to-t from-[#0F3D2E]/20 via-[#0F3D2E]/30 to-[#092d21]" />
-
      
       
       <div className="absolute inset-x-0 top-1/2 z-10 -translate-y-1/2 px-6 sm:px-10 lg:px-20">
